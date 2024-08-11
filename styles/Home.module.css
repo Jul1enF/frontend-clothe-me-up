@@ -1,22 +1,95 @@
-.main {
+.body{
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 4rem 0;
 }
 
-.title {
-  line-height: 1.15;
-  font-size: 4rem;
+.leftContainer{
+  width: 54vw;
+  height: 100vh;
+  background-image: url('../public/tops4.jpg') ;
+  background-size: cover;
+  display: flex;
+  transition-duration: 0.5s;
 }
 
-.title a {
-  color: #0070f3;
-  text-decoration: none;
+.topsContainer{
+  height: 30%;
+  display: flex;
+  align-items: flex-end;
+  padding-left: 3vw;
 }
 
-.title a:hover, .title a:focus, .title a:active {
-  text-decoration: underline;
+.tops{
+  font-family: 'Open Sans';
+  color:white;
+  font-size: 35px;
+  font-weight: 700;
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+
+
+
+.rightContainer{
+  width: 46vw;
+  height: 100vh;
+  background-image: url('../public/jeans3.jpg') ;
+  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+  transition-duration: 0.4s;
+}
+
+.downsContainer{
+  height: 30%;
+  width: 100%;
+  padding-right: 3.5vw;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.downs{
+  font-family: 'Open Sans';
+  color:white;
+  font-size: 35px;
+  font-weight: 700;
+  text-shadow : 0.2px 0.1px 0.2px rgb(65, 65, 65);
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+
+/* Changement quand hover sur tops */
+
+.leftContainer:has(.tops:hover) {
+  width: 57vw;
+  transition-duration: 0.5s;
+}
+
+body:has(.tops:hover) .rightContainer {
+  width: 43vw;
+  transition-duration: 0.5s;
+}
+
+.tops:hover{
+  font-size: 39px;
+  transition-duration: 0.5s;
+  font-weight: 760;
+}
+
+
+/* Changement quand hover sur downs */
+
+.rightContainer:has(.downs:hover) {
+  width: 51vw;
+  transition-duration: 0.5s;
+}
+
+body:has(.downss:hover) .leftContainer {
+  width: 49vw;
+  transition-duration: 0.5s;
+}
+
+.downs:hover{
+  font-size: 39px;
+  transition-duration: 0.5s;
+  font-weight: 760;
 }

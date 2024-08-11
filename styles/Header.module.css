@@ -1,0 +1,163 @@
+.headerBody{
+    background-color:transparent;
+    position:fixed;
+    top: 0;
+    left:0;
+    width: 100vw;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    transition-duration: 0.9s;
+}
+
+.searchContainer{
+    width:30%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 3vw;
+}
+
+.inputContainer{
+    width: 280px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid white;
+    transition-duration: 0.5s;
+}
+
+.glassIcon{
+    height: 21px;
+    color:white;
+    margin-right: 20px;
+    cursor: pointer;
+    transition-duration: 0.5s;
+}
+
+.search{
+    height:100%;
+    width:100%;
+    font-size: 16.5px;
+    background-color: transparent;
+    outline: none;
+    border : none;
+    color:white;
+    transition-duration: 0.2s;
+}
+.search::placeholder{
+    color:rgb(189, 189, 189);
+    transition-duration: 0.5s;
+  }
+
+.titleContainer{
+    width:30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 7px;
+    transition-duration: 0.6s;
+}
+
+.nameSite{
+    color:white;
+    font-family: 'Open Sans';
+    font-weight: 800;
+    font-size: 43px;
+    letter-spacing: 1px;
+    text-shadow : 0.3px 0.1px 0.3px rgb(65, 65, 65);
+    cursor: pointer;
+    transition-duration: 0.5s;
+}
+
+.iconsContainer{
+    width:30%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 3vw;
+}
+
+.userIcon{
+    color:white;
+    height : 21.5px;
+    cursor: pointer;
+    transition-duration: 0.5s;
+}
+
+.cartIcon{
+    color:white;
+    height : 21.5px;
+    margin-left: 20px;
+    cursor: pointer;
+    transition-duration: 0.5s;
+}
+
+/* Changements quand hover du header */
+
+.headerBody:hover{
+    background-color: white;
+    transition-duration: 0.9s;
+}
+
+.headerBody:hover .inputContainer{
+    width: 295px;
+    height: 51px;
+    border-bottom: 1.15px solid rgb(13, 1, 102);
+    transition-duration: 0.5s;
+ }
+
+ .headerBody:hover .glassIcon{
+    height: 23px;
+    color:rgb(13, 1, 102);
+    margin-right: 21px;
+    transition-duration: 0.5s;
+ }
+
+ .headerBody:hover .search{
+    height:100%;
+    width:100%;
+    font-size: 18px;
+    color:rgb(13, 1, 102);
+    transition-duration: 0.1s;
+ }
+
+ .headerBody:hover .search::placeholder{
+    color: rgb(13, 1, 102);
+    transition-duration: 0.5s;
+ }
+
+
+
+.headerBody:hover .titleContainer{
+    padding-top: 0;
+    transition-duration: 0.5s;
+ }
+
+.headerBody:hover .nameSite{
+   font-size: 44.5px;
+   color: rgb(13, 1, 102);
+   transition-duration: 0.5s;
+   text-shadow: none;
+}
+
+
+
+.headerBody:hover .userIcon{
+    height: 23px;
+    color:rgb(13, 1, 102);
+    transition-duration: 0.5s;
+ }
+
+ .headerBody:hover .cartIcon{
+    height: 23px;
+    color:rgb(13, 1, 102);
+    margin-left: 21px;
+    transition-duration: 0.5s;
+ }
+
