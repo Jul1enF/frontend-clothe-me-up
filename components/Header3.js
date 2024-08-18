@@ -1,4 +1,4 @@
-import styles from '../styles/Header.module.css'
+import styles from '../styles/Header3.module.css'
 import { useState, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faCartShopping, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { useSelector, useDispatch } from 'react-redux'
 import { logout } from '../reducers/user'
 import {useRouter} from 'next/router'
+
 
 
 export default function Header() {
@@ -51,7 +52,6 @@ export default function Header() {
             </div>
         )
     }
-
     return (
         <div className={styles.headerBody} onMouseLeave={() => setUserMenuVisible(false)}>
             <div className={styles.searchContainer}>

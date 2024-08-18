@@ -1,0 +1,138 @@
+.body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.topContainer{
+    height: 44%;
+    background-image: url('../public/SignBackground6.jpg');
+    background-size: cover;
+}
+
+.downContainer{
+    width: 100%;
+    height: 56%;
+    display: flex;
+}
+
+.titleContainer{
+    width: 22%;
+    height: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title{
+    color : rgb(13, 1, 102);
+    font-size: 30px;
+    font-family: Helvetica;
+    font-weight: 770;
+}
+
+.lineContainer{
+    width: 1px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+ 
+}
+
+.line{
+    width: 1px;
+    height : 85%;
+    border-right: 1px solid rgb(13, 1, 102);
+}
+
+.inputsContainer{
+    width : 77%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 2%;
+}
+
+.inputColumn{
+    padding-top: 5%;
+    padding-bottom: 5%;
+    width: 40%;
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  
+}
+
+.input{
+    height : 47px;
+    width: 61%;
+    border-radius: 5px;
+    background-color: white;
+    color:rgb(13, 1, 102);
+    outline: none;
+    padding-left: 7px;
+    font-size: 15px;
+    border: 1px solid rgb(13, 1, 102);
+}
+
+.inputsContainer input::placeholder{
+    color:rgb(13, 1, 102);
+}
+
+.passwordContainer{
+    height : 47px;
+    width: 61%;
+    border-radius: 5px;
+    background-color: white;
+    color:rgb(13, 1, 102);
+    outline: none;
+    padding-left: 7px;
+    padding-right: 9px;
+    font-size: 15px;
+    border: 1px solid rgb(13, 1, 102);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.password{
+    border:none;
+    height: 45px;
+    width: 80%;
+    outline: none;
+    font-size: 15px;
+    color:rgb(13, 1, 102);
+}
+
+.eyeIcon{
+    color:rgb(13, 1, 102);
+    cursor: pointer;
+
+}
+
+.errorMessage{
+    width:40vw;
+    position:absolute;
+    bottom: 4vh;
+    left : 29vw;
+    font-size: 17px;
+    color:rgb(230, 25, 25);
+    text-align: center;
+}
+
+.registerBtn{
+    height:54px;
+    width: 53%;
+    border: none;
+    color:white;
+    background-color: rgb(13, 1, 102);
+    border-radius: 25px;
+    font-size: 19px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    cursor: pointer;
+
+}

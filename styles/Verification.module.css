@@ -1,0 +1,49 @@
+.body{
+    width: 100vw;
+    height:100vh;
+}
+.mainContainer{
+    height:100%;
+    width: 100%;
+    padding-top: 100px;
+    display: flex;
+}
+
+.leftContainer{
+    height:100%;
+    width: 35%;
+    background-image: url('../public/verifBackground.jpg');
+    background-size: cover;
+}
+
+.rightContainer{
+    height: 100%;
+    width: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10%;
+}
+
+.centralContainer{
+    width: 70%;
+    height: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.line{
+    width: 70%;
+    height:1px;
+    border-bottom: 1px solid rgb(13, 1, 102);
+}
+
+.sentence{
+    color:rgb(13, 1, 102);
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
+    line-height: 35px;
+}

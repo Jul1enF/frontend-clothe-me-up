@@ -1,14 +1,15 @@
-import styles from '../styles/Header.module.css'
+import styles from '../styles/Header2.module.css'
 import { useState, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser, faCartShopping, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import { faUser, faCartShopping, faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link'
 import { useSelector, useDispatch } from 'react-redux'
 import { logout } from '../reducers/user'
 import {useRouter} from 'next/router'
 
 
-export default function Header() {
+
+export default function Header2(){
     const [userMenuVisible, setUserMenuVisible] = useState(false)
     const [search, setSearch]=useState('')
 
@@ -51,9 +52,8 @@ export default function Header() {
             </div>
         )
     }
-
-    return (
-        <div className={styles.headerBody} onMouseLeave={() => setUserMenuVisible(false)}>
+    return(
+        <div className={styles.headerBody} onMouseLeave={()=>setUserMenuVisible(false)}>
             <div className={styles.searchContainer}>
                 <div className={styles.inputContainer}>
                     <FontAwesomeIcon icon={faMagnifyingGlass} className={styles.glassIcon} />
@@ -65,11 +65,11 @@ export default function Header() {
             </div>
             <div className={styles.iconsContainer}>
                 <div className={styles.userContainer}>
-                    <FontAwesomeIcon className={styles.userIcon} icon={faUser} onClick={() => setUserMenuVisible(!userMenuVisible)} />
-                    {userName}
-                    {userDropdown}
+                <FontAwesomeIcon className={styles.userIcon} icon={faUser} onClick={()=>setUserMenuVisible(!userMenuVisible)}/>
+                {userName}
+                {userDropdown}
                 </div>
-                <FontAwesomeIcon className={styles.cartIcon} icon={faCartShopping} />
+                <FontAwesomeIcon className={styles.cartIcon} icon={faCartShopping}/>
             </div>
         </div>
     )
