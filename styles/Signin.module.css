@@ -55,9 +55,8 @@
 }
 
 .inputColumn{
-    padding-top: 5%;
-    padding-bottom: 5%;
-    width: 40%;
+    padding-top: 2%;
+    width: 45%;
     height: 100%;
     display:flex;
     flex-direction: column;
@@ -68,7 +67,7 @@
 
 .input{
     height : 47px;
-    width: 61%;
+    width: 65%;
     border-radius: 5px;
     background-color: white;
     color:rgb(13, 1, 102);
@@ -84,7 +83,7 @@
 
 .passwordContainer{
     height : 47px;
-    width: 61%;
+    width: 65%;
     border-radius: 5px;
     background-color: white;
     color:rgb(13, 1, 102);
@@ -96,6 +95,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 4.5vh;
 }
 
 .password{
@@ -116,8 +116,8 @@
 .errorMessage{
     width:40vw;
     position:absolute;
-    bottom: 4vh;
-    left : 29vw;
+    bottom: 21vh;
+    left : 21vw;
     font-size: 17px;
     color:rgb(230, 25, 25);
     text-align: center;
@@ -125,7 +125,7 @@
 
 .registerBtn{
     height:54px;
-    width: 53%;
+    width: 17vw;
     border: none;
     color:white;
     background-color: rgb(13, 1, 102);
@@ -135,4 +135,43 @@
     letter-spacing: 1px;
     cursor: pointer;
 
+
 }
+
+.btnContainer{
+    height: 50%;
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+   
+}
+
+.imgContainer{
+    position: relative;
+    height : 25px;
+    width:25px;
+    }
+    
+    .or{
+        font-size: 24px;
+        color:rgb(13, 1, 102);
+    }
+    
+    .googleBtn{
+    height: 50px;
+    width: 40%;
+    background-color: white;
+    border: 1px solid rgb(13, 1, 102);
+    color:rgb(13, 1, 102);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 900;
+    font-family: Helvetica;
+    cursor: pointer;
+    }
+    

@@ -16,6 +16,7 @@
   display: flex;
   align-items: flex-end;
   padding-left: 3vw;
+  transition-duration: 0.5s;
 }
 
 .tops{

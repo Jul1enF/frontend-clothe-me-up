@@ -1,0 +1,58 @@
+.body{
+    width:23.5vw;
+    height:51vh;
+    min-height: 51vh;
+    background-color: rgb(245	245	245	);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 4vh;
+    position: relative;
+}
+
+.infosContainer{
+    position:absolute;
+    height: 14vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    margin-right: 13vw;
+    margin-bottom: 30.5vh;
+}
+
+.infosContainer h4{
+color :rgb(13, 1, 102);
+font-size: 27px;
+}
+
+.infosContainer h5{
+color :rgb(13, 1, 102);
+font-size: 22px;
+margin-bottom: 1vh;
+}
+
+.infosContainer button{
+background-color: rgb(13, 1, 102);
+color:white;
+border :none;
+font-size: 22px;
+height : 45px;
+width:9.5vw;
+border-radius: 5px;
+cursor: pointer;
+transition-duration: 1s;
+}
+
+.infosContainer button:hover{
+    background-color: transparent;
+    color:rgb(13, 1, 102);
+    border:0.5px solid rgb(13, 1, 102);
+    transition-duration: 1s;
+}
+
+.imgContainer{
+    position: relative;
+    height : 47vh;
+    width: 24vh;
+}

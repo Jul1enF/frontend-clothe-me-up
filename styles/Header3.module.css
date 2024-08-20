@@ -101,19 +101,19 @@
 .userName{
     color: rgb(13, 1, 102);
     position: absolute;
-    margin-top:55px;
+    margin-top:57px;
     font-size:16px;
     transition-duration: 0.5s;
 }
 
 .userDropdownContainer{
-    width: 100px;
+    width: 140px;
     background-color:  rgb(13, 1, 102);
     position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 105px;
+    margin-top: 112px;
     border-radius: 10px;
    
 }
@@ -122,8 +122,8 @@
     width: 100%;
     text-align: center;
     font-size: 13px;
-    padding-top: 6.5px;
-    padding-bottom: 6.5px;
+    padding-top: 9px;
+    padding-bottom: 9px;
     color:white;
     cursor: pointer;
 }
@@ -213,6 +213,7 @@
 
  .headerBody:hover .userName{
     text-shadow: none;
+    margin-top:58px;
     color:rgb(13, 1, 102);
     transition-duration: 0.5s;
     font-size: 17px;

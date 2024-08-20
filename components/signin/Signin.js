@@ -6,6 +6,7 @@ import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 import { useDispatch } from 'react-redux'
 import { login } from '../../reducers/user'
 import { useRouter } from 'next/router'
+import Image from 'next/image'
 
 export default function Signin() {
 
@@ -52,6 +53,12 @@ export default function Signin() {
         }
     }
 
+    const googleClick=async()=>{
+        const response = await fetch(`${url}/users/google`, {method:'POST'})
+        const data = await response.json()
+        window.location.href = data.url
+     }
+
     return (
         <div className={styles.body}>
             <Header2 />
@@ -73,12 +80,17 @@ export default function Signin() {
                             <input type={eye1Visible ? "text" : "password"} placeholder='Mot de passe' className={styles.password} onChange={(e) => {
                                 setPassword(e.target.value)
                                 setError('')
-                            }} value={password}></input>
+                            }} value={password} onKeyDown={(event)=>{
+                                if (event.code === 'Enter')
+                                {loginClick()}
+                              }}></input>
                             <FontAwesomeIcon icon={eye1Visible ? faEyeSlash : faEye} className={styles.eyeIcon} onClick={() => setEye1Visible(!eye1Visible)} />
                         </div>
-                    </div>
-                    <div className={styles.inputColumn}>
                         <button className={styles.registerBtn} onClick={() => loginClick()}>Se connecter</button>
+                    </div>
+                    <div className={styles.btnContainer}>
+                        <h2 className={styles.or}>Ou</h2>
+                        <button onClick={()=>googleClick()} className={styles.googleBtn}><div className={styles.imgContainer}><Image src="/googleIcon.svg.png" layout='fill' alt="google logo" /></div>Se connecter avec Google </button>
                         <h4 className={styles.errorMessage}>{error}</h4>
                     </div>
                 </div>

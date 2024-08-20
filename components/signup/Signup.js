@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 import { CloseOutlined } from '@ant-design/icons'
 import { Modal } from 'antd'
+import Image from 'next/image'
 
 
 export default function Signup() {
@@ -75,6 +76,12 @@ export default function Signup() {
         }
     }
 
+    const googleClick=async()=>{
+       const response = await fetch(`${url}/users/google`, {method:'POST'})
+       const data = await response.json()
+       window.location.href = data.url
+    }
+
     return (
         <div className={styles.body}>
             <Header2 />
@@ -132,12 +139,16 @@ export default function Signup() {
                             setError('')
                         }} value={mobile}></input>
                         <h4 className={styles.errorMessage}>{error}</h4>
+                        <button className={styles.registerBtn} onClick={() => registerClick()}>Enregistrer</button>
                     </div>
                     <div className={styles.btnContainer}>
-                        <button className={styles.registerBtn} onClick={() => registerClick()}>Enregistrer</button>
+                        <h2 className={styles.or}>Ou</h2>
+                        <button onClick={()=>googleClick()} className={styles.googleBtn}><div className={styles.imgContainer}><Image src="/googleIcon.svg.png" layout='fill' alt="google logo" /></div>S'inscrire avec Google </button>
                     </div>
                 </div>
             </div>
         </div>
     )
 }
+
+// <a href={`${url}/users/auth/google`} target='_blank'>
