@@ -47,7 +47,7 @@ export default function Signin() {
                 setError(data.error)
             }
             else{
-                dispatch(login({firstname : data.firstname, token:data.token, connectionDate: new Date()}))
+                dispatch(login({firstname : data.firstname, token:data.token, connectionDate: new Date(), is_admin : data.is_admin}))
                 router.push('/')
             }
         }

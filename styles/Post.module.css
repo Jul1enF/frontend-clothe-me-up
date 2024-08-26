@@ -1,0 +1,104 @@
+.body{
+    height: 100%;
+    width:100%;
+    display: flex;
+}
+
+
+.inputColumn{
+    padding-bottom: 1%;
+    width: 33%;
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+.inputContainer{
+    width : 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 2vw;
+}
+
+.input{
+    height : 42px;
+    width: 15vw;
+    border-radius: 5px;
+    background-color: white;
+    color:rgb(13, 1, 102);
+    outline: none;
+    padding-left: 7px;
+    font-size: 15px;
+    border: 1px solid rgb(13, 1, 102);
+}
+
+.descriptionInput{
+    height : 110px;
+    width: 15vw;
+    border-radius: 5px;
+    background-color: white;
+    color:rgb(13, 1, 102);
+    outline: none;
+    padding-left: 7px;
+    font-size: 15px;
+    border: 1px solid rgb(13, 1, 102);
+}
+
+.sizeInput{
+    height : 42px;
+    width: 7vw;
+    border-radius: 5px;
+    background-color: white;
+    color:rgb(13, 1, 102);
+    outline: none;
+    padding-left: 7px;
+    font-size: 15px;
+    border: 1px solid rgb(13, 1, 102);
+}
+
+.stockInput{
+    height : 42px;
+    width: 5vw;
+    border-radius: 5px;
+    background-color: white;
+    color:rgb(13, 1, 102);
+    outline: none;
+    padding-left: 7px;
+    font-size: 15px;
+    border: 1px solid rgb(13, 1, 102);
+}
+
+.inputsColumn input::placeholder{
+    color:rgb(13, 1, 102);
+}
+
+.inputColumn h5{
+    font-size: 16.5px;
+}
+
+.registerBtn{
+    height:46px;
+    width: 13vw;
+    border: none;
+    color:white;
+    background-color: rgb(13, 1, 102);
+    border-radius: 25px;
+    font-size: 19px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.errorMessage{
+    width:40vw;
+    position:absolute;
+    bottom: 3vh;
+    left : 29vw;
+    font-size: 17px;
+    color:rgb(230, 25, 25);
+    text-align: center;
+}

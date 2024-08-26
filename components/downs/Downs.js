@@ -20,11 +20,15 @@ export default function Downs() {
     }, [])
 
     const allPants = useSelector((state) => state.pants.value)
-    const i = allPants.length - 1
 
-    const lastPant = allPants[i]
-    let lastPants = allPants.slice(0, i)
-    lastPants.reverse()
+    // Tri de tous les pantalons pour ne garder que différents modèles (peu importe taille)
+    const pants = allPants.filter((obj1, i, arr) => arr.findIndex(obj2 => (obj2.name === obj1.name)) === i)
+
+    const i = pants.length - 1
+
+    const lastPant = pants[i]
+    let lastPants = pants.slice(0, i)
+    pants.reverse()
 
     // Affichage conditionnel pour le premier render de la page où allPants est []
 

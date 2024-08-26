@@ -84,11 +84,19 @@
     padding-right: 4vw;
 }
 
+.boIcon{
+    color:white;
+    height : 22px;
+    cursor: pointer;
+    transition-duration: 0.5s;
+}
+
 .userContainer{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-left: 32px;
 }
 
 .userIcon{
@@ -225,4 +233,12 @@
     margin-left: 33px;
     transition-duration: 0.5s;
  }
+
+ .headerBody:hover .boIcon{
+    height: 23.5px;
+    color:rgb(13, 1, 102);
+    margin-left: 33px;
+    transition-duration: 0.5s;
+ }
+
 

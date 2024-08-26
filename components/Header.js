@@ -1,7 +1,7 @@
 import styles from '../styles/Header.module.css'
 import { useState, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser, faCartShopping, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import { faUser, faCartShopping, faMagnifyingGlass, faScrewdriverWrench } from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link'
 import { useSelector, useDispatch } from 'react-redux'
 import { logout } from '../reducers/user'
@@ -27,6 +27,14 @@ export default function Header() {
             router.push('/')
         }
     },[])
+
+     // Affichage conditionnel du lien vers le backoffice
+
+     let boLink
+
+     if (user.is_admin){
+        boLink= <Link href='/bo'><FontAwesomeIcon icon={faScrewdriverWrench}className={styles.boIcon}></FontAwesomeIcon></Link>
+     }
 
     // Affichage conditionnel du prénom de l'utilisateur et du menu user
 
@@ -64,6 +72,7 @@ export default function Header() {
                 <Link href='/'><h1 className={styles.nameSite}>CLOTHE ME UP !</h1></Link>
             </div>
             <div className={styles.iconsContainer}>
+                {boLink}
                 <div className={styles.userContainer}>
                     <FontAwesomeIcon className={styles.userIcon} icon={faUser} onClick={() => setUserMenuVisible(!userMenuVisible)} />
                     {userName}
