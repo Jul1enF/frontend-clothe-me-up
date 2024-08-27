@@ -5,39 +5,62 @@ import { faUser, faCartShopping, faMagnifyingGlass, faScrewdriverWrench } from '
 import Link from 'next/link'
 import { useSelector, useDispatch } from 'react-redux'
 import { logout } from '../reducers/user'
-import {useRouter} from 'next/router'
+import { addPants } from '../reducers/pants'
+import { useRouter } from 'next/router'
 
 
 
 export default function Header() {
     const [userMenuVisible, setUserMenuVisible] = useState(false)
-    const [search, setSearch]=useState('')
+    const [search, setSearch] = useState('')
 
-    const dispatch=useDispatch()
+    const dispatch = useDispatch()
     const router = useRouter()
+    const url = process.env.NEXT_PUBLIC_BACK_ADDRESS
 
     const user = useSelector((state) => state.user.value)
+    console.log(user)
 
-    // Vidage du reducer user et ejection sur la page d'accueil si connexion depuis plus de deux heures.
+    const articlesNumber = user.cart_pants.length + user.cart_tops.length
 
-    useEffect(()=>{
+    // Vidage du reducer user et ejection sur la page d'accueil si connexion depuis plus de deux heures. Téléchargement de tous les articles réellement en stock.
+
+    const useEffectFunction = async () => {
+        // Ejection après 120 min
         const date = new Date()
         const connexionTime = date - user.connectionDate
-        if(connexionTime/1000/60 > 120){
+        if (connexionTime / 1000 / 60 > 120) {
             dispatch(logout())
             router.push('/')
+            return
         }
-    },[])
+
+        //Téléchargement pantalons du shop (stocks réels)
+        const response = await fetch(`${url}/pants/allPants`)
+        const allPants = await response.json()
+        if (allPants.result) {
+            dispatch(addPants(allPants.pants))
+        }
+    }
+
+    useEffect(() => {
+        useEffectFunction()
+    }, [])
+
 
     // Affichage conditionnel du lien vers le backoffice
 
     let boLink
 
-    if (user.is_admin){
-       boLink= <Link href='/bo'><FontAwesomeIcon icon={faScrewdriverWrench}className={styles.boIcon}></FontAwesomeIcon></Link>
+    if (user.is_admin) {
+        boLink = <Link href='/bo'><FontAwesomeIcon icon={faScrewdriverWrench} className={styles.boIcon}></FontAwesomeIcon></Link>
     }
 
-    // Affichage conditionnel du prénom de l'utilisateur et du menu user
+    // Affichage conditionnel du prénom de l'utilisateur, du menu user et du nombre d'item dans cart
+
+    let cartNumStyle
+
+    articlesNumber>0 ? cartNumStyle={display:"flex"} : cartNumStyle={display:"none"}
 
     let userName
     let userDropdown
@@ -48,7 +71,7 @@ export default function Header() {
         userDropdown = (
             <div className={styles.userDropdownContainer} style={userMenuVisible ? { display: "flex" } : { display: "none" }}>
                 <p className={styles.firstP}>Mon compte</p>
-                <Link href="/"><p className={styles.lastP} onClick={()=>dispatch(logout())}>Se déconnecter</p></Link>
+                <Link href="/"><p className={styles.lastP} onClick={() => dispatch(logout())}>Se déconnecter</p></Link>
             </div>
         )
     }
@@ -65,7 +88,7 @@ export default function Header() {
             <div className={styles.searchContainer}>
                 <div className={styles.inputContainer}>
                     <FontAwesomeIcon icon={faMagnifyingGlass} className={styles.glassIcon} />
-                    <input className={styles.search} type="text" placeholder='Rechercher...' onChange={(e)=>setSearch(e.target.value)} value={search}></input>
+                    <input className={styles.search} type="text" placeholder='Rechercher...' onChange={(e) => setSearch(e.target.value)} value={search}></input>
                 </div>
             </div>
             <div className={styles.titleContainer}>
@@ -78,7 +101,8 @@ export default function Header() {
                     {userName}
                     {userDropdown}
                 </div>
-                <FontAwesomeIcon className={styles.cartIcon} icon={faCartShopping} />
+                <FontAwesomeIcon className={styles.cartIcon} icon={faCartShopping} onClick={()=>router.push('/cart')}/>
+                <Link href='/cart'><div className={styles.cartCircle} style={cartNumStyle}><p>{articlesNumber}</p></div></Link>
             </div>
         </div>
     )

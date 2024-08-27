@@ -5,6 +5,7 @@ import { faUser, faCartShopping, faMagnifyingGlass, faScrewdriverWrench } from '
 import Link from 'next/link'
 import { useSelector, useDispatch } from 'react-redux'
 import { logout } from '../reducers/user'
+import { addPants } from '../reducers/pants'
 import {useRouter} from 'next/router'
 
 
@@ -14,18 +15,35 @@ export default function Header() {
 
     const dispatch=useDispatch()
     const router = useRouter()
+    const url = process.env.NEXT_PUBLIC_BACK_ADDRESS
 
     const user = useSelector((state) => state.user.value)
 
-    // Vidage du reducer user et ejection sur la page d'accueil si connexion depuis plus de deux heures.
+    const articlesNumber = user.cart_pants.length + user.cart_tops.length
 
-    useEffect(()=>{
+    // Vidage du reducer user et ejection sur la page d'accueil si connexion depuis plus de deux heures. Téléchargement de tous les articles réellement en stock.
+
+    const useEffectFunction=async()=>{
+        // Ejection après 120 min
         const date = new Date()
         const connexionTime = date - user.connectionDate
         if(connexionTime/1000/60 > 120){
             dispatch(logout())
             router.push('/')
+            return
         }
+        //Téléchargement pantalons du shop (stocks réels)
+        const response = await fetch(`${url}/pants/allPants`)
+        const allPants = await response.json()
+        console.log(allPants)
+ 
+        if(allPants.result){
+            dispatch(addPants(allPants.pants))
+        }
+    }
+
+    useEffect(()=>{
+       useEffectFunction()
     },[])
 
      // Affichage conditionnel du lien vers le backoffice
@@ -36,7 +54,11 @@ export default function Header() {
         boLink= <Link href='/bo'><FontAwesomeIcon icon={faScrewdriverWrench}className={styles.boIcon}></FontAwesomeIcon></Link>
      }
 
-    // Affichage conditionnel du prénom de l'utilisateur et du menu user
+      // Affichage conditionnel du prénom de l'utilisateur, du menu user et du nombre d'item dans cart
+
+      let cartNumStyle
+
+      articlesNumber>0 ? cartNumStyle={display:"flex"} : cartNumStyle={display:"none"}
 
     let userName
     let userDropdown
@@ -60,6 +82,8 @@ export default function Header() {
         )
     }
 
+
+
     return (
         <div className={styles.headerBody} onMouseLeave={() => setUserMenuVisible(false)}>
             <div className={styles.searchContainer}>
@@ -78,7 +102,8 @@ export default function Header() {
                     {userName}
                     {userDropdown}
                 </div>
-                <FontAwesomeIcon className={styles.cartIcon} icon={faCartShopping} />
+                <FontAwesomeIcon className={styles.cartIcon} icon={faCartShopping} onClick={()=>router.push('/cart')}/>
+                <Link href='/cart'><div className={styles.cartCircle} style={cartNumStyle}><p>{articlesNumber}</p></div></Link>
             </div>
         </div>
     )

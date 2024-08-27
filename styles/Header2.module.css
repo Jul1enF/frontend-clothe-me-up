@@ -161,6 +161,29 @@
     transition-duration: 0.5s;
 }
 
+.cartCircle{
+    background-color: white;
+    height: 23px;
+    width: 23px;
+    border-radius: 50%;
+    position: absolute;
+    margin-top: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition-duration: 0.5s;
+}
+
+.cartCircle p{
+    color:rgb(13, 1, 102);
+    font-weight: 600;
+    font-size: 17px;
+    transition-duration: 0.5s;
+}
+
+
+
 /* Changements quand hover du header */
 
 .headerBody:hover{
@@ -231,6 +254,20 @@
     height: 23.5px;
     color:rgb(13, 1, 102);
     margin-left: 33px;
+    transition-duration: 0.5s;
+ }
+
+ .headerBody:hover .cartCircle{
+    background-color:rgb(13, 1, 102);
+    height:24px;
+    width:24px;
+    transition-duration: 0.5s;
+    margin-top: 56px;
+ }
+
+ .headerBody:hover .cartCircle p{
+    color: white;
+    font-size: 17px;
     transition-duration: 0.5s;
  }
 

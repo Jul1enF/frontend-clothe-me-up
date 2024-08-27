@@ -73,7 +73,7 @@ padding-top: 1vh;
 
 .sizeMenu{
     width: 20vw;
-    height : 5vh;
+    height : 45px;
     border: 1px solid rgb(13, 1, 102);
     border-radius: 5px;
     display: flex;
@@ -94,17 +94,26 @@ padding-top: 1vh;
     color:rgb(13, 1, 102);
 }
 
+.dropContainer{
+    position: absolute;
+    margin-top: 9.8%;
+    width: 20vw;
+    height : 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
 .dropDown{
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
     background-color: white;
     width:20vw;
-    position: absolute;
-    margin-top: 25.9vh;
 }
 
-.empty, .stocks{
+.stocks{
     display:flex;
     width: 100%;
     justify-content: space-between;
@@ -114,10 +123,6 @@ padding-top: 1vh;
     border-right: 1px solid rgb(13, 1, 102);
    
 
-}
-.empty{
-    cursor:default;
-    color:rgb(13, 1, 102, 40%);
 }
 
 .stocks{

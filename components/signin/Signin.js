@@ -3,7 +3,7 @@ import Header2 from '../Header2'
 import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { login } from '../../reducers/user'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
@@ -12,6 +12,7 @@ export default function Signin() {
 
     const dispatch = useDispatch()
     const router = useRouter()
+    const user = useSelector((state)=>state.user.value)
 
     const url = process.env.NEXT_PUBLIC_BACK_ADDRESS
 
@@ -39,6 +40,8 @@ export default function Signin() {
                 body: JSON.stringify({
                     email,
                     password,
+                    pantsNotLinked : user.pantsNotLinked,
+                    topsNotLinked : user.topsNotLinked,
                 })
                 })
             const data = await response.json()
@@ -47,7 +50,7 @@ export default function Signin() {
                 setError(data.error)
             }
             else{
-                dispatch(login({firstname : data.firstname, token:data.token, connectionDate: new Date(), is_admin : data.is_admin}))
+                dispatch(login({firstname : data.firstname, token:data.token, connectionDate: new Date(), is_admin : data.is_admin, cart_pants: data.cart_pants,  cart_tops : data.cart_tops}))
                 router.push('/')
             }
         }

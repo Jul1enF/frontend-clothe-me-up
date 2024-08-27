@@ -2,7 +2,7 @@ import styles from '../../styles/Home.module.css';
 import Header from '../Header';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../../reducers/user';
 import Link from 'next/link'
 
@@ -10,10 +10,24 @@ function Home() {
   const router = useRouter()
   const dispatch = useDispatch()
   const { infos } = router.query
+  const url = process.env.NEXT_PUBLIC_BACK_ADDRESS
+  const user = useSelector((state)=>state.user.value)
 
-  const useEffectFunction = () => {
+  // useEffect pour gérer l'arrivée avec google et récupérer les infos du user
+  
+  const useEffectFunction = async () => {
     if (!infos) { return }
-    dispatch(login({ firstname: infos[0], token: infos[1], connectionDate: new Date() }))
+    const response = await fetch(`${url}/users/googleUserInfos`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+          jwtToken : infos[0],
+          pantsNotLinked : user.pantsNotLinked,
+          topsNotLinked : user.topsNotLinked,
+      })
+      })
+      const data = await response.json()
+      dispatch(login({firstname : data.firstname, token:data.token, connectionDate: new Date(), is_admin : data.is_admin, cart_pants: data.cart_pants,  cart_tops : data.cart_tops}))
   }
 
   useEffect(() => {

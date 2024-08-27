@@ -1,34 +1,25 @@
 import styles from '../../styles/Downs.module.css'
 import Header3 from '../Header3'
-import { useEffect } from 'react'
-import { addPants } from '../../reducers/pants'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import FirstItem from './FirstItem'
 import Item from './Item'
 
 export default function Downs() {
 
     const url = process.env.NEXT_PUBLIC_BACK_ADDRESS
-    const dispatch = useDispatch()
-
-    useEffect(() => {
-        fetch(`${url}/pants/allPants`)
-            .then(response => response.json())
-            .then(data => {
-                dispatch(addPants(data.articles))
-            })
-    }, [])
 
     const allPants = useSelector((state) => state.pants.value)
 
     // Tri de tous les pantalons pour ne garder que différents modèles (peu importe taille)
     const pants = allPants.filter((obj1, i, arr) => arr.findIndex(obj2 => (obj2.name === obj1.name)) === i)
 
+    // Tri entre dernier pantalon posté et les autres
+
     const i = pants.length - 1
 
     const lastPant = pants[i]
     let lastPants = pants.slice(0, i)
-    pants.reverse()
+    lastPants.reverse()
 
     // Affichage conditionnel pour le premier render de la page où allPants est []
 

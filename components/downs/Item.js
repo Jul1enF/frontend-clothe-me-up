@@ -11,7 +11,7 @@ export default function Item(props){
             <div className={styles.infosContainer}>
                 <h4>{props.name}</h4>
                 <h5>{price}</h5>
-                <Link href={`/article/${props._id}/pants`}>
+                <Link href={`/pants_article/${props.name}`}>
                  <button>Découvrir</button>
                 </Link>
             </div>

@@ -1,11 +1,14 @@
 import styles from '../../styles/Post.module.css'
 import { useState } from 'react'
+import { useSelector } from 'react-redux'
 
 export default function Post() {
 
     const url = process.env.NEXT_PUBLIC_BACK_ADDRESS
 
     const [error, setError] = useState('')
+    const user=useSelector((state)=>state.user.value)
+    console.log(user)
 
     // États inputs
 
@@ -41,6 +44,9 @@ export default function Post() {
     // Fonction appelée au click sur enregistrer
 
     const registerClick = () => {
+        let jwtToken
+        if (user.token){jwtToken=user.token}
+
         if (!name || !imgUrl || !price || !description || !category || !size1 || !stock1) {
             setError('Tous les champs ne sont pas renseignés !')
             return
@@ -54,6 +60,7 @@ export default function Post() {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
+                jwtToken,
                 name,
                 imgUrl,
                 price,
