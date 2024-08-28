@@ -13,6 +13,7 @@ function Home() {
   const url = process.env.NEXT_PUBLIC_BACK_ADDRESS
   const user = useSelector((state)=>state.user.value)
 
+
   // useEffect pour gérer l'arrivée avec google et récupérer les infos du user
   
   const useEffectFunction = async () => {
@@ -34,17 +35,18 @@ function Home() {
     useEffectFunction()
   }, [infos])
 
+
   return (
     <div className={styles.body}>
       <Header />
       <div className={styles.leftContainer}>
         <div className={styles.topsContainer}>
-          <h2 className={styles.tops}>HAUTS</h2>
+          <Link href="/tops"><h2 className={styles.tops}>HAUTS</h2></Link>
         </div>
       </div>
       <div className={styles.rightContainer}>
         <div className={styles.downsContainer}>
-          <Link href='/downs'><h2 className={styles.downs}>BAS</h2></Link>
+          <Link href='/pants'><h2 className={styles.downs}>BAS</h2></Link>
         </div>
       </div>
     </div>

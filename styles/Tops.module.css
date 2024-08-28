@@ -8,13 +8,13 @@
 .leftContainer{
     height:100%;
     width: 35%;
-    background-image: url('../public/Downs4.jpg');
+    background-image: url('../public/TopsBG3.jpg');
     background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-end;
-    padding: 6vh 2vw 0vh 0vw;
+    padding: 14vh 2vw 0vh 0vw;
 }
 
 .rightContainer{
@@ -29,11 +29,12 @@
     scrollbar-width: none;
 }
 
-.lastPsContainer{
+.lastTsContainer{
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
     justify-content: space-between;
-    padding: 0 8vw;
+    padding: 0 4vw;
     
 }
 
@@ -43,10 +44,12 @@
     font-family: Helvetica;
     font-weight: 770;
     margin-bottom:2.5vh;
+    letter-spacing: 0.5px;
+    text-shadow : -0.3px -0.3px 0.3px rgb(65, 65, 65);
 }
 
 .line{
-    border-bottom: 1px solid white;
+    border-bottom: 2px solid white;
     width: 75%;
     height : 2px;
     margin-bottom:3vh;

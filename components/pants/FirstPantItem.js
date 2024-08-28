@@ -1,8 +1,8 @@
-import styles from '../../styles/FirstItem.module.css'
+import styles from '../../styles/FirstPantItem.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function FirstItem(props){
+export default function FirstPantItem(props){
     const price = props.price.toFixed(2).toString()+"€"
     return(
         <div className={styles.body}>

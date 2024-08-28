@@ -1,22 +1,22 @@
-import styles from '../../styles/PantsArticle.module.css'
+import styles from '../../styles/TopsArticle.module.css'
 import Header3 from '../Header3'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { addCartPant, addPantNotLinked } from '../../reducers/user'
+import { addCartTop, addTopNotLinked } from '../../reducers/user'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 
 
-export default function PantsArticle() {
+export default function TopsArticle() {
 
     const router = useRouter()
     const { infos } = router.query
     const dispatch = useDispatch()
     const url = process.env.NEXT_PUBLIC_BACK_ADDRESS
 
-    let pants = useSelector((state) => state.pants.value)
+    let tops = useSelector((state) => state.tops.value)
     const user = useSelector((state) => state.user.value)
 
     console.log(user)
@@ -29,7 +29,7 @@ export default function PantsArticle() {
     const useEffectFunction = () => {
         if (!infos) { return }
         else {
-            setArticles(pants.filter(e => e.name == infos[0]))
+            setArticles(tops.filter(e => e.name == infos[0]))
         }
     }
 
@@ -110,7 +110,7 @@ export default function PantsArticle() {
         let jwtToken
         if (user.token) { jwtToken = user.token }
 
-        const response = await fetch(`${url}/pants/addCartPant`, {
+        const response = await fetch(`${url}/tops/addCartTop`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -119,9 +119,9 @@ export default function PantsArticle() {
             })
         })
         const data = await response.json()
-        dispatch(addCartPant(data.cartPantSaved))
+        dispatch(addCartTop(data.cartTopSaved))
         // Si l'utilisateur pas connecté, mise de côté id item
-        if (data.noLink) { dispatch(addPantNotLinked(data.noLink)) }
+        if (data.noLink) { dispatch(addTopNotLinked(data.noLink)) }
 
         setMenuSentence('Choisissez votre taille')
         setChosenSize('')
@@ -144,7 +144,7 @@ export default function PantsArticle() {
                 <div className={styles.productInfosContainer}>
                     <h4 className={styles.price}>{price}</h4>
                     <p className={styles.description}>{description}</p>
-                    <div className={styles.sizeMenu} onClick={() => setMenuVisible(!menuVisible)}>
+                    <div className={styles.sizeMenu} onClick={() => setMenuVisible(!menuVisible)} >
                         <p className={styles.menuSentence}>{menuSentence}</p>
                         <FontAwesomeIcon icon={faChevronDown} className={styles.dropDownIcon}></FontAwesomeIcon>
                         <div className={styles.dropContainer} style={dropStyle} >

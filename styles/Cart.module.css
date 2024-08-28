@@ -1,0 +1,125 @@
+.body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.topContainer{
+    height: 41%;
+    background-image: url('../public/SignBackground6.jpg');
+    background-size: cover;
+}
+
+.downContainer{
+    width: 100%;
+    height: 59%;
+    display: flex;
+}
+
+.titleContainer{
+    width: 22%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title{
+    color : rgb(13, 1, 102);
+    font-size: 30px;
+    font-family: Helvetica;
+    font-weight: 770;
+}
+
+.lineContainer{
+    width: 1px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+ 
+}
+
+.line{
+    width: 1px;
+    height : 87%;
+    border-right: 1px solid rgb(13, 1, 102);
+}
+
+.rightContainer{
+    width : 77%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 3.5vh;
+}
+
+.rightContainer h2{
+    color : rgb(13, 1, 102);
+    font-size: 24px;
+    margin-bottom: 1.5vh;
+}
+
+.articlesContainer{
+    width:100%;
+    max-height : 29vh;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    padding : 3vh 0;
+    border-top: 1px solid rgb(13, 1, 102);
+    border-bottom: 1px solid rgb(13, 1, 102);
+    margin-bottom: 2.5vh;
+}
+
+.rightContainer h4{
+    color : rgb(13, 1, 102);
+    font-size: 20px;
+    font-style: italic;
+    letter-spacing: 0.1px;
+}
+
+.total{
+    color : rgb(13, 1, 102);
+    font-size: 22px;
+    margin-bottom: 2vh;
+}
+
+.connexion{
+    color : rgb(13, 1, 102);
+    font-size: 19px;
+    margin-bottom: 1.5vh;
+}
+
+.orderBtn{
+    width: 14vw;
+    height : 5vh;
+    border: 1px solid rgb(13, 1, 102);
+    border-radius: 5px;
+    background-color: rgb(13, 1, 102);
+    color:white;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 580;
+    transition-duration: 0.7s;
+    margin-right: 4vw;
+}
+
+.orderBtn:hover{
+    background-color: white;
+    color:rgb(13, 1, 102);
+    transition-duration: 0.7s;
+}
+
+.error{
+    width:40vw;
+    position:absolute;
+    bottom: 52.3vh;
+    left : 39vw;
+    font-size: 18px;
+    color:rgb(230, 25, 25);
+    text-align: center;
+}
+

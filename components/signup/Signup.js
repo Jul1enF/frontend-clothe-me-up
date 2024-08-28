@@ -1,6 +1,7 @@
 import styles from '../../styles/Signup.module.css'
 import Header2 from '../Header2'
 import { useState } from 'react'
+import { useSelector } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 import { CloseOutlined } from '@ant-design/icons'
@@ -11,6 +12,8 @@ import Image from 'next/image'
 export default function Signup() {
 
     const url = process.env.NEXT_PUBLIC_BACK_ADDRESS
+
+    const user = useSelector((state)=>state.user.value)
 
     // États pour affichage ou non passwords et modal
 
@@ -77,9 +80,16 @@ export default function Signup() {
     }
 
     const googleClick=async()=>{
-       const response = await fetch(`${url}/users/google`, {method:'POST'})
-       const data = await response.json()
-       window.location.href = data.url
+        if(user.cart_pants.length>0 || user.cart_tops.length>0){
+            const response = await fetch(`${url}/cart/google`, {method:'POST'})
+            const data = await response.json()
+            window.location.href = data.url
+        }
+        else{
+            const response = await fetch(`${url}/users/google`, {method:'POST'})
+            const data = await response.json()
+            window.location.href = data.url
+        }
     }
 
     return (

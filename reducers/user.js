@@ -27,17 +27,33 @@ export const userSlice = createSlice({
         addCartPant : (state,action)=>{
             state.value.cart_pants.push(action.payload)
         },
+        deleteCartPant : (state, action)=>{
+            state.value.cart_pants=state.value.cart_pants.filter(e=>e._id!==action.payload)
+        },
         addPantNotLinked : (state, action)=>{
             state.value.pantsNotLinked.push(action.payload)
+        },
+        deletePantNotLinked : (state, action)=>{
+            state.value.pantsNotLinked=state.value.pantsNotLinked.filter(e=>e!==action.payload)
         },
         addCartTop : (state,action)=>{
             state.value.cart_tops.push(action.payload)
         },
+        deleteCartTop : (state, action)=>{
+            state.value.cart_tops=state.value.cart_tops.filter(e=>e._id!==action.payload)
+        },
         addTopNotLinked : (state, action)=>{
             state.value.topsNotLinked.push(action.payload)
+        },
+        deleteTopNotLinked : (state, action)=>{
+            state.value.topsNotLinked=state.value.topsNotLinked.filter(e=>e!==action.payload)
+        },
+        actualiseCart : (state, action)=>{
+            state.value.cart_pants = action.payload.cart_pants
+            state.value.cart_tops = action.payload.cart_tops
         },
     }
 })
 
-export const {login, logout, addCartPant, addCartTop, addPantNotLinked, addTopNotLinked} = userSlice.actions
+export const {login, logout, addCartPant, addCartTop, addPantNotLinked, addTopNotLinked, actualiseCart, deleteCartPant, deleteCartTop, deletePantNotLinked, deleteTopNotLinked} = userSlice.actions
 export default userSlice.reducer

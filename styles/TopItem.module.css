@@ -1,0 +1,60 @@
+.body{
+    width:27vw;
+    height:51vh;
+    min-height: 51vh;
+    background-color: rgb(245	245	245	);
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    margin-bottom: 4vh;
+    padding: 2vh 0.5vw;
+    position: relative;
+}
+
+.infosContainer{
+    position:absolute;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    margin-right: 17.5vw;
+    padding-bottom: 3vh;
+    z-index: 1;
+}
+
+.infosContainer h4{
+color :rgb(13, 1, 102);
+font-size: 27px;
+}
+
+.infosContainer h5{
+color :rgb(13, 1, 102);
+font-size: 22px;
+margin-bottom: 1vh;
+}
+
+.infosContainer button{
+background-color: rgb(13, 1, 102);
+color:white;
+border :none;
+font-size: 22px;
+height : 43px;
+width:8vw;
+border-radius: 5px;
+cursor: pointer;
+transition-duration: 1s;
+}
+
+.infosContainer button:hover{
+    background-color: transparent;
+    color:rgb(13, 1, 102);
+    border:0.5px solid rgb(13, 1, 102);
+    transition-duration: 1s;
+}
+
+.imgContainer{
+    position: relative;
+    height : 47vh;
+    width: 38vh;
+}

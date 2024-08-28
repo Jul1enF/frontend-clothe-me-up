@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { useSelector, useDispatch } from 'react-redux'
 import { logout } from '../reducers/user'
 import { addPants } from '../reducers/pants'
+import { addTops} from '../reducers/tops'
 import { useRouter } from 'next/router'
 
 
@@ -40,6 +41,13 @@ export default function Header2() {
         if (allPants.result) {
             dispatch(addPants(allPants.pants))
         }
+
+        //Téléchargement hauts du shop (stocks réels)
+        const response2 = await fetch(`${url}/tops/allTops`)
+        const allTops = await response2.json()
+        if (allTops.result) {
+            dispatch(addTops(allTops.tops))
+        }
     }
 
     useEffect(() => {
@@ -54,11 +62,11 @@ export default function Header2() {
         boLink = <Link href='/bo'><FontAwesomeIcon icon={faScrewdriverWrench} className={styles.boIcon}></FontAwesomeIcon></Link>
     }
 
-     // Affichage conditionnel du prénom de l'utilisateur, du menu user et du nombre d'item dans cart
+    // Affichage conditionnel du prénom de l'utilisateur, du menu user et du nombre d'item dans cart
 
-     let cartNumStyle
+    let cartNumStyle
 
-     articlesNumber>0 ? cartNumStyle={display:"flex"} : cartNumStyle={display:"none"}
+    articlesNumber > 0 ? cartNumStyle = { display: "flex" } : cartNumStyle = { display: "none" }
 
     let userName
     let userDropdown
@@ -99,8 +107,8 @@ export default function Header2() {
                     {userName}
                     {userDropdown}
                 </div>
-                <FontAwesomeIcon className={styles.cartIcon} icon={faCartShopping} onClick={()=>router.push('/cart')}/>
-                <Link href='/cart'><div className={styles.cartCircle} style={cartNumStyle}><p>{articlesNumber}</p></div></Link>
+                <FontAwesomeIcon className={styles.cartIcon} icon={faCartShopping} onClick={() => router.push('/cart/c')} />
+                <Link href='/cart/c'><div className={styles.cartCircle} style={cartNumStyle}><p>{articlesNumber}</p></div></Link>
             </div>
         </div>
     )

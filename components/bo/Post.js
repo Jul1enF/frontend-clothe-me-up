@@ -17,6 +17,7 @@ export default function Post() {
     const [price, setPrice] = useState('')
     const [description, setDescription] = useState('')
     const [category, setCategory] = useState('')
+    console.log(category)
 
     const [size1, setSize1] = useState('')
     const [stock1, setStock1] = useState('')

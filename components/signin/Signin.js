@@ -51,15 +51,25 @@ export default function Signin() {
             }
             else{
                 dispatch(login({firstname : data.firstname, token:data.token, connectionDate: new Date(), is_admin : data.is_admin, cart_pants: data.cart_pants,  cart_tops : data.cart_tops}))
-                router.push('/')
+
+                if(data.cart_pants.length>0 || data.cart_pants.length>0){router.push('/cart/c')}
+                
+                else {router.push('/')}
             }
         }
     }
 
     const googleClick=async()=>{
-        const response = await fetch(`${url}/users/google`, {method:'POST'})
-        const data = await response.json()
-        window.location.href = data.url
+        if(user.cart_pants.length>0 || user.cart_tops.length>0){
+            const response = await fetch(`${url}/cart/google`, {method:'POST'})
+            const data = await response.json()
+            window.location.href = data.url
+        }
+        else{
+            const response = await fetch(`${url}/users/google`, {method:'POST'})
+            const data = await response.json()
+            window.location.href = data.url
+        }
      }
 
     return (

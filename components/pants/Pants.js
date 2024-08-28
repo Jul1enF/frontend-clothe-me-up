@@ -1,12 +1,10 @@
-import styles from '../../styles/Downs.module.css'
+import styles from '../../styles/Pants.module.css'
 import Header3 from '../Header3'
 import { useSelector } from 'react-redux'
-import FirstItem from './FirstItem'
-import Item from './Item'
+import FirstPantItem from './FirstPantItem'
+import PantItem from './PantItem'
 
 export default function Downs() {
-
-    const url = process.env.NEXT_PUBLIC_BACK_ADDRESS
 
     const allPants = useSelector((state) => state.pants.value)
 
@@ -27,8 +25,8 @@ export default function Downs() {
     let lastPs
 
     if (allPants.length > 0) {
-        lastP = <FirstItem {...lastPant} />
-        lastPs= lastPants.map((e,i)=><Item key={i} {...e}/>)
+        lastP = <FirstPantItem {...lastPant} />
+        lastPs= lastPants.map((e,i)=><PantItem key={i} {...e}/>)
     }
 
     return (

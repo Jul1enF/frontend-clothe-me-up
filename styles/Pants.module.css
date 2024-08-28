@@ -1,0 +1,53 @@
+.body{
+    padding-top: 100px;
+    height:100vh;
+    width:100vw;
+    display: flex;
+}
+
+.leftContainer{
+    height:100%;
+    width: 35%;
+    background-image: url('../public/Downs4.jpg');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding: 6vh 2vw 0vh 0vw;
+}
+
+.rightContainer{
+    height: 100%;
+    width:65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top:6vh;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+.lastPsContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 8vw;
+    
+}
+
+.title{
+    color : white;
+    font-size: 35px;
+    font-family: Helvetica;
+    font-weight: 770;
+    margin-bottom:2.5vh;
+}
+
+.line{
+    border-bottom: 2px solid white;
+    width: 75%;
+    height : 2px;
+    margin-bottom:3vh;
+}
