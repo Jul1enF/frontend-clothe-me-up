@@ -143,6 +143,7 @@ export default function Payment(props) {
         })
         const orderResult = await answer.json()
         console.log(orderResult)
+        // Bien penser à tous les cas de retour (articles plus dispo, token expiré, payement refusé...)
     }
 
 
