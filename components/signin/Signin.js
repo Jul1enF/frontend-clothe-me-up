@@ -50,7 +50,7 @@ export default function Signin() {
                 setError(data.error)
             }
             else{
-                dispatch(login({firstname : data.firstname, token:data.token, connectionDate: new Date(), is_admin : data.is_admin, cart_pants: data.cart_pants,  cart_tops : data.cart_tops}))
+                dispatch(login({firstname : data.firstname, token:data.token, connectionDate: new Date(), is_admin : data.is_admin, cart_pants: data.cart_pants,  cart_tops : data.cart_tops, addresses : data.addresses}))
 
                 if(data.cart_pants.length>0 || data.cart_pants.length>0){router.push('/cart/c')}
                 

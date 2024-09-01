@@ -52,8 +52,11 @@ export const userSlice = createSlice({
             state.value.cart_pants = action.payload.cart_pants
             state.value.cart_tops = action.payload.cart_tops
         },
+        addAddresse : (state, action)=>{
+            state.value.addresses.push(action.payload)
+        },
     }
 })
 
-export const {login, logout, addCartPant, addCartTop, addPantNotLinked, addTopNotLinked, actualiseCart, deleteCartPant, deleteCartTop, deletePantNotLinked, deleteTopNotLinked} = userSlice.actions
+export const {login, logout, addCartPant, addCartTop, addPantNotLinked, addTopNotLinked, actualiseCart, deleteCartPant, deleteCartTop, deletePantNotLinked, deleteTopNotLinked, addAddresse} = userSlice.actions
 export default userSlice.reducer

@@ -110,7 +110,9 @@ export default function Header() {
                     {userName}
                     {userDropdown}
                 </div>
-                <FontAwesomeIcon className={styles.cartIcon} icon={faCartShopping} onClick={() => router.push('/cart/c')} />
+                <div className={styles.cartContainer} onClick={()=>router.push('/cart/c')}>
+                <FontAwesomeIcon className={styles.cartIcon} icon={faCartShopping}/>
+                </div>
                 <Link href='/cart/c'><div className={styles.cartCircle} style={cartNumStyle}><p>{articlesNumber}</p></div></Link>
             </div>
         </div>

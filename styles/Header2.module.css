@@ -81,7 +81,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding-right: 4vw;
+    padding-right: 3vw;
 }
 
 .boIcon{
@@ -96,7 +96,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-left: 32px;
+    margin-left: 3vw;
 }
 
 .userIcon{
@@ -153,10 +153,17 @@
     border-bottom-right-radius: 15px;
 }
 
+.cartContainer{
+    height: 45px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-left: 3vw;
+}
+
 .cartIcon{
     color:white;
     height : 22px;
-    margin-left: 32px;
     cursor: pointer;
     transition-duration: 0.5s;
 }
@@ -253,7 +260,6 @@
  .headerBody:hover .cartIcon{
     height: 23.5px;
     color:rgb(13, 1, 102);
-    margin-left: 33px;
     transition-duration: 0.5s;
  }
 
@@ -274,7 +280,6 @@
  .headerBody:hover .boIcon{
     height: 23.5px;
     color:rgb(13, 1, 102);
-    margin-left: 33px;
     transition-duration: 0.5s;
  }
 

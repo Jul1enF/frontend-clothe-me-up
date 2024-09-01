@@ -28,7 +28,7 @@ function Home() {
       })
       })
       const data = await response.json()
-      dispatch(login({firstname : data.firstname, token:data.token, connectionDate: new Date(), is_admin : data.is_admin, cart_pants: data.cart_pants,  cart_tops : data.cart_tops}))
+      dispatch(login({firstname : data.firstname, token:data.token, connectionDate: new Date(), is_admin : data.is_admin, cart_pants: data.cart_pants,  cart_tops : data.cart_tops, addresses : data.addresses}))
   }
 
   useEffect(() => {
