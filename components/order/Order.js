@@ -44,9 +44,7 @@ export default function Order() {
     // Calcul du montant total des articles + frais de port
     let totalArticles = 0
 
-    user.cart_pants.length > 0 && user.cart_pants.map(e => totalArticles += e.price)
-
-    user.cart_tops.length > 0 && user.cart_tops.map(e => totalArticles += e.price)
+    user.cart_articles.length > 0 && user.cart_articles.map(e => totalArticles += e.price)
 
     let total = totalArticles + deliveryPrice
 
@@ -59,7 +57,7 @@ export default function Order() {
     } else if (step === "delivery") {
         content = <Delivery changeStep={changeStep} totalArticles={totalArticles} getDeliveryMode={getDeliveryMode} getDeliveryPrice={getDeliveryPrice} getAddresse2={getAddresse2} />
     } else if (step == "payment") {
-        content = <Payment total={total} totalArticles={totalArticles} cart_pants={user.cart_pants} cart_tops={user.cart_tops} jwtToken={user.token} chosenAdresse={chosenAdresse} chosenAdresse2={chosenAdresse2} deliveryMode={deliveryMode} deliveryPrice={deliveryPrice} />
+        content = <Payment total={total} totalArticles={totalArticles} cart_articles={user.cart_articles} jwtToken={user.token} chosenAdresse={chosenAdresse} chosenAdresse2={chosenAdresse2} deliveryMode={deliveryMode} deliveryPrice={deliveryPrice} />
     }
 
     let addresseStyle

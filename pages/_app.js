@@ -5,11 +5,10 @@ import { StyleProvider } from '@ant-design/cssinjs'
 import {Provider} from 'react-redux'
 import { configureStore } from '@reduxjs/toolkit';
 import user from '../reducers/user';
-import pants from '../reducers/pants';
-import tops from '../reducers/tops'
+import articles from '../reducers/articles'
 
 const store = configureStore({
-  reducer :{user, pants, tops},
+  reducer :{user, articles},
   middleware: (getDefaultMiddleware) => 
     getDefaultMiddleware({ serializableCheck: false })
 })

@@ -23,12 +23,11 @@ function Home() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
           jwtToken : infos[0],
-          pantsNotLinked : user.pantsNotLinked,
-          topsNotLinked : user.topsNotLinked,
+          articlesNotLinked : user.articlesNotLinked,
       })
       })
       const data = await response.json()
-      dispatch(login({firstname : data.firstname, token:data.token, connectionDate: new Date(), is_admin : data.is_admin, cart_pants: data.cart_pants,  cart_tops : data.cart_tops, addresses : data.addresses}))
+      dispatch(login({firstname : data.firstname, token:data.token, connectionDate: new Date(), is_admin : data.is_admin, cart_articles: data.cart_articles, addresses : data.addresses}))
   }
 
   useEffect(() => {

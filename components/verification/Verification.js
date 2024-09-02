@@ -26,8 +26,7 @@ export default function Verification(){
             body: JSON.stringify({
                 jwtToken : infos[0],
                 email : infos[1],
-                pantsNotLinked : user.pantsNotLinked,
-                topsNotLinked : user.topsNotLinked,
+                articlesNotLinked : user.articlesNotLinked,
             })
             })
         const data = await response.json()
@@ -35,7 +34,7 @@ export default function Verification(){
         if(data.result){
             setSentence1("Merci d'avoir confirmé votre email, votre inscription est maintenant terminée !")
             setSentence2("Vous allez être redirigé vers la page d'accueil.")
-            dispatch(login({firstname : data.firstname, token:data.token, connectionDate: new Date(), is_admin : data.is_admin, cart_pants: data.cart_pants,  cart_tops : data.cart_tops, addresses : data.addresses}))
+            dispatch(login({firstname : data.firstname, token:data.token, connectionDate: new Date(), is_admin : data.is_admin, cart_articles: data.cart_articles, addresses : data.addresses}))
             setValidated(true)
         }
         else if (!data.result && data.error =="no data")

@@ -2,10 +2,9 @@ import {createSlice} from '@reduxjs/toolkit'
 
 const initialState = {
     value:{
-        cart_pants :[],
-        cart_tops:[],
-        pantsNotLinked:[],
-        topsNotLinked:[],
+        cart_articles :[],
+        articlesNotLinked:[],
+        addresses: [],
     },
 }
 
@@ -18,39 +17,25 @@ export const userSlice = createSlice({
         },
         logout: (state)=>{
             state.value = {
-                cart_pants :[],
-                cart_tops:[],
-                pantsNotLinked:[],
-                topsNotLinked:[],
+                cart_articles :[],
+                articlesNotLinked:[],
+                addresses: [],
             }
         },
-        addCartPant : (state,action)=>{
-            state.value.cart_pants.push(action.payload)
+        addCartArticle : (state,action)=>{
+            state.value.cart_articles.push(action.payload)
         },
-        deleteCartPant : (state, action)=>{
-            state.value.cart_pants=state.value.cart_pants.filter(e=>e._id!==action.payload)
+        deleteCartArticle : (state, action)=>{
+            state.value.cart_articles=state.value.cart_articles.filter(e=>e._id!==action.payload)
         },
-        addPantNotLinked : (state, action)=>{
-            state.value.pantsNotLinked.push(action.payload)
+        addArticleNotLinked : (state, action)=>{
+            state.value.articlesNotLinked.push(action.payload)
         },
-        deletePantNotLinked : (state, action)=>{
-            state.value.pantsNotLinked=state.value.pantsNotLinked.filter(e=>e!==action.payload)
-        },
-        addCartTop : (state,action)=>{
-            state.value.cart_tops.push(action.payload)
-        },
-        deleteCartTop : (state, action)=>{
-            state.value.cart_tops=state.value.cart_tops.filter(e=>e._id!==action.payload)
-        },
-        addTopNotLinked : (state, action)=>{
-            state.value.topsNotLinked.push(action.payload)
-        },
-        deleteTopNotLinked : (state, action)=>{
-            state.value.topsNotLinked=state.value.topsNotLinked.filter(e=>e!==action.payload)
+        deleteArticleNotLinked : (state, action)=>{
+            state.value.articlesNotLinked=state.value.articlesNotLinked.filter(e=>e!==action.payload)
         },
         actualiseCart : (state, action)=>{
-            state.value.cart_pants = action.payload.cart_pants
-            state.value.cart_tops = action.payload.cart_tops
+            state.value.cart_articles = action.payload.cart_articles
         },
         addAddresse : (state, action)=>{
             state.value.addresses.push(action.payload)
@@ -58,5 +43,5 @@ export const userSlice = createSlice({
     }
 })
 
-export const {login, logout, addCartPant, addCartTop, addPantNotLinked, addTopNotLinked, actualiseCart, deleteCartPant, deleteCartTop, deletePantNotLinked, deleteTopNotLinked, addAddresse} = userSlice.actions
+export const {login, logout, addCartArticle, addArticleNotLinked, actualiseCart, deleteCartArticle, deleteArticleNotLinked, addAddresse} = userSlice.actions
 export default userSlice.reducer

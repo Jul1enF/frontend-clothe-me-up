@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { addCartTop, addTopNotLinked } from '../../reducers/user'
+import { addCartArticle, addArticleNotLinked } from '../../reducers/user'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 
@@ -16,7 +16,8 @@ export default function TopsArticle() {
     const dispatch = useDispatch()
     const url = process.env.NEXT_PUBLIC_BACK_ADDRESS
 
-    let tops = useSelector((state) => state.tops.value)
+    let allArticles = useSelector((state) => state.articles.value)
+    let tops = allArticles.filter(e=>e.category == "tops")
     const user = useSelector((state) => state.user.value)
 
     console.log(user)
@@ -110,7 +111,7 @@ export default function TopsArticle() {
         let jwtToken
         if (user.token) { jwtToken = user.token }
 
-        const response = await fetch(`${url}/tops/addCartTop`, {
+        const response = await fetch(`${url}/articles/addCartArticle`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -119,9 +120,9 @@ export default function TopsArticle() {
             })
         })
         const data = await response.json()
-        dispatch(addCartTop(data.cartTopSaved))
+        dispatch(addCartArticle(data.cartArticleSaved))
         // Si l'utilisateur pas connecté, mise de côté id item
-        if (data.noLink) { dispatch(addTopNotLinked(data.noLink)) }
+        if (data.noLink) { dispatch(addArticleNotLinked(data.noLink)) }
 
         setMenuSentence('Choisissez votre taille')
         setChosenSize('')

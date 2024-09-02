@@ -5,8 +5,7 @@ import { faUser, faCartShopping, faMagnifyingGlass, faScrewdriverWrench } from '
 import Link from 'next/link'
 import { useSelector, useDispatch } from 'react-redux'
 import { logout } from '../reducers/user'
-import { addPants } from '../reducers/pants'
-import { addTops} from '../reducers/tops'
+import {addArticles} from "../reducers/articles"
 import { useRouter } from 'next/router'
 
 
@@ -20,7 +19,7 @@ export default function Header() {
 
     const user = useSelector((state) => state.user.value)
 
-    let articlesNumber = user.cart_pants.length + user.cart_tops.length
+    let articlesNumber = user.cart_articles.length
 
     // Vidage du reducer user et ejection sur la page d'accueil si connexion depuis plus de deux heures. Téléchargement de tous les articles réellement en stock.
 
@@ -28,25 +27,17 @@ export default function Header() {
         // Ejection après 120 min
         const date = new Date()
         const connexionTime = date - user.connectionDate
-        if (connexionTime / 1000 / 60 > 120) {
+        if (connexionTime / 1000 / 60 > 180) {
             dispatch(logout())
             router.push('/')
             return
         }
-        //Téléchargement pantalons du shop (stocks réels)
-        const response = await fetch(`${url}/pants/allPants`)
-        const allPants = await response.json()
-        console.log(allPants)
+        //Téléchargement des articles du shop (stocks réels)
+        const response = await fetch(`${url}/articles/allArticles`)
+        const allArticles = await response.json()
 
-        if (allPants.result) {
-            dispatch(addPants(allPants.pants))
-        }
-        
-        //Téléchargement hauts du shop (stocks réels)
-        const response2 = await fetch(`${url}/tops/allTops`)
-        const allTops = await response2.json()
-        if (allTops.result) {
-            dispatch(addTops(allTops.tops))
+        if (allArticles.result) {
+            dispatch(addArticles(allArticles.articles))
         }
     }
 

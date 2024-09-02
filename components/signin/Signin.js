@@ -40,8 +40,7 @@ export default function Signin() {
                 body: JSON.stringify({
                     email,
                     password,
-                    pantsNotLinked : user.pantsNotLinked,
-                    topsNotLinked : user.topsNotLinked,
+                    articlesNotLinked : user.articlesNotLinked,
                 })
                 })
             const data = await response.json()
@@ -50,9 +49,9 @@ export default function Signin() {
                 setError(data.error)
             }
             else{
-                dispatch(login({firstname : data.firstname, token:data.token, connectionDate: new Date(), is_admin : data.is_admin, cart_pants: data.cart_pants,  cart_tops : data.cart_tops, addresses : data.addresses}))
+                dispatch(login({firstname : data.firstname, token:data.token, connectionDate: new Date(), is_admin : data.is_admin, cart_articles: data.cart_articles, addresses : data.addresses}))
 
-                if(data.cart_pants.length>0 || data.cart_pants.length>0){router.push('/cart/c')}
+                if(data.cart_articles.length>0 ){router.push('/cart/c')}
                 
                 else {router.push('/')}
             }
@@ -60,7 +59,7 @@ export default function Signin() {
     }
 
     const googleClick=async()=>{
-        if(user.cart_pants.length>0 || user.cart_tops.length>0){
+        if(user.cart_articles.length>0){
             const response = await fetch(`${url}/cart/google`, {method:'POST'})
             const data = await response.json()
             window.location.href = data.url

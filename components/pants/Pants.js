@@ -6,7 +6,8 @@ import PantItem from './PantItem'
 
 export default function Downs() {
 
-    const allPants = useSelector((state) => state.pants.value)
+    const allArticles = useSelector((state) => state.articles.value)
+    const allPants = allArticles.filter(e=>e.category == "pants")
 
     // Tri de tous les pantalons pour ne garder que différents modèles (peu importe taille)
     const pants = allPants.filter((obj1, i, arr) => arr.findIndex(obj2 => (obj2.name === obj1.name)) === i)

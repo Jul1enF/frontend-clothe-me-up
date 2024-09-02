@@ -6,7 +6,8 @@ import TopItem from './TopItem'
 
 export default function Downs() {
 
-    const allTops = useSelector((state) => state.tops.value)
+    const allArticles = useSelector((state) => state.articles.value)
+    const allTops = allArticles.filter(e=>e.category == "tops")
 
     // Tri de tous les hauts pour ne garder que différents modèles (peu importe taille)
     const tops = allTops.filter((obj1, i, arr) => arr.findIndex(obj2 => (obj2.name === obj1.name)) === i)

@@ -80,7 +80,7 @@ export default function Signup() {
     }
 
     const googleClick=async()=>{
-        if(user.cart_pants.length>0 || user.cart_tops.length>0){
+        if(user.cart_articles.length>0){
             const response = await fetch(`${url}/cart/google`, {method:'POST'})
             const data = await response.json()
             window.location.href = data.url

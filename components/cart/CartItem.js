@@ -2,7 +2,7 @@ import styles from '../../styles/CartItem.module.css'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { useSelector, useDispatch } from 'react-redux'
-import { deleteCartPant, deleteCartTop, deletePantNotLinked, deleteTopNotLinked } from '../../reducers/user'
+import { deleteCartArticle, deleteArticleNotLinked } from '../../reducers/user'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
@@ -26,21 +26,15 @@ export default function CartItem(props) {
         let jwtToken
         user.token ? jwtToken = user.token : jwtToken = "none"
 
-        const response = await fetch(`${url}/cart/deleteArticle/${props._id}/${props.category}/${jwtToken}`, { method: 'DELETE' })
+        const response = await fetch(`${url}/cart/deleteArticle/${props._id}/${jwtToken}`, { method: 'DELETE' })
         const data = await response.json()
         console.log(data)
         
-        if (data.result && props.category == "pants"){
-            dispatch(deleteCartPant(props._id))
+        if (data.result && !user.token){
+            dispatch(deleteArticleNotLinked(props._id))
         }
-        if (data.result && props.category == "tops"){
-            dispatch(deleteCartTop(props._id))
-        }
-        if (data.result && !user.token && props.category== "pants"){
-            dispatch(deletePantNotLinked(props._id))
-        }
-        if (data.result && !user.token && props.category== "tops"){
-            dispatch(deleteTopNotLinked(props._id))
+        if (data.result){
+            dispatch(deleteCartArticle(props._id))
         }
     }
 

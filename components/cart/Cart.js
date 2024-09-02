@@ -18,9 +18,11 @@ export default function Cart() {
 
     const [error, setError] = useState('')
 
-    // Fonction useEffect pour vérifier que les articles mis dans le panier sont encore dispos (dans les collections cart) et gérer l'arrivée avec la connexion Google
+
+    // Fonction useEffect pour gérer l'arrivée avec la connexion Google et vérifier que les articles mis dans le panier sont encore dispos (dans la collection cart)
 
     const useEffectFunction = async () => {
+
         // Si arrivée avec Google, récup des infos users
         if (!infos) { return }
         if (infos[0] == 'g') {
@@ -29,12 +31,11 @@ export default function Cart() {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     jwtToken: infos[1],
-                    pantsNotLinked: user.pantsNotLinked,
-                    topsNotLinked: user.topsNotLinked,
+                    articlesNotLinked: user.articlesNotLinked,
                 })
             })
             const data = await response.json()
-            dispatch(login({ firstname: data.firstname, token: data.token, connectionDate: new Date(), is_admin: data.is_admin, cart_pants: data.cart_pants, cart_tops: data.cart_tops, addresses : data.addresses }))
+            dispatch(login({ firstname: data.firstname, token: data.token, connectionDate: new Date(), is_admin: data.is_admin, cart_articles: data.cart_articles, addresses : data.addresses }))
             if (data.change) {
                 setError('Des articles de votre panier ont été remis en rayon !')
                 setTimeout(() => setError(''), "4000")
@@ -44,7 +45,7 @@ export default function Cart() {
 
         // Sinon vérif des dispos des articles mis dans le panier
 
-        if (user.cart_pants.length > 0 || user.cart_tops.length > 0) {
+        if (user.cart_articles.length > 0) {
 
             let jwtToken
 
@@ -54,23 +55,20 @@ export default function Cart() {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    pantsNotLinked: user.pantsNotLinked,
-                    topsNotLinked: user.topsNotLinked,
-                    cart_pants: user.cart_pants,
-                    cart_tops: user.cart_tops,
+                    articlesNotLinked: user.articlesNotLinked,
+                    cart_articles: user.cart_articles,
                     jwtToken,
                 })
             })
 
             const data = await response.json()
+            console.log(data)
 
             // Actualisation du panier quand pas connecté
             if (data.change && !jwtToken) {
                 dispatch(login({
-                    pantsNotLinked: data.pantsNotLinked,
-                    topsNotLinked: data.topsNotLinked,
-                    cart_pants: data.cart_pants,
-                    cart_tops: data.cart_tops,
+                    articlesNotLinked: data.articlesNotLinked,
+                    cart_articles: data.cart_articles,
                 }))
                 setError('Des articles de votre panier ont été remis en rayon !')
                 setTimeout(() => setError(''), "4000")
@@ -78,8 +76,7 @@ export default function Cart() {
             // Actualisation du panier quand connecté
             else if (data.change) {
                 dispatch(actualiseCart({
-                    cart_pants: data.cart_pants,
-                    cart_tops: data.cart_tops,
+                    cart_articles: data.cart_articles,
                 }))
                 setError('Des articles de votre panier ont été remis en rayon !')
                 setTimeout(() => setError(''), "4000")
@@ -98,13 +95,12 @@ export default function Cart() {
     let articles
     let total = 0
 
-    if (user.cart_tops.length == 0 && user.cart_pants.length == 0) {
+    if (user.cart_articles.length == 0) {
         articles = <h4>Aucun article enregistré !</h4>
     } else {
         // Mise en commun de tous les articles et tri par date d'ajout au panier
         let allArticles = []
-        user.cart_pants.map(e => allArticles.push(e))
-        user.cart_tops.map(e => allArticles.push(e))
+        user.cart_articles.map(e => allArticles.push(e))
 
         allArticles.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt))
         console.log(allArticles)
@@ -126,13 +122,13 @@ export default function Cart() {
 
     let payment
     let sentence
-    if (user.cart_tops.length == 0 && user.cart_pants.length == 0 && !user.token) {
+    if (user.cart_articles.length == 0 && !user.token) {
         payment = <div className={styles.connexionContainer}>
             <Link href="/signin"><button className={styles.orderBtn}>Se connecter</button></Link>
             <Link href="/signup"><button className={styles.orderBtn}>S'inscrire</button></Link>
         </div>
     }
-    else if (user.cart_tops.length == 0 && user.cart_pants.length == 0 && user.token){
+    else if ( user.cart_articles.length == 0 && user.token){
         payment=<></>
     }
     else if (user.token) {

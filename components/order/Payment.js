@@ -2,7 +2,7 @@ import styles from "../../styles/Payment.module.css"
 import { useEffect, useState } from "react"
 import { useRouter } from "next/router"
 import { useDispatch } from "react-redux"
-import { deleteCartPant, deleteCartTop } from "../../reducers/user"
+import { deleteCartArticle, actualiseCart } from "../../reducers/user"
 import Image from 'next/image'
 
 export default function Payment(props) {
@@ -20,8 +20,7 @@ export default function Payment(props) {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                cart_pants: props.cart_pants,
-                cart_tops: props.cart_tops,
+                cart_articles: props.cart_articles,
                 jwtToken: props.jwtToken,
             })
         })
@@ -32,12 +31,8 @@ export default function Payment(props) {
             setError("Erreur, merci de vous reconnecter.")
             setTimeout(() => { router.push("/") }, "4000")
         }
-        if (data.badChange && data.pantsRemoved.length > 0) {
-            data.pantsRemoved.map(e => dispatch(deleteCartPant(e)))
-            setError("Des articles de votre panier ne sont malheureusement plus disponibles !")
-        }
-        if (data.badChange && data.topsRemoved.length > 0) {
-            data.topsRemoved.map(e => dispatch(deleteCartTop(e)))
+        if (data.badChange && data.articlesRemoved.length > 0) {
+            data.articlesRemoved.map(e => dispatch(deleteCartArticle(e)))
             setError("Des articles de votre panier ne sont malheureusement plus disponibles !")
         }
     }
@@ -52,14 +47,13 @@ export default function Payment(props) {
 
     // Mise en commun de tous les articles et tri par date d'ajout au panier
     let allArticles = []
-    props.cart_pants.map(e => allArticles.push(e))
-    props.cart_tops.map(e => allArticles.push(e))
+    props.cart_articles.map(e => allArticles.push(e))
 
     allArticles.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt))
 
     // Map pour afficher tous les articles
     articles = allArticles.map((e, i) => {
-        return <div className={styles.articleContainer} key={i}><h5 className={styles.articleName}>- {e.name},</h5><h5 className={styles.articleSize}> Taille : {e.size} ,</h5><h5 className={styles.articlePrice}> Prix : {e.price}</h5></div>
+        return <div className={styles.articleContainer} key={i}><h5 className={styles.articleName}>- {e.name},</h5><h5 className={styles.articleSize}> Taille : {e.size} ,</h5><h5 className={styles.articlePrice}> Prix : {e.price.toFixed(2)}€</h5></div>
     })
 
     // États pour erreur et infos CB
@@ -125,8 +119,7 @@ export default function Payment(props) {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                cart_pants: props.cart_pants,
-                cart_tops: props.cart_tops,
+                cart_articles: props.cart_articles,
                 jwtToken: props.jwtToken,
                 totalArticles : props.totalArticles,
                 deliveryPrice: props.deliveryPrice,
@@ -143,7 +136,27 @@ export default function Payment(props) {
         })
         const orderResult = await answer.json()
         console.log(orderResult)
-        // Bien penser à tous les cas de retour (articles plus dispo, token expiré, payement refusé...)
+
+        // Si token expiré
+        if(!orderResult.result){
+            setError("Payement non débité, expiration de votre connexion. Merci de vous reconnecter")
+            setTimeout(()=>{router.push('/')},"4000")
+        }
+        // Si articles plus dispo
+        else if (!orderResult.payment && missingArticles){
+            setError(orderResult.errorSentence)
+            orderResult.articlesRemoved.map(e=>dispatch(deleteCartArticle(e)))
+             setTimeout(()=>{router.push('/cart/c')},"4000")
+        }
+        // Si payement refusé
+        else if (!orderResult.payment){
+            setError(orderResult.errorSentence)
+        }
+        else if (orderResult.result && orderResult.payment){
+            setError("Commande réussie")
+            dispatch(actualiseCart({cart_articles : []}))
+        }
+
     }
 
 
