@@ -21,6 +21,8 @@ export default function Order() {
     const [deliveryMode, setDeliveryMode] = useState('')
     const [deliveryPrice, setDeliveryPrice] = useState(0)
 
+    console.log(chosenAdresse)
+
     function getAddresse(addresse) {
         setChosenAdresse(addresse)
     }
@@ -55,10 +57,17 @@ export default function Order() {
     if (step === "address") {
         content = <Address addresses={user.addresses} token={user.token} getAddresse={getAddresse} changeStep={changeStep} />
     } else if (step === "delivery") {
-        content = <Delivery changeStep={changeStep} totalArticles={totalArticles} getDeliveryMode={getDeliveryMode} getDeliveryPrice={getDeliveryPrice} getAddresse2={getAddresse2} />
+        content = <Delivery changeStep={changeStep} totalArticles={totalArticles} getDeliveryMode={getDeliveryMode} getDeliveryPrice={getDeliveryPrice} getAddresse2={getAddresse2} chosenAdresse={chosenAdresse}/>
     } else if (step == "payment") {
-        content = <Payment total={total} totalArticles={totalArticles} cart_articles={user.cart_articles} jwtToken={user.token} chosenAdresse={chosenAdresse} chosenAdresse2={chosenAdresse2} deliveryMode={deliveryMode} deliveryPrice={deliveryPrice} />
+        content = <Payment changeStep={changeStep} total={total} totalArticles={totalArticles} cart_articles={user.cart_articles} jwtToken={user.token} chosenAdresse={chosenAdresse} chosenAdresse2={chosenAdresse2} deliveryMode={deliveryMode} deliveryPrice={deliveryPrice} />
+    } else if (step == "ordered") {
+        content = <div className={styles.successContainer}>
+            <h3>Félicitation, votre achat est bien validé ! Votre commande arrive bientôt !</h3>
+            <h3>Un email de confirmation avec votre reçu vous a été adressé.</h3>
+        </div>
     }
+
+    // Affichage conditionnel des flèches en fonction de l'étape
 
     let addresseStyle
     step === "address" ? addresseStyle = { color: "rgb(13, 1, 102)" } : addresseStyle = { color: "transparent" }
@@ -69,6 +78,20 @@ export default function Order() {
     let paymentStyle
     step === "payment" ? paymentStyle = { color: "rgb(13, 1, 102)" } : paymentStyle = { color: "transparent" }
 
+    let validationStyle
+    step === "ordered" ? validationStyle = { color: "rgb(13, 1, 102)" } : validationStyle = { color: "transparent" }
+
+    // Fonction appelée au click sur les noms d'étapes pour revenir à celles ci
+
+    const addressClick = ()=>{
+        if (step=== "ordered"){return}
+        else {setStep("address")}
+    }
+
+    const deliveryClick = ()=>{
+        if (step=== "ordered" || step === "address"){return}
+        else {setStep("delivery")}
+    }
 
     return (
         <div className={styles.body}>
@@ -81,15 +104,19 @@ export default function Order() {
                 <div className={styles.stepsTitleContainer}>
                     <div className={styles.stepAndIconContainer}>
                         <FontAwesomeIcon icon={faArrowRight} style={addresseStyle} className={styles.arrowIcon} />
-                        <h2 className={styles.title2}>Adresse de livraison</h2>
+                        <h2 className={styles.title2} onClick={()=>addressClick()}>Adresse de livraison</h2>
                     </div>
                     <div className={styles.stepAndIconContainer}>
                         <FontAwesomeIcon icon={faArrowRight} style={deliveryStyle} className={styles.arrowIcon} />
-                        <h2 className={styles.title2}>Mode de livraison</h2>
+                        <h2 className={styles.title2} onClick={()=>deliveryClick()}>Mode de livraison</h2>
                     </div>
                     <div className={styles.stepAndIconContainer}>
                         <FontAwesomeIcon icon={faArrowRight} style={paymentStyle} className={styles.arrowIcon} />
-                        <h2 className={styles.title2}>Paiement</h2>
+                        <h2>Paiement</h2>
+                    </div>
+                    <div className={styles.stepAndIconContainer}>
+                        <FontAwesomeIcon icon={faArrowRight} style={validationStyle} className={styles.arrowIcon} />
+                        <h2 >Validation</h2>
                     </div>
                 </div>
                 <div className={styles.line2}></div>

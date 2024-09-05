@@ -152,9 +152,10 @@ export default function Payment(props) {
         else if (!orderResult.payment){
             setError(orderResult.errorSentence)
         }
+        // Si payement réussi
         else if (orderResult.result && orderResult.payment){
-            setError("Commande réussie")
             dispatch(actualiseCart({cart_articles : []}))
+            props.changeStep("ordered")
         }
 
     }
