@@ -4,10 +4,43 @@
     flex-direction: column;
     align-items: center;
     padding-bottom: 2vh;
-   
+    padding-top: 1vh;
 }
 
 .map{
     width: 100%;
     height: 40vh;
+}
+
+.markerContainer{
+    height:5vh;
+    width:5vh;
+    margin-left: -1vh;
+}
+
+.markerIcon{
+    height : 5vh;
+    color:rgb(124	124	123	);
+}
+
+.selectedMarkerIcon{
+    height:5vh;
+    color:orange;
+}
+
+.colissimoLogo{
+    position: absolute;
+    color:white;
+    height : 2.5vh;
+    width: 2.5vh;
+    margin-left: 0.65vh;
+    margin-top: 0.6vh;
+    z-index: 1;
+    object-fit: contain;
+}
+
+.popupContainer{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
 }
