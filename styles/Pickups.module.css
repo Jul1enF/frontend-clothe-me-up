@@ -8,8 +8,9 @@
 }
 
 .map{
-    width: 100%;
-    height: 40vh;
+    width: 90%;
+    height: 32vh;
+    margin-bottom: 2vh;
 }
 
 .markerContainer{
@@ -33,14 +34,124 @@
     color:white;
     height : 2.5vh;
     width: 2.5vh;
-    margin-left: 0.65vh;
+    margin-left: 0.7vh;
     margin-top: 0.6vh;
     z-index: 1;
     object-fit: contain;
 }
 
 .popupContainer{
-    background-color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 2.5vh 1vw;
+}
+
+.popupContainer p{
+    font-size: 15px;
+    font-weight: 600;
+    margin:0 0 1.5vh;
+}
+
+.popupBtn{
+    height:30px;
+    width: 10vw;
+    border: none;
+    color:white;
+    background-color: rgb(13, 1, 102);
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.pickupsContainer{
+    width:90%;
+    height: 40vh;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+}
+
+.pickContainer{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 2vh;
+    background-color: white;
+    padding : 2vh 1vw;
+    border-radius: 5px;
+}
+
+.schedulesContainer{
+    display : flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.schedules{
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+    margin-bottom: 0.5vh;
+}
+
+.dayContainer{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 0.5vh;
+}
+
+.sundayContainer{
+    display : flex;
+    justify-content: space-between;
+    width:50%;
+    margin-bottom: 2vh;
+}
+
+.sundayShortContainer{
+    display : flex;
+    justify-content: space-between;
+    width:38%;
+    margin-bottom: 2vh;
+}
+
+.pickContainer h4{
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 0.5vh;
+}
+
+.pickContainer h6{
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 1vh;
+}
+
+.pickContainer h5{
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    margin-bottom: 2vh;
+}
+
+.pickContainer p{
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.pickupBtn{
+    height:30px;
+    width: 25%;
+    border: none;
+    color:white;
+    background-color: rgb(13, 1, 102);
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    cursor: pointer;
 }

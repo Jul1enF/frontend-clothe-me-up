@@ -15,13 +15,16 @@ export default function Delivery(props) {
     const [pickupAddresses, setPickupAddresses] = useState("")
     const [pickupsVisible, setPickupsVisible] = useState(false)
 
-    // Fixation du prix d'envoi en fonction frais de port offets ou non
+    // Fixation du prix d'envoi en fonction frais de port offerts ou non
 
     let colissimoPrice
     props.totalArticles >= 0.4 ? colissimoPrice = 0.00 : colissimoPrice = 0.20
 
     // Fonction appelée au click pour sélectionner un mode d'envoi
     const selectClick = () => {
+        if(chosenDelivery=="Colissimo : Point de retrait"){
+            return
+        }
         props.getDeliveryMode(chosenDelivery)
         props.getDeliveryPrice(deliveryPrice)
         props.changeStep("payment")
@@ -43,12 +46,21 @@ export default function Delivery(props) {
         setPickupsVisible(true)
     }
 
+    // Fonction à envoyer en props à Pickups pour IDF et enregistrement du point de retrait colissimo
+
+    const choosePickup= (pickup)=>{
+        props.getAddresse2(pickup)
+        props.getDeliveryMode(chosenDelivery)
+        props.getDeliveryPrice(deliveryPrice)
+        props.changeStep("payment")
+    }
+
     // Affichage conditionnel de la fenêtre des points retrait
 
     let map
     !pickupsVisible ? map = <></> : map =
         <div className={styles.pickupsContainer}>
-            <Pickups pickupAddresses={pickupAddresses} />
+            <Pickups pickupAddresses={pickupAddresses} choosePickup={choosePickup} />
         </div>
 
 
@@ -58,6 +70,7 @@ export default function Delivery(props) {
                 <input type="radio" id="colissimo1" name="transporter" value="Colissimo : Domicile sans signature" onChange={(e) => {
                     setChosenDelivery(e.target.value)
                     setDeliveryPrice(colissimoPrice)
+                    setPickupsVisible(false)
                 }}></input>
                 <label htmlFor="colissimo1">
                     <div className={styles.imgContainer}>
@@ -91,6 +104,7 @@ export default function Delivery(props) {
                 <input type="radio" id="chronopost" name="transporter" value="Chronopost 24h" onChange={(e) => {
                     setChosenDelivery(e.target.value)
                     setDeliveryPrice(0.80)
+                    setPickupsVisible(false)
                 }}></input>
                 <label htmlFor="chronopost">
                     <div className={styles.imgContainer}>
@@ -106,6 +120,7 @@ export default function Delivery(props) {
                 <input type="radio" id="shop" name="transporter" value="Retrait en magasin" onChange={(e) => {
                     setChosenDelivery(e.target.value)
                     setDeliveryPrice(0)
+                    setPickupsVisible(false)
                 }}></input>
                 <label htmlFor="shop">
                     <div className={styles.iconContainer}>

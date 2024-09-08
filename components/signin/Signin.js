@@ -47,9 +47,10 @@ export default function Signin() {
 
             if (!data.result){
                 setError(data.error)
+                console.log(data.err)
             }
             else{
-                dispatch(login({firstname : data.firstname, token:data.token, connectionDate: new Date(), is_admin : data.is_admin, cart_articles: data.cart_articles, addresses : data.addresses}))
+                dispatch(login({firstname : data.firstname, token:data.token, connectionDate: new Date(), is_admin : data.is_admin, cart_articles: data.cart_articles, addresses : data.addresses, orders : data.orders}))
 
                 if(data.cart_articles.length>0 ){router.push('/cart/c')}
                 

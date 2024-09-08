@@ -10,19 +10,34 @@ import React from "react"
 
 export default function Pickups(props) {
 
-    const [selectedMarker, setSelectedMarker] = useState('')
+    const [selectedPickup, setSelectedPickup] = useState('')
 
     
-    // useRef et useEffect pour ouvrir popup à chaque rerender causé par selectedMarker
+    // useRef et useEffect pour ouvrir popup à chaque rerender causé par selectedMarker et scroller jusqu'à la fiche du point retrait sélectionné
 
     const markerRefs = useRef({})
+    const pickupsRefs = useRef({})
+    const pickupsWindowRef = useRef(null)
 
     useEffect(() => {
-        if (selectedMarker) {
-            const markerToOpen = markerRefs.current[selectedMarker];
+        if (selectedPickup) {
+
+            const markerToOpen = markerRefs.current[selectedPickup];
             markerToOpen.openPopup()
+
+            const pickupToScroll = pickupsRefs.current[selectedPickup]
+            const windowToScroll = pickupsWindowRef.current
+
+            const pickupOffsetTop = pickupToScroll.offsetTop
+            const windowOffsetTop = windowToScroll.offsetTop
+            const distanceToScroll = pickupOffsetTop-windowOffsetTop
+
+            windowToScroll.scroll({
+                top: distanceToScroll,
+                behavior: "smooth"
+              })
         }
-    }, [selectedMarker])
+    }, [selectedPickup])
 
 
     // Lorsque fermé, remplacement des horaires par "Fermé"
@@ -36,6 +51,31 @@ export default function Pickups(props) {
         } return e
     })
 
+    // Si un seul horaire par jour, suppression du 00:00 qui le suit
+
+    pickupAddresses = pickupAddresses.map(e => {
+        for (let element in e) {
+            const regex = /00:00-00:00/
+            if(regex.test(e[element])){
+            e[element]=e[element].replace(regex, '')
+            }
+        } return e
+    })
+
+    // Fonction appelée en cas de sélection d'un point relais
+    const choosePickup=(id)=>{
+        pickupAddresses.map(e=>{
+            if (e.id === id){
+                props.choosePickup({
+                    title : e.title,
+                    address : e.address,
+                    city : e.city,
+                    post_code : e.post_code,
+                })
+            }
+        })
+    }
+
 
     // Création d'une zone sur laquelle centrer la map en fonction des différentes adresses des pickups
 
@@ -44,6 +84,45 @@ export default function Pickups(props) {
     })
 
     const bounds = L.latLngBounds([...allCoords])
+
+
+    // Création des fiches des points de retraits
+
+    const pickups = pickupAddresses.map((e,i)=>{
+       return <div className={styles.pickContainer} key={i} ref={(m) => pickupsRefs.current[e.id] = m}>
+            <h4>{e.title}</h4>
+            <h6>{e.address} {e.post_code} {e.city}</h6>
+            <h5>Horaires d'ouverture :</h5>
+            <div className={styles.schedulesContainer}>
+                <div className={styles.schedules}>
+                    <div className={styles.dayContainer}>
+                    <p>Lundi :</p><p> {e.openingMonday}</p>
+                    </div>
+                    <div className={styles.dayContainer}>
+                    <p>Mardi :</p><p> {e.openingTuesday}</p>
+                    </div>
+                    <div className={styles.dayContainer}>
+                    <p>Mercredi :</p><p> {e.openingWenesday}</p>
+                    </div>
+                </div>
+                <div className={styles.schedules}>
+                    <div className={styles.dayContainer}>
+                    <p>Jeudi :</p><p> {e.openingThursday}</p>
+                    </div>
+                    <div className={styles.dayContainer}>
+                    <p>Vendredi :</p><p> {e.openingFriday}</p>
+                    </div>
+                    <div className={styles.dayContainer}>
+                    <p>Samedi :</p><p> {e.openingSaturday}</p>
+                    </div>
+                </div>
+            </div>
+            <div className={e.openingSunday.length<13 ? styles.sundayShortContainer : styles.sundayContainer}>
+            <p>Dimanche :</p><p> {e.openingSunday}</p>
+            </div>
+            <button type="button" className={styles.pickupBtn} onClick={() => choosePickup(e.id)}>Choisir</button>
+        </div>
+    })
 
 
     return (
@@ -55,35 +134,38 @@ export default function Pickups(props) {
                 />
                 {pickupAddresses.map((e, i) =>
                     <Marker
-                        ref={(m) => markerRefs.current[e.title] = m}
-                        key={e.title}
+                        ref={(m) => markerRefs.current[e.id] = m}
+                        key={e.id}
                         position={[e.latitude, e.longitude]}
                         icon={L.divIcon({
                             html: renderToStaticMarkup(
                                 <div className={styles.markerContainer}>
                                     <img src='/colissimo-logo.png' alt="logo colissimo" className={styles.colissimoLogo} />
-                                    <FontAwesomeIcon icon={faLocationPin} className={selectedMarker !== e.title ? styles.markerIcon : styles.selectedMarkerIcon}></FontAwesomeIcon>
+                                    <FontAwesomeIcon icon={faLocationPin} className={selectedPickup !== e.id ? styles.markerIcon : styles.selectedMarkerIcon}></FontAwesomeIcon>
                                 </div>
                             ),
                             className: "markerIcon",
                         })}
                         eventHandlers={{
                             click: () => {
-                                setSelectedMarker(e.title)
+                                setSelectedPickup(e.id)
                             },
                         }}
                     >
                         <Popup
-                            key={i}
                             position={[e.latitude, e.longitude]}
                         >
                             <div className={styles.popupContainer}>
                                 <p>{e.title}</p>
+                                <button type="button" className={styles.popupBtn} onClick={() => choosePickup(e.id)}>Choisir</button>
                             </div>
                         </Popup>
                     </Marker>
                 )}
             </MapContainer>
+            <div className={styles.pickupsContainer} ref={pickupsWindowRef}>
+                {pickups}
+            </div>
         </div>
     )
 }

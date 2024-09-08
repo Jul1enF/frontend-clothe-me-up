@@ -63,7 +63,7 @@ export default function Order() {
     } else if (step == "ordered") {
         content = <div className={styles.successContainer}>
             <h3>Félicitation, votre achat est bien validé ! Votre commande arrive bientôt !</h3>
-            <h3>Un email de confirmation avec votre reçu vous a été adressé.</h3>
+            <h3>Un email de confirmation avec votre reçu vous a été adressé (pensez à vérifier vos spams).</h3>
         </div>
     }
 

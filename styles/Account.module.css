@@ -1,0 +1,91 @@
+.body {
+    height: 100vh;
+    width: 100vw;
+    padding-top: 100px;
+    display: flex;
+}
+
+.leftContainer {
+    width: 27%;
+    height: 100%;
+    background-image: url('../public/accountBG.jpg');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 3.5vh 3vw;
+
+}
+
+.title {
+    color: rgb(13, 1, 102);
+    font-size: 38px;
+    font-family: Helvetica;
+    font-weight: 800;
+    margin-bottom: 2.5vh;
+}
+
+.line {
+    border-bottom: 2px solid rgb(13, 1, 102);
+    width: 90%;
+    height: 2px;
+    margin-bottom: 3vh;
+}
+
+.rightContainer {
+    width: 73%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.stepsTitleContainer {
+    height: 100%;
+    width: 29%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 5vh;
+}
+
+.stepAndIconContainer {
+    width: 100%;
+    height: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5vw;
+    margin-bottom: 8vh;
+}
+
+.arrowIcon {
+    color: transparent;
+    height: 20px
+}
+
+.title2{
+    cursor: pointer;
+}
+
+.stepsTitleContainer h2 {
+    font-size: 22px;
+    font-weight: 850;
+    color: rgb(13, 1, 102);
+}
+
+.line2 {
+    width: 1px;
+    height: 90%;
+    border-left: 1px solid rgb(13, 1, 102);
+}
+
+.stepContainer {
+    height: 100%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 3vh 2vw 1vh;
+}

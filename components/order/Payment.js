@@ -2,7 +2,7 @@ import styles from "../../styles/Payment.module.css"
 import { useEffect, useState } from "react"
 import { useRouter } from "next/router"
 import { useDispatch } from "react-redux"
-import { deleteCartArticle, actualiseCart } from "../../reducers/user"
+import { deleteCartArticle, actualiseCart, addOrder } from "../../reducers/user"
 import Image from 'next/image'
 
 export default function Payment(props) {
@@ -155,6 +155,7 @@ export default function Payment(props) {
         // Si payement réussi
         else if (orderResult.result && orderResult.payment){
             dispatch(actualiseCart({cart_articles : []}))
+            dispatch(addOrder(orderResult.newSavedOrder))
             props.changeStep("ordered")
         }
 

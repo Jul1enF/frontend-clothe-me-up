@@ -68,7 +68,7 @@ export default function Header2() {
 
         userDropdown = (
             <div className={styles.userDropdownContainer} style={userMenuVisible ? { display: "flex" } : { display: "none" }}>
-                <p className={styles.firstP}>Mon compte</p>
+                <Link href="/account"><p className={styles.firstP}>Mon compte</p></Link>
                 <Link href="/"><p className={styles.lastP} onClick={() => dispatch(logout())}>Se déconnecter</p></Link>
             </div>
         )
