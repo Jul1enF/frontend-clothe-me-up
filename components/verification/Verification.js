@@ -34,7 +34,7 @@ export default function Verification(){
         if(data.result){
             setSentence1("Merci d'avoir confirmé votre email, votre inscription est maintenant terminée !")
             setSentence2("Vous allez être redirigé vers la page d'accueil.")
-            dispatch(login({firstname : data.firstname, token:data.token, connectionDate: new Date(), is_admin : data.is_admin, cart_articles: data.cart_articles, addresses : data.addresses, orders : data.orders}))
+            dispatch(login({firstname : data.firstname,  name:data.name, email:data.email, mobile_phone:data.mobile_phone, token:data.token, connectionDate: new Date(), is_admin : data.is_admin, cart_articles: data.cart_articles, addresses : data.addresses, orders : data.orders, password : data.password }))
             setValidated(true)
         }
         else if (!data.result && data.error =="no data")

@@ -43,8 +43,20 @@ export const userSlice = createSlice({
         addAddresse : (state, action)=>{
             state.value.addresses.push(action.payload)
         },
+        changeReducerFirstname : (state, action)=>{
+            state.value.firstname = action.payload
+        },
+        changeReducerName : (state, action)=>{
+            state.value.name = action.payload
+        },
+        changeReducerPhone : (state, action)=>{
+            state.value.mobile_phone = action.payload
+        },
+        changeReducerPassword : (state, action)=>{
+            state.value.password = action.payload
+        },
     }
 })
 
-export const {login, logout, addCartArticle, addArticleNotLinked, actualiseCart, deleteCartArticle, deleteArticleNotLinked, addAddresse, addOrder} = userSlice.actions
+export const {login, logout, addCartArticle, addArticleNotLinked, actualiseCart, deleteCartArticle, deleteArticleNotLinked, addAddresse, addOrder, changeReducerFirstname, changeReducerName, changeReducerPhone, changeReducerPassword} = userSlice.actions
 export default userSlice.reducer

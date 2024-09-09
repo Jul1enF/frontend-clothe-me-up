@@ -35,7 +35,7 @@ export default function Cart() {
                 })
             })
             const data = await response.json()
-            dispatch(login({ firstname: data.firstname, token: data.token, connectionDate: new Date(), is_admin: data.is_admin, cart_articles: data.cart_articles, addresses : data.addresses, orders : data.orders }))
+            dispatch(login({ firstname: data.firstname, name:data.name, email:data.email, mobile_phone:data.mobile_phone, token: data.token, connectionDate: new Date(), is_admin: data.is_admin, cart_articles: data.cart_articles, addresses : data.addresses, orders : data.orders, password : data.password }))
             if (data.change) {
                 setError('Des articles de votre panier ont été remis en rayon !')
                 setTimeout(() => setError(''), "4000")
