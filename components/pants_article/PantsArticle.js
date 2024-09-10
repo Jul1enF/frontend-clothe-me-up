@@ -17,10 +17,8 @@ export default function PantsArticle() {
     const url = process.env.NEXT_PUBLIC_BACK_ADDRESS
 
     let allArticles = useSelector((state) => state.articles.value)
-    let pants = allArticles.filter(e=>e.category == "pants")
+    let pants = allArticles.filter(e => e.category == "pants")
     const user = useSelector((state) => state.user.value)
-
-    console.log(user)
 
     const [articles, setArticles] = useState([])
     const [menuVisible, setMenuVisible] = useState(false)

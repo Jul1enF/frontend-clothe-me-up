@@ -4,7 +4,7 @@
     top: 0;
     left:0;
     width: 100vw;
-    height: 100px;
+    height: 90px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -24,7 +24,7 @@
 
 .inputContainer{
     width: 260px;
-    height: 50px;
+    height: 47px;
     display: flex;
     align-items: center;
     border-bottom: 1px solid rgb(13, 1, 102);
@@ -55,20 +55,44 @@
     transition-duration: 0.5s;
   }
 
+
+  .autocompleteContainer{
+    position: absolute;
+    margin-top: 855px;
+    height: 800px;
+}
+
+.autocomplete{
+    background-color: rgb(245	245	245	);
+    padding:15px;
+    width: 280px;
+    height: fit-content;
+    max-height: 250px;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+}
+
+.autocomplete p{
+    color: rgb(13, 1, 102);
+    font-size: 17.5px;
+    font-weight: 550;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
 .titleContainer{
     width:30%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 7px;
     transition-duration: 0.6s;
 }
 
 .nameSite{
     color:rgb(13, 1, 102);
     font-family: 'Open Sans';
-    font-weight: 700;
+    font-weight: 730;
     font-size: 43px;
     letter-spacing: 1px;
     cursor: pointer;
@@ -91,12 +115,27 @@
     transition-duration: 0.5s;
 }
 
+.menuContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 4vw;
+}
+
+.menuIcon{
+    color:rgb(13, 1, 102);
+    height : 26px;
+    cursor: pointer;
+    transition-duration: 0.5s;
+}
+
 .userContainer{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-left: 3vw;
+    margin-left: 4vw;
 }
 
 .userIcon{
@@ -109,29 +148,41 @@
 .userName{
     color: rgb(13, 1, 102);
     position: absolute;
-    margin-top:57px;
+    margin-top:47px;
     font-size:16px;
+    font-weight: 600;
     transition-duration: 0.5s;
 }
 
+
 .userDropdownContainer{
-    width: 140px;
-    background-color:  rgb(13, 1, 102);
+    width: 180px;
+    height : 20vh;
     position: absolute;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
-    margin-top: 112px;
-    border-radius: 10px;
-   
+    margin-top: 229px;
+    margin-right: 5.6vw;
+}
+
+.triangle{
+    color:rgb(13, 1, 102);
+    height:40px;
+    position: absolute;
+    margin-top: -17px;
+    margin-left: 5.7vw;
 }
 
 .userDropdownContainer p{
+    background-color:  rgb(13, 1, 102);
     width: 100%;
     text-align: center;
-    font-size: 15px;
-    padding-top: 9px;
-    padding-bottom: 9px;
+    font-size: 16px;
+    font-weight: 550;
+    padding-top: 14px;
+    padding-bottom: 14px;
     color:white;
     cursor: pointer;
 }
@@ -139,17 +190,22 @@
 .userDropdownContainer p:hover{
     text-decoration: underline;
     text-underline-offset: 2px;
+    text-decoration-thickness: 1.5px;
 }
 
 .firstP{
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    border-bottom: 0.5px solid white;
+    border-bottom: 1px solid white;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+.P{
+    border-bottom: 1px solid white;
 }
 
 .lastP{
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
 }
 
 .cartContainer{
@@ -157,7 +213,7 @@
     cursor: pointer;
     display: flex;
     align-items: center;
-    margin-left: 3vw;
+    margin-left: 4vw;
 }
 
 .cartIcon{
@@ -169,22 +225,24 @@
 
 .cartCircle{
     background-color: rgb(13, 1, 102);
-    height: 23px;
-    width: 23px;
+    height: 19px;
+    width: 19px;
     border-radius: 50%;
     position: absolute;
-    margin-top: 55px;
+    margin-top: 47px;
+    margin-right: 0.1vw;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     transition-duration: 0.5s;
+    padding-top: 1.5px;
 }
 
 .cartCircle p{
     color:white;
     font-weight: 600;
-    font-size: 17px;
+    font-size: 16.5px;
     transition-duration: 0.5s;
 }
 
@@ -194,7 +252,7 @@
 .headerBody:hover{
     background-color: white;
     transition-duration: 0.9s;
-    height:105px;
+    height:95px;
 }
 
 .headerBody:hover .inputContainer{
@@ -239,6 +297,11 @@
 }
 
 
+.headerBody:hover .menuIcon{
+    height: 27px;
+    color:rgb(13, 1, 102);
+    transition-duration: 0.5s;
+ }
 
 .headerBody:hover .userIcon{
     height: 23.5px;
@@ -249,7 +312,7 @@
 
  .headerBody:hover .userName{
     text-shadow: none;
-    margin-top:58px;
+    margin-top:46px;
     color:rgb(13, 1, 102);
     transition-duration: 0.5s;
     font-size: 17px;
@@ -263,10 +326,10 @@
 
  .headerBody:hover .cartCircle{
     background-color:rgb(13, 1, 102);
-    height:24px;
-    width:24px;
+    height:20px;
+    width:20px;
     transition-duration: 0.5s;
-    margin-top: 56px;
+
  }
 
  .headerBody:hover .cartCircle p{
