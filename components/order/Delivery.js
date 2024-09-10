@@ -36,7 +36,7 @@ export default function Delivery(props) {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                chosenAdresse: props.chosenAdresse,
+                chosenAddress: props.chosenAddress,
             })
         })
         const data = await response.json()
@@ -49,7 +49,7 @@ export default function Delivery(props) {
     // Fonction à envoyer en props à Pickups pour IDF et enregistrement du point de retrait colissimo
 
     const choosePickup= (pickup)=>{
-        props.getAddresse2(pickup)
+        props.getAddress2(pickup)
         props.getDeliveryMode(chosenDelivery)
         props.getDeliveryPrice(deliveryPrice)
         props.changeStep("payment")

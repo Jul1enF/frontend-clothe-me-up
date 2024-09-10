@@ -16,19 +16,19 @@ export default function Order() {
 
     //Fonctions IDF et états pour remonter les choix de commande
 
-    const [chosenAdresse, setChosenAdresse] = useState({})
-    const [chosenAdresse2, setChosenAdresse2] = useState('')
+    const [chosenAddress, setChosenAddress] = useState({})
+    const [chosenAddress2, setChosenAddress2] = useState('')
     const [deliveryMode, setDeliveryMode] = useState('')
     const [deliveryPrice, setDeliveryPrice] = useState(0)
 
-    console.log(chosenAdresse)
+    console.log(chosenAddress)
 
-    function getAddresse(addresse) {
-        setChosenAdresse(addresse)
+    function getAddress(address) {
+        setChosenAddress(address)
     }
 
-    function getAddresse2(addresse2) {
-        setChosenAdresse2(addresse2)
+    function getAddress2(address2) {
+        setChosenAddress2(address2)
     }
 
     function changeStep(nextStep) {
@@ -55,11 +55,11 @@ export default function Order() {
     let content
 
     if (step === "address") {
-        content = <Address addresses={user.addresses} token={user.token} getAddresse={getAddresse} changeStep={changeStep} />
+        content = <Address addresses={user.addresses} token={user.token} getAddress={getAddress} changeStep={changeStep} />
     } else if (step === "delivery") {
-        content = <Delivery changeStep={changeStep} totalArticles={totalArticles} getDeliveryMode={getDeliveryMode} getDeliveryPrice={getDeliveryPrice} getAddresse2={getAddresse2} chosenAdresse={chosenAdresse}/>
+        content = <Delivery changeStep={changeStep} totalArticles={totalArticles} getDeliveryMode={getDeliveryMode} getDeliveryPrice={getDeliveryPrice} getAddress2={getAddress2} chosenAddress={chosenAddress}/>
     } else if (step == "payment") {
-        content = <Payment changeStep={changeStep} total={total} totalArticles={totalArticles} cart_articles={user.cart_articles} jwtToken={user.token} chosenAdresse={chosenAdresse} chosenAdresse2={chosenAdresse2} deliveryMode={deliveryMode} deliveryPrice={deliveryPrice} />
+        content = <Payment changeStep={changeStep} total={total} totalArticles={totalArticles} cart_articles={user.cart_articles} jwtToken={user.token} chosenAddress={chosenAddress} chosenAddress2={chosenAddress2} deliveryMode={deliveryMode} deliveryPrice={deliveryPrice} />
     } else if (step == "ordered") {
         content = <div className={styles.successContainer}>
             <h3>Félicitation, votre achat est bien validé ! Votre commande arrive bientôt !</h3>

@@ -2,6 +2,7 @@ import styles from "../../styles/Account.module.css"
 import Header3 from "../Header3"
 import Informations from "./Informations"
 import Addresses from "./Addresses"
+import MyOrders from "./MyOrders"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { useState } from "react"
@@ -13,7 +14,18 @@ export default function Account(){
     
     // État et fonction pour arrêt affichage fenêtre enregistrement d'une nouvelle addresse (Addresses) au click sur "Mes adresses"
 
-    
+    const [newAddressVisible, setNewAddressVisible] = useState(false)
+
+    const changeNewAddressVisible=(state)=>{
+        setNewAddressVisible(state)
+    }
+
+
+    // Affichage conditionnel du contenu à droite et de la flèche en fonction de l'étape choisie
+
+    let informationsStyle
+    let addressesStyle
+    let ordersStyle
 
     let content
     if (step == "informations"){
@@ -21,13 +33,14 @@ export default function Account(){
         informationsStyle={color:"rgb(13, 1, 102)"}
     }
     else if (step == "addresses"){
-        content=<Addresses/>
+        content=<Addresses newAddressVisible={newAddressVisible} changeNewAddressVisible={changeNewAddressVisible}/>
         addressesStyle={color:"rgb(13, 1, 102)"}
     }
+    else if (step == "orders"){
+        content = <MyOrders />
+        ordersStyle={color:"rgb(13, 1, 102)"}
+    }
 
-    let informationsStyle
-    let addressesStyle
-    let ordersStyle
 
     return(
         <div className={styles.body}>
@@ -44,16 +57,17 @@ export default function Account(){
                     </div>
                     <div className={styles.stepAndIconContainer}>
                         <FontAwesomeIcon icon={faArrowRight} style={addressesStyle} className={styles.arrowIcon} />
-                        <h2 className={styles.title2} onClick={()=>setStep("addresses")}>Mes addresses</h2>
+                        <h2 className={styles.title2} onClick={()=>{
+                            setStep("addresses")
+                            setNewAddressVisible(false)
+                            }}>Mes addresses</h2>
                     </div>
                     <div className={styles.stepAndIconContainer}>
                         <FontAwesomeIcon icon={faArrowRight} style={ordersStyle} className={styles.arrowIcon} />
-                        <h2>Mes commandes</h2>
+                        <h2 className={styles.title2} onClick={()=>{
+                            setStep("orders")
+                            }}>Mes commandes</h2>
                     </div>
-                    {/* <div className={styles.stepAndIconContainer}>
-                        <FontAwesomeIcon icon={faArrowRight} style={validationStyle} className={styles.arrowIcon} />
-                        <h2 >Validation</h2>
-                    </div> */}
                 </div>
                 <div className={styles.line2}></div>
                 <div className={styles.stepContainer}>

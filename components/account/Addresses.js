@@ -2,25 +2,24 @@ import styles from "../../styles/Addresses.module.css"
 
 import { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { addAddresse } from '../../reducers/user'
+import { addAddress, deleteAddress } from '../../reducers/user'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
 
-export default function Addresses() {
+export default function Addresses(props) {
     const url = process.env.NEXT_PUBLIC_BACK_ADDRESS
     const user = useSelector((state)=>state.user.value)
     const dispatch = useDispatch()
 
     // Affichage ou non du formulaire d'adresse à l'arrivée
-    const [newAddressVisible, setNewAddressVisible] = useState(false)
 
     useEffect(() => {
-        (user.addresses.length == 0) ? setNewAddressVisible(true) : setNewAddressVisible(false)
+        (user.addresses.length == 0) ? props.changeNewAddressVisible(true) : props.changeNewAddressVisible(false)
     }, [])
 
     let newAddressStyle
-    newAddressVisible ? newAddressStyle = { display: "flex" } : newAddressStyle = { display: "none" }
+    props.newAddressVisible ? newAddressStyle = { display: "flex" } : newAddressStyle = { display: "none" }
 
     // États pour enregistrement adresse
     const [title, setTitle] = useState('')
@@ -56,7 +55,7 @@ export default function Addresses() {
             setError("Code postal incorrect !")
         }
         else {
-            const response = await fetch(`${url}/modification/addAdress`, {
+            const response = await fetch(`${url}/modification/addAddress`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -77,8 +76,23 @@ export default function Addresses() {
                 setError("Limite de temps de connexion dépassé. Merci de vous reconnecter.")
             }
             else if (data.result) {
-                dispatch(addAddresse(data.addresse))
+                dispatch(addAddress(data.address))
+                props.changeNewAddressVisible(false)
             }
+        }
+    }
+
+    // Fonction appelée au click sur la poubelle pour supprimer une adresse
+
+    const deleteClick= async(_id)=>{
+
+        const jwtToken = user.token
+
+        const response = await fetch(`${url}/modification/deleteAddress/${_id}/${jwtToken}`, { method: 'DELETE' })
+        const data = await response.json()
+
+        if (data.result){
+            dispatch(deleteAddress(_id))
         }
     }
 
@@ -92,16 +106,16 @@ export default function Addresses() {
             return <div className={styles.singleAddressContainer} key={i}>
                  <h5 className={styles.addresseName}>{e.title} :</h5>
                  <h5 className={styles.addressInfos}>{e.address} {e.post_code} {e.city}</h5>
-                 <FontAwesomeIcon className={styles.trash} icon={faTrash}/>
+                 <FontAwesomeIcon className={styles.trash} icon={faTrash} onClick={()=>deleteClick(e._id)}/>
             </div>
         })
     }
 
-    newAddressVisible ? addresses = <></> : addresses =
+    props.newAddressVisible ? addresses = <></> : addresses =
         <div className={styles.addressesContainer}>
             {addressesComponents}
             <div className={styles.getNewAddressContainer}>
-            <h4 onClick={() => setNewAddressVisible(true)}>Enregistrer une nouvelle adresse ?</h4>
+            <h4 onClick={() => props.changeNewAddressVisible(true)}>Enregistrer une nouvelle adresse ?</h4>
             </div>
         </div>
 

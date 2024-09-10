@@ -1,7 +1,7 @@
 import styles from '../../styles/Address.module.css'
 import { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { addAddresse } from '../../reducers/user'
+import { addAddress } from '../../reducers/user'
 
 
 export default function Address(props) {
@@ -52,7 +52,7 @@ export default function Address(props) {
             setError("Code postal incorrect !")
         }
         else {
-            const response = await fetch(`${url}/modification/addAdress`, {
+            const response = await fetch(`${url}/modification/addAddress`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -73,8 +73,8 @@ export default function Address(props) {
                 setError("Limite de temps de connexion dépassé. Merci de vous reconnecter.")
             }
             else if (data.result) {
-                dispatch(addAddresse(data.addresse))
-                props.getAddresse(data.addresse)
+                dispatch(addAddress(data.address))
+                props.getAddress(data.address)
                 props.changeStep("delivery")
             }
         }
@@ -88,7 +88,7 @@ export default function Address(props) {
     if (props.addresses) {
         addressesComponents = props.addresses.map((e, i) => {
             return <h4 key={i} onClick={() => {
-                props.getAddresse(e)
+                props.getAddress(e)
                 props.changeStep("delivery")
             }}><span className={styles.addresseName}>{e.title} :  </span>{e.address} {e.post_code} {e.city}</h4>
         })

@@ -40,8 +40,11 @@ export const userSlice = createSlice({
         addOrder : (state, action)=>{
             state.value.orders.push(action.payload)
         },
-        addAddresse : (state, action)=>{
+        addAddress : (state, action)=>{
             state.value.addresses.push(action.payload)
+        },
+        deleteAddress : (state, action)=>{
+            state.value.addresses=state.value.addresses.filter(e=>e._id !== action.payload)
         },
         changeReducerFirstname : (state, action)=>{
             state.value.firstname = action.payload
@@ -58,5 +61,5 @@ export const userSlice = createSlice({
     }
 })
 
-export const {login, logout, addCartArticle, addArticleNotLinked, actualiseCart, deleteCartArticle, deleteArticleNotLinked, addAddresse, addOrder, changeReducerFirstname, changeReducerName, changeReducerPhone, changeReducerPassword} = userSlice.actions
+export const {login, logout, addCartArticle, addArticleNotLinked, actualiseCart, deleteCartArticle, deleteArticleNotLinked, addAddress, deleteAddress, addOrder, changeReducerFirstname, changeReducerName, changeReducerPhone, changeReducerPassword} = userSlice.actions
 export default userSlice.reducer
