@@ -1,13 +1,6 @@
 import styles from "../../styles/Pickups.module.css"
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import "leaflet/dist/leaflet.css"
-
-// import L from "leaflet"
-// import dynamic from 'next/dynamic'
-// const L = dynamic(() => import('leaflet'), {
-//     ssr: false,
-//   })
-
 import { useState, useRef, useEffect } from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationPin } from "@fortawesome/free-solid-svg-icons";
@@ -91,11 +84,17 @@ export default function Pickups (props) {
 
     // Création d'une zone sur laquelle centrer la map en fonction des différentes adresses des pickups
 
-    const allCoords = pickupAddresses.map(e => {
-        return L.latLng([e.latitude, e.longitude])
-    })
+    let allCoords
+    if (isBrowser){
+        allCoords = pickupAddresses.map(e => {
+            return L.latLng([e.latitude, e.longitude])
+        })
+    }
 
-    const bounds = L.latLngBounds([...allCoords])
+    let bounds
+    if (isBrowser){
+        bounds = L.latLngBounds([...allCoords])
+    }
 
 
     // Création des fiches des points de retraits
@@ -149,7 +148,7 @@ export default function Pickups (props) {
                         ref={(m) => markerRefs.current[e.id] = m}
                         key={e.id}
                         position={[e.latitude, e.longitude]}
-                        icon={L.divIcon({
+                        icon={isBrowser && L.divIcon({
                             html: renderToStaticMarkup(
                                 <div className={styles.markerContainer}>
                                     <img src='/colissimo-logo.png' alt="logo colissimo" className={styles.colissimoLogo} />
