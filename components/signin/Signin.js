@@ -64,12 +64,12 @@ export default function Signin() {
         if(user.cart_articles.length>0){
             const response = await fetch(`${url}/cart/google`, {method:'POST'})
             const data = await response.json()
-            window.location.href = data.url
+            location.assign(data.url)
         }
         else{
             const response = await fetch(`${url}/users/google`, {method:'POST'})
             const data = await response.json()
-            window.location.href = data.url
+            location.assign(data.url)
         }
      }
 
