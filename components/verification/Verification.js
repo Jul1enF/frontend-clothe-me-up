@@ -27,6 +27,7 @@ export default function Verification(){
                 jwtToken : infos[0],
                 email : infos[1],
                 articlesNotLinked : user.articlesNotLinked,
+                temporaryToken : user.temporaryToken,
             })
             })
         const data = await response.json()

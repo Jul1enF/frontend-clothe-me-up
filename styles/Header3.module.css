@@ -149,7 +149,7 @@
     color: rgb(13, 1, 102);
     position: absolute;
     margin-top:47px;
-    font-size:16px;
+    font-size:15px;
     font-weight: 600;
     transition-duration: 0.5s;
 }
@@ -163,7 +163,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    margin-top: 229px;
+    top: 89px;
     margin-right: 5.6vw;
 }
 
@@ -315,7 +315,7 @@
     margin-top:46px;
     color:rgb(13, 1, 102);
     transition-duration: 0.5s;
-    font-size: 17px;
+    font-size: 15px;
  }
 
  .headerBody:hover .cartIcon{

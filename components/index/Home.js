@@ -23,7 +23,6 @@ function Home() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
           jwtToken : infos[0],
-          articlesNotLinked : user.articlesNotLinked,
       })
       })
       const data = await response.json()

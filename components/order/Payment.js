@@ -2,7 +2,7 @@ import styles from "../../styles/Payment.module.css"
 import { useEffect, useState } from "react"
 import { useRouter } from "next/router"
 import { useDispatch } from "react-redux"
-import { deleteCartArticle, actualiseCart, addOrder } from "../../reducers/user"
+import { deleteCartArticle, actualiseCart, addOrder, logout } from "../../reducers/user"
 import Image from 'next/image'
 
 export default function Payment(props) {
@@ -34,6 +34,7 @@ export default function Payment(props) {
         if (data.badChange && data.articlesRemoved.length > 0) {
             data.articlesRemoved.map(e => dispatch(deleteCartArticle(e)))
             setError("Des articles de votre panier ne sont malheureusement plus disponibles !")
+            setTimeout(() => { router.push("/cart/c") }, "4000")
         }
     }
 
@@ -140,10 +141,13 @@ export default function Payment(props) {
         // Si token expiré
         if(!orderResult.result){
             setError("Payement non débité, expiration de votre connexion. Merci de vous reconnecter")
-            setTimeout(()=>{router.push('/')},"4000")
+            setTimeout(() => {
+                dispatch(logout())
+                router.push('/')
+            }, "4000")
         }
         // Si articles plus dispo
-        else if (!orderResult.payment && missingArticles){
+        else if (!orderResult.payment && orderResult.missingArticles){
             setError(orderResult.errorSentence)
             orderResult.articlesRemoved.map(e=>dispatch(deleteCartArticle(e)))
              setTimeout(()=>{router.push('/cart/c')},"4000")

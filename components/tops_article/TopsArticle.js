@@ -17,15 +17,16 @@ export default function TopsArticle() {
     const url = process.env.NEXT_PUBLIC_BACK_ADDRESS
 
     let allArticles = useSelector((state) => state.articles.value)
-    let tops = allArticles.filter(e=>e.category == "tops")
+    let tops = allArticles.filter(e => e.category == "tops")
     const user = useSelector((state) => state.user.value)
 
-    console.log(user)
 
     const [articles, setArticles] = useState([])
     const [menuVisible, setMenuVisible] = useState(false)
     const [menuSentence, setMenuSentence] = useState('Choisissez votre taille')
     const [chosenSize, setChosenSize] = useState('')
+    const [resultSentence, setResultSentence]=useState('')
+
 
     const useEffectFunction = () => {
         if (!infos) { return }
@@ -57,7 +58,17 @@ export default function TopsArticle() {
         // Mise en place d'un tableau d'objets des stocks en fonction des tailles
 
         articles.map((e, i) => {
-            if (i === 0) { stocks.push({ size: e.size, stock: 1 }) }
+
+            // Priorité en fonction de la taille
+            let priority
+
+           if (e.size == 'S'){priority=1}
+           else if(e.size == 'M'){priority=2}
+           else if(e.size == 'L'){priority=3}
+           else if(e.size == 'XL'){priority=4}
+           else if(e.size== 'XXL'){priority=5}
+
+            if (i === 0) { stocks.push({ size: e.size, stock: 1, priority }) }
             else {
                 let sizeFound = false
                 stocks.map(j => {
@@ -66,16 +77,20 @@ export default function TopsArticle() {
                         sizeFound = true
                     }
                 })
-                if (!sizeFound) { stocks.push({ size: e.size, stock: 1 }) }
+                if (!sizeFound) { stocks.push({ size: e.size, stock: 1, priority }) }
             }
         })
 
 
+        // Tri en fonction de la taille
+        stocks.sort((a,b)=>a.priority-b.priority)
+
+        console.log(sizesDropdown)
         // Map des stocks pour le dropdown des tailles
 
         stocks.map((e, i) => {
             sizesDropdown.push(
-                <div className={styles.stocks} key={i} onClick={() => sizeClick(e.size)}>
+                <div key={i} className={styles.stocks} onClick={() => sizeClick(e.size)}>
                     <p className={styles.size}>Taille : {e.size}</p>
                     <p className={styles.stock}>(stock : {e.stock})</p>
                 </div>
@@ -93,6 +108,7 @@ export default function TopsArticle() {
     const sizeClick = (size) => {
         setMenuSentence(`${articles[0].name} (taille : ${size})`)
         setChosenSize(size)
+        setMenuVisible(false)
     }
 
     // Affichage avec moins d'opacité du bouton d'ajout au panier si pas de taille sélectionnée
@@ -109,13 +125,17 @@ export default function TopsArticle() {
         const chosenSizeArticles = articles.filter(e => e.size == chosenSize)
 
         let jwtToken
+        let temporaryToken
+
         if (user.token) { jwtToken = user.token }
+        else {temporaryToken = user.temporaryToken}
 
         const response = await fetch(`${url}/articles/addCartArticle`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 jwtToken,
+                temporaryToken,
                 _id: chosenSizeArticles[0]._id
             })
         })
@@ -127,6 +147,12 @@ export default function TopsArticle() {
         setMenuSentence('Choisissez votre taille')
         setChosenSize('')
         setArticles(articles.filter(e => e._id !== chosenSizeArticles[0]._id))
+
+        setResultSentence("Article mis de côté dans votre panier pendant 3 heures !")
+        setTimeout(()=>setResultSentence(''), "3800")
+
+        // Si plus d'article au prochain re-render, push vers page tops
+        if(articles.length==1){router.push('/tops')}
     }
 
     return (
@@ -145,9 +171,11 @@ export default function TopsArticle() {
                 <div className={styles.productInfosContainer}>
                     <h4 className={styles.price}>{price}</h4>
                     <p className={styles.description}>{description}</p>
-                    <div className={styles.sizeMenu} onClick={() => setMenuVisible(!menuVisible)} >
-                        <p className={styles.menuSentence}>{menuSentence}</p>
-                        <FontAwesomeIcon icon={faChevronDown} className={styles.dropDownIcon}></FontAwesomeIcon>
+                    <div className={styles.sizeAndDropContainer}>
+                        <div className={styles.sizeMenu} onClick={() => setMenuVisible(!menuVisible)}>
+                            <p className={styles.menuSentence}>{menuSentence}</p>
+                            <FontAwesomeIcon icon={faChevronDown} className={styles.dropDownIcon}></FontAwesomeIcon>
+                        </div>
                         <div className={styles.dropContainer} style={dropStyle} >
                             <div className={styles.dropDown} onMouseLeave={() => setMenuVisible(false)}>
                                 {sizesDropdown}
@@ -155,6 +183,7 @@ export default function TopsArticle() {
                         </div>
                     </div>
                     <button className={styles.cartBtn} style={cartBtnStyle} onClick={() => cartBtnClick()}>Ajouter au panier</button>
+                    <p className={styles.resultSentence}>{resultSentence}</p>
                 </div>
             </div>
         </div>

@@ -21,7 +21,7 @@ export default function Order() {
     const [deliveryMode, setDeliveryMode] = useState('')
     const [deliveryPrice, setDeliveryPrice] = useState(0)
 
-    console.log(chosenAddress)
+    console.log(chosenAddress2)
 
     function getAddress(address) {
         setChosenAddress(address)

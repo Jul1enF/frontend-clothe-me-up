@@ -1,10 +1,15 @@
 import {createSlice} from '@reduxjs/toolkit'
+const uid2 = require('uid2')
+
+const temporaryToken = uid2(32)
 
 const initialState = {
     value:{
         cart_articles :[],
         articlesNotLinked:[],
         addresses: [],
+        orders : [],
+        temporaryToken,
     },
 }
 
@@ -20,6 +25,8 @@ export const userSlice = createSlice({
                 cart_articles :[],
                 articlesNotLinked:[],
                 addresses: [],
+                orders : [],
+                temporaryToken,
             }
         },
         addCartArticle : (state,action)=>{

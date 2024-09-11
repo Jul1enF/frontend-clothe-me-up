@@ -1,11 +1,13 @@
 import styles from '../../styles/Address.module.css'
 import { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { addAddress } from '../../reducers/user'
+import { addAddress, logout } from '../../reducers/user'
+import { useRouter } from 'next/router'
 
 
 export default function Address(props) {
     const url = process.env.NEXT_PUBLIC_BACK_ADDRESS
+    const router = useRouter()
     const dispatch = useDispatch()
 
     // Affichage ou non du formulaire d'adresse à l'arrivée
@@ -71,6 +73,10 @@ export default function Address(props) {
 
             if (data.error && data.error.name == "TokenExpiredError") {
                 setError("Limite de temps de connexion dépassé. Merci de vous reconnecter.")
+                setTimeout(() => {
+                    dispatch(logout())
+                    router.push('/')
+                }, "4000")
             }
             else if (data.result) {
                 dispatch(addAddress(data.address))

@@ -81,6 +81,8 @@ padding-top: 1vh;
     align-items: center;
     cursor: pointer;
     margin-bottom: 3vh;
+    z-index: 5;
+    position: relative;
 }
 
 .menuSentence{
@@ -96,12 +98,15 @@ padding-top: 1vh;
 
 .dropContainer{
     position: absolute;
-    margin-top: 28vh;
+    margin-top: -3.5vh;
+    padding-top: 2px;
     width: 20vw;
     height : 100px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    z-index: 1;
+    cursor: pointer;
 }
 
 .dropDown{
@@ -111,17 +116,19 @@ padding-top: 1vh;
     align-items: center;
     background-color: white;
     width:20vw;
+    z-index: 1;
 }
 
 .stocks{
     display:flex;
     width: 100%;
     justify-content: space-between;
-    padding : 6px 2vw;
+    padding : 9px 2vw;
     border-bottom: 1px solid rgb(13, 1, 102);
     border-left: 1px solid rgb(13, 1, 102);
     border-right: 1px solid rgb(13, 1, 102);
     color:rgb(13, 1, 102);
+    z-index: 1;
 }
 
 
@@ -133,6 +140,7 @@ padding-top: 1vh;
    width: 50%;
    display: flex;
     text-align: left;
+    z-index: 1;
     
 }
 
@@ -140,6 +148,7 @@ padding-top: 1vh;
     width: 50%;
     display:flex;
    justify-content: flex-end;
+   z-index: 1;
 }
 
 .cartBtn{
@@ -153,10 +162,21 @@ padding-top: 1vh;
     font-size: 16px;
     font-weight: 570;
     transition-duration: 0.7s;
+    z-index: 0;
 }
 
 .cartBtn:hover{
     background-color: white;
     color:rgb(13, 1, 102);
     transition-duration: 0.7s;
+}
+
+.resultSentence{
+    width:40vw;
+    position: absolute;
+    color:rgb(13, 1, 102);
+    margin-top: 65vh;
+    text-align: right;
+    font-weight: 550;
+    font-size: 20px;
 }

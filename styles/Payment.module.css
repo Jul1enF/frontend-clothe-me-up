@@ -83,10 +83,9 @@
 
 .paymentContainer{
     border : 1px solid rgb(13, 1, 102);
-    height : 33vh;
     width: 65%;
     border-radius: 5px;
-    padding: 2vh 3vw;
+    padding: 2vh 3vw 3vh;
 }
 
 .cardInfosContainer{

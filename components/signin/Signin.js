@@ -41,6 +41,7 @@ export default function Signin() {
                     email,
                     password,
                     articlesNotLinked : user.articlesNotLinked,
+                    temporaryToken : user.temporaryToken,
                 })
                 })
             const data = await response.json()

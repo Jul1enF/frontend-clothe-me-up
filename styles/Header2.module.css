@@ -150,7 +150,7 @@
     position: absolute;
     margin-top:47px;
     text-shadow : 0.4px 0.6px 0.6px rgb(65, 65, 65);
-    font-size:16px;
+    font-size:15px;
     font-weight: 600;
     transition-duration: 0.5s;
 }
@@ -163,7 +163,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    margin-top: 229px;
+    top: 89px;
     margin-right: 5.6vw;
 }
 
@@ -316,7 +316,7 @@
     text-shadow: none;
     color:rgb(13, 1, 102);
     transition-duration: 0.5s;
-    font-size: 17px;
+    font-size: 15px;
     margin-top:46px;
  }
 

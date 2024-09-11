@@ -41,7 +41,6 @@ export default function Delivery(props) {
         })
         const data = await response.json()
 
-        console.log(data)
         setPickupAddresses(data.pickups)
         setPickupsVisible(true)
     }
@@ -71,6 +70,7 @@ export default function Delivery(props) {
                     setChosenDelivery(e.target.value)
                     setDeliveryPrice(colissimoPrice)
                     setPickupsVisible(false)
+                    props.getAddress2('')
                 }}></input>
                 <label htmlFor="colissimo1">
                     <div className={styles.imgContainer}>
@@ -105,6 +105,7 @@ export default function Delivery(props) {
                     setChosenDelivery(e.target.value)
                     setDeliveryPrice(0.80)
                     setPickupsVisible(false)
+                    props.getAddress2('')
                 }}></input>
                 <label htmlFor="chronopost">
                     <div className={styles.imgContainer}>
@@ -121,6 +122,7 @@ export default function Delivery(props) {
                     setChosenDelivery(e.target.value)
                     setDeliveryPrice(0)
                     setPickupsVisible(false)
+                    props.getAddress2('')
                 }}></input>
                 <label htmlFor="shop">
                     <div className={styles.iconContainer}>

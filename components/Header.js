@@ -20,6 +20,7 @@ export default function Header() {
     const url = process.env.NEXT_PUBLIC_BACK_ADDRESS
 
     const user = useSelector((state) => state.user.value)
+    console.log(user)
 
     let articlesNumber = user.cart_articles.length
 

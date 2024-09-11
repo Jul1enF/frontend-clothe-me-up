@@ -60,7 +60,7 @@
 .rightContainer h2{
     color : rgb(13, 1, 102);
     font-size: 24px;
-    margin-bottom: 1.5vh;
+    margin-bottom: 2vh;
 }
 
 .articlesContainer{
@@ -68,10 +68,10 @@
     max-height : 34vh;
     overflow-y: scroll;
     scrollbar-width: none;
-    padding : 2vh 0;
+    padding : 3vh 0;
     border-top: 1px solid rgb(13, 1, 102);
     border-bottom: 1px solid rgb(13, 1, 102);
-    margin-bottom: 2vh;
+    margin-bottom: 3vh;
 }
 
 .rightContainer h4{
@@ -81,16 +81,31 @@
     letter-spacing: 0.1px;
 }
 
-.total{
-    color : rgb(13, 1, 102);
-    font-size: 22px;
+.totalContainer{
     margin-bottom: 2vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between ;
+}
+
+.totalContainer h3{
+    color : rgb(13, 1, 102);
+    font-size: 21px;
+}
+
+.totalContainer h6{
+    color : rgb(13, 1, 102);
+    font-size: 19px;
 }
 
 .connexion{
     color : rgb(13, 1, 102);
     font-size: 19px;
     margin-bottom: 1.5vh;
+}
+
+.connexionContainer{
+    margin-bottom: 2vh;
 }
 
 .orderBtn{

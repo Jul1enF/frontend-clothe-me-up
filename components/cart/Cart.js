@@ -14,7 +14,6 @@ export default function Cart() {
     const dispatch = useDispatch()
     const { infos } = router.query
     const user = useSelector((state) => state.user.value)
-    console.log(user)
 
     const [error, setError] = useState('')
 
@@ -32,6 +31,7 @@ export default function Cart() {
                 body: JSON.stringify({
                     jwtToken: infos[1],
                     articlesNotLinked: user.articlesNotLinked,
+                    temporaryToken : user.temporaryToken
                 })
             })
             const data = await response.json()
@@ -48,8 +48,10 @@ export default function Cart() {
         if (user.cart_articles.length > 0) {
 
             let jwtToken
+            let temporaryToken
 
             if (user.token) { jwtToken = user.token }
+            else {temporaryToken = user.temporaryToken}
 
             const response = await fetch(`${url}/cart/checkArticles`, {
                 method: 'PUT',
@@ -58,6 +60,7 @@ export default function Cart() {
                     articlesNotLinked: user.articlesNotLinked,
                     cart_articles: user.cart_articles,
                     jwtToken,
+                    temporaryToken,
                 })
             })
 
@@ -69,6 +72,8 @@ export default function Cart() {
                 dispatch(login({
                     articlesNotLinked: data.articlesNotLinked,
                     cart_articles: data.cart_articles,
+                    addresses: [],
+                    temporaryToken : user.temporaryToken,
                 }))
                 setError('Des articles de votre panier ont été remis en rayon !')
                 setTimeout(() => setError(''), "4000")
@@ -109,12 +114,21 @@ export default function Cart() {
             return <CartItem key={i} {...e} />
         })
 
-        allArticles.map(e=>total+=e.price)
+        allArticles.map(e => total+=e.price)
     }
 
     let totalSection
-    if(total>0){
-        totalSection = <h3 className={styles.total}>Total : {total.toFixed(2)}€</h3>
+    if (total>=0.4){
+        totalSection = <div className={styles.totalContainer}>
+        <h3 className={styles.total}>Total : {total.toFixed(2)}€</h3>
+        <h6>Frais de port offerts !</h6>
+    </div> 
+    }
+    else if(total>0){
+        totalSection = <div className={styles.totalContainer}>
+            <h3 className={styles.total}>Total : {total.toFixed(2)}€</h3>
+            <h6>(Plus que {(0.4-total).toFixed(2)}€ avant les frais de port offerts !)</h6>
+        </div> 
     }
 
 
