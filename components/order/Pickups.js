@@ -1,14 +1,26 @@
 import styles from "../../styles/Pickups.module.css"
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import "leaflet/dist/leaflet.css"
-import L from "leaflet"
+
+// import L from "leaflet"
+// import dynamic from 'next/dynamic'
+// const L = dynamic(() => import('leaflet'), {
+//     ssr: false,
+//   })
+
 import { useState, useRef, useEffect } from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationPin } from "@fortawesome/free-solid-svg-icons";
 import { renderToStaticMarkup } from 'react-dom/server';
 import React from "react"
 
-export default function Pickups(props) {
+export default function Pickups (props) {
+
+    const isBrowser = typeof window !== 'undefined';
+    let L
+    if (isBrowser) {
+        L = require('leaflet')
+    }
 
     const [selectedPickup, setSelectedPickup] = useState('')
 
