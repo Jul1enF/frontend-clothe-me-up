@@ -1,6 +1,7 @@
 import styles from "../../styles/Pickups.module.css"
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import "leaflet/dist/leaflet.css"
+import L from "leaflet"
 import { useState, useRef, useEffect } from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationPin } from "@fortawesome/free-solid-svg-icons";
@@ -9,11 +10,11 @@ import React from "react"
 
 export default function Pickups (props) {
 
-    const isBrowser = typeof window !== 'undefined';
-    let L
-    if (isBrowser) {
-        L = require('leaflet')
-    }
+    // const isBrowser = typeof window !== 'undefined';
+    // let L
+    // if (isBrowser) {
+    //     L = require('leaflet')
+    // }
 
     const [selectedPickup, setSelectedPickup] = useState('')
 
@@ -84,17 +85,23 @@ export default function Pickups (props) {
 
     // Création d'une zone sur laquelle centrer la map en fonction des différentes adresses des pickups
 
-    let allCoords
-    if (isBrowser){
-        allCoords = pickupAddresses.map(e => {
-            return L.latLng([e.latitude, e.longitude])
-        })
-    }
+    // let allCoords
+    // if (isBrowser){
+    //     allCoords = pickupAddresses.map(e => {
+    //         return L.latLng([e.latitude, e.longitude])
+    //     })
+    // }
 
-    let bounds
-    if (isBrowser){
-        bounds = L.latLngBounds([...allCoords])
-    }
+    const allCoords = pickupAddresses.map(e => {
+                return L.latLng([e.latitude, e.longitude])
+            })
+
+    // let bounds
+    // if (isBrowser){
+    //     bounds = L.latLngBounds([...allCoords])
+    // }
+
+    const bounds = L.latLngBounds([...allCoords])
 
 
     // Création des fiches des points de retraits
@@ -148,7 +155,7 @@ export default function Pickups (props) {
                         ref={(m) => markerRefs.current[e.id] = m}
                         key={e.id}
                         position={[e.latitude, e.longitude]}
-                        icon={isBrowser && L.divIcon({
+                        icon={L.divIcon({
                             html: renderToStaticMarkup(
                                 <div className={styles.markerContainer}>
                                     <img src='/colissimo-logo.png' alt="logo colissimo" className={styles.colissimoLogo} />

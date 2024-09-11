@@ -1,6 +1,8 @@
 import styles from "../../styles/Delivery.module.css"
 import Image from "next/image"
-import Pickups from "./Pickups"
+// import Pickups from "./Pickups"
+import dynamic from 'next/dynamic'
+const Pickups = dynamic(() => import("./Pickups"), { ssr: false })
 import { useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faHome } from "@fortawesome/free-solid-svg-icons"
