@@ -17,7 +17,7 @@ export default function Pickups(props) {
 
     const markerRefs = useRef({})
     const pickupsRefs = useRef({})
-    const pickupsWindowRef = useRef(null)
+    const pickupsComponentRef = useRef(null)
 
     useEffect(() => {
         if (selectedPickup) {
@@ -26,13 +26,13 @@ export default function Pickups(props) {
             markerToOpen.openPopup()
 
             const pickupToScroll = pickupsRefs.current[selectedPickup]
-            const windowToScroll = pickupsWindowRef.current
+            const componentToScroll = pickupsComponentRef.current
 
             const pickupOffsetTop = pickupToScroll.offsetTop
-            const windowOffsetTop = windowToScroll.offsetTop
-            const distanceToScroll = pickupOffsetTop-windowOffsetTop
+            const componentOffsetTop = componentToScroll.offsetTop
+            const distanceToScroll = pickupOffsetTop - componentOffsetTop
 
-            windowToScroll.scroll({
+            componentToScroll.scroll({
                 top: distanceToScroll,
                 behavior: "smooth"
               })
@@ -163,7 +163,7 @@ export default function Pickups(props) {
                     </Marker>
                 )}
             </MapContainer>
-            <div className={styles.pickupsContainer} ref={pickupsWindowRef}>
+            <div className={styles.pickupsContainer} ref={pickupsComponentRef}>
                 {pickups}
             </div>
         </div>
