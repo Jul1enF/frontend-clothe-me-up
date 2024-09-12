@@ -31,7 +31,8 @@ export default function Header() {
     const useEffectFunction = async () => {
         // Ejection après 120 min
         const date = new Date()
-        const connexionTime = date - user.connectionDate
+        const connexionTime = date - new Date(user.connectionDate)
+        console.log(connexionTime / 1000 / 60)
         if (connexionTime / 1000 / 60 > 180) {
             dispatch(logout())
             router.push('/')
