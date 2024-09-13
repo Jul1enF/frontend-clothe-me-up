@@ -100,11 +100,11 @@ export default function Cart() {
     let articles
     let total = 0
 
-    console.log(user.cart_articles.every(e=>e.price))
+    console.log(user.cart_articles.every(e=>e && e.price))
 
     if (user.cart_articles.length == 0) {
         articles = <h4>Aucun article enregistré !</h4>
-    } else if(user.cart_articles.every(e=>e.price)) {
+    } else if(user.cart_articles.every(e=>e && e.price)) {
         // Mise en commun de tous les articles et tri par date d'ajout au panier
         let allArticles = []
         user.cart_articles.map(e => allArticles.push(e))
