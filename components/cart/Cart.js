@@ -114,7 +114,9 @@ export default function Cart() {
             return <CartItem key={i} {...e} />
         })
 
-        allArticles.map(e => total+=e.price)
+        allArticles.every(e=>e.price!==undefined) && allArticles.map(e => total+=e.price)
+
+        console.log(allArticles.every(e=>e.price!==undefined))
     }
 
     let totalSection

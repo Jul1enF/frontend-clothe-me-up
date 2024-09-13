@@ -49,7 +49,7 @@ export default function Header() {
 
     useEffect(() => {
         useEffectFunction()
-    }, [])
+    }, [user])
 
 
 
