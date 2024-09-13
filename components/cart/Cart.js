@@ -102,7 +102,7 @@ export default function Cart() {
 
     if (user.cart_articles.length == 0) {
         articles = <h4>Aucun article enregistré !</h4>
-    } else {
+    } else if(user.cart_articles[0]!==undefined) {
         // Mise en commun de tous les articles et tri par date d'ajout au panier
         let allArticles = []
         user.cart_articles.map(e => allArticles.push(e))
