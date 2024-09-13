@@ -100,9 +100,11 @@ export default function Cart() {
     let articles
     let total = 0
 
+    console.log(user.cart_articles.every(e=>e.price!==undefined))
+
     if (user.cart_articles.length == 0) {
         articles = <h4>Aucun article enregistré !</h4>
-    } else if(user.cart_articles[0]!==undefined) {
+    } else if(user.cart_articles.every(e=>e.price!==undefined)) {
         // Mise en commun de tous les articles et tri par date d'ajout au panier
         let allArticles = []
         user.cart_articles.map(e => allArticles.push(e))
@@ -114,9 +116,7 @@ export default function Cart() {
             return <CartItem key={i} {...e} />
         })
 
-        allArticles.every(e=>e.price!==undefined) && allArticles.map(e => total+=e.price)
-
-        console.log(allArticles.every(e=>e.price!==undefined))
+        allArticles.map(e => total+=e.price)
     }
 
     let totalSection
