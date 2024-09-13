@@ -10,12 +10,6 @@ import React from "react"
 
 export default function Pickups (props) {
 
-    // const isBrowser = typeof window !== 'undefined';
-    // let L
-    // if (isBrowser) {
-    //     L = require('leaflet')
-    // }
-
     const [selectedPickup, setSelectedPickup] = useState('')
 
     
@@ -82,24 +76,10 @@ export default function Pickups (props) {
         })
     }
 
-
-    // Création d'une zone sur laquelle centrer la map en fonction des différentes adresses des pickups
-
-    // let allCoords
-    // if (isBrowser){
-    //     allCoords = pickupAddresses.map(e => {
-    //         return L.latLng([e.latitude, e.longitude])
-    //     })
-    // }
-
     const allCoords = pickupAddresses.map(e => {
                 return L.latLng([e.latitude, e.longitude])
             })
 
-    // let bounds
-    // if (isBrowser){
-    //     bounds = L.latLngBounds([...allCoords])
-    // }
 
     const bounds = L.latLngBounds([...allCoords])
 
