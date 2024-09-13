@@ -60,7 +60,7 @@ export default function Account(){
                         <h2 className={styles.title2} onClick={()=>{
                             setStep("addresses")
                             setNewAddressVisible(false)
-                            }}>Mes addresses</h2>
+                            }}>Mes adresses</h2>
                     </div>
                     <div className={styles.stepAndIconContainer}>
                         <FontAwesomeIcon icon={faArrowRight} style={ordersStyle} className={styles.arrowIcon} />
