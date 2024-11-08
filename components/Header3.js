@@ -24,7 +24,7 @@ export default function Header() {
 
     let articlesNumber = user.cart_articles.length
 
-    
+
 
     // Vidage du reducer user et ejection sur la page d'accueil si connexion depuis plus de deux heures. Téléchargement de tous les articles réellement en stock.
 
@@ -60,9 +60,9 @@ export default function Header() {
 
     articles.map((e, i) => {
         if (i = 0) {
-            articlesList.push({name : e.name, category : e.category})
+            articlesList.push({ name: e.name, category: e.category })
         } else {
-            !articlesList.some(item => item.name == e.name) && articlesList.push({name : e.name, category : e.category})
+            !articlesList.some(item => item.name == e.name) && articlesList.push({ name: e.name, category: e.category })
         }
     })
 
@@ -76,7 +76,7 @@ export default function Header() {
                 <p onClick={() => {
                     setArticleSearched(e.name)
                     setAutocompleteVisible(false)
-                    e.category=="tops" ? router.push(`/tops_article/${e.name}`) : router.push(`/pants_article/${e.name}`)
+                    e.category == "tops" ? router.push(`/tops_article/${e.name}`) : router.push(`/pants_article/${e.name}`)
                 }} key={i}>{e.name}</p>
             )
         })
@@ -89,14 +89,14 @@ export default function Header() {
 
     // Fonction appelée en appuyant sur entrée dans input recherche
 
-    const inputKeyDown = (event)=>{
-        if (event.code === 'Enter' && articlesList.some(item => item.name == articleSearched)){
+    const inputKeyDown = (event) => {
+        if (event.code === 'Enter' && articlesList.some(item => item.name == articleSearched)) {
 
-            const itemFound = articlesList.find(e=>e.name == articleSearched)
-            
-            itemFound.category=="tops" ? router.push(`/tops_article/${articleSearched}`) : router.push(`/pants_article/${articleSearched}`)
+            const itemFound = articlesList.find(e => e.name == articleSearched)
+
+            itemFound.category == "tops" ? router.push(`/tops_article/${articleSearched}`) : router.push(`/pants_article/${articleSearched}`)
         }
-        else{return}
+        else { return }
     }
 
 
@@ -159,48 +159,56 @@ export default function Header() {
             setMenuVisible(false)
             setAutocompleteVisible(false)
         }}>
-            <div className={styles.searchContainer}>
-                <div className={styles.inputContainer}>
-                    <FontAwesomeIcon icon={faMagnifyingGlass} className={styles.glassIcon} />
-                    <input 
-                    className={styles.search} type="text" placeholder='Rechercher...' onChange={(e) =>{
-                        setArticleSearched(e.target.value)
-                        setAutocompleteVisible(true)
-                    }} value={articleSearched}
-                    onClick={()=>setAutocompleteVisible(true)}
-                    onKeyDown={inputKeyDown}
-                    ></input>
-                    <div className={styles.autocompleteContainer} style={autocompleteVisible ? { display: "flex" } : { display: "none" }}>
-                        <div className={styles.autocomplete}>
-                            {autocompleteList}
+
+            <div className={styles.phoneTitleContainer}>
+                <Link href='/'><h1 className={styles.nameSite}>CLOTHE ME UP !</h1></Link>
+            </div>
+
+
+            <div className={styles.computerHeaderContainer}>
+                <div className={styles.searchContainer}>
+                    <div className={styles.inputContainer}>
+                        <FontAwesomeIcon icon={faMagnifyingGlass} className={styles.glassIcon} />
+                        <input
+                            className={styles.search} type="text" placeholder='Rechercher...' onChange={(e) => {
+                                setArticleSearched(e.target.value)
+                                setAutocompleteVisible(true)
+                            }} value={articleSearched}
+                            onClick={() => setAutocompleteVisible(true)}
+                            onKeyDown={inputKeyDown}
+                        ></input>
+                        <div className={styles.autocompleteContainer} style={autocompleteVisible ? { display: "flex" } : { display: "none" }}>
+                            <div className={styles.autocomplete}>
+                                {autocompleteList}
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className={styles.titleContainer}>
-                <Link href='/'><h1 className={styles.nameSite}>CLOTHE ME UP !</h1></Link>
-            </div>
-            <div className={styles.iconsContainer}>
-                {boLink}
-                <div className={styles.menuContainer}>
-                    <FontAwesomeIcon className={styles.menuIcon} icon={faBars} onClick={() => {
-                        setMenuVisible(!menuVisible)
-                        setUserMenuVisible(false)
-                    }} />
-                    {menuDropdown}
+                <div className={styles.titleContainer}>
+                    <Link href='/'><h1 className={styles.nameSite}>CLOTHE ME UP !</h1></Link>
                 </div>
-                <div className={styles.userContainer}>
-                    <FontAwesomeIcon className={styles.userIcon} icon={faUser} onClick={() => {
-                        setUserMenuVisible(!userMenuVisible)
-                        setMenuVisible(false)
-                    }} />
-                    {userName}
-                    {userDropdown}
+                <div className={styles.iconsContainer}>
+                    {boLink}
+                    <div className={styles.menuContainer}>
+                        <FontAwesomeIcon className={styles.menuIcon} icon={faBars} onClick={() => {
+                            setMenuVisible(!menuVisible)
+                            setUserMenuVisible(false)
+                        }} />
+                        {menuDropdown}
+                    </div>
+                    <div className={styles.userContainer}>
+                        <FontAwesomeIcon className={styles.userIcon} icon={faUser} onClick={() => {
+                            setUserMenuVisible(!userMenuVisible)
+                            setMenuVisible(false)
+                        }} />
+                        {userName}
+                        {userDropdown}
+                    </div>
+                    <div className={styles.cartContainer} onClick={() => router.push('/cart/c')}>
+                        <FontAwesomeIcon className={styles.cartIcon} icon={faCartShopping} />
+                    </div>
+                    <Link href='/cart/c'><div className={styles.cartCircle} style={cartNumStyle}><p>{articlesNumber}</p></div></Link>
                 </div>
-                <div className={styles.cartContainer} onClick={() => router.push('/cart/c')}>
-                    <FontAwesomeIcon className={styles.cartIcon} icon={faCartShopping} />
-                </div>
-                <Link href='/cart/c'><div className={styles.cartCircle} style={cartNumStyle}><p>{articlesNumber}</p></div></Link>
             </div>
         </div>
     )

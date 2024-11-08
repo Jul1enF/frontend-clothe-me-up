@@ -54,3 +54,40 @@
     height : 2px;
     margin-bottom:3vh;
 }
+
+
+
+
+
+
+/* Changement pour affichage smartphone */
+
+
+@media only screen and (max-width: 1150px){
+
+
+    .body{
+        padding-top: 14vh;
+        flex-direction: column;
+    }
+
+    .leftContainer{
+        width : 100vw;
+        height : 24.5vh;
+        padding : 3.5vh 0 0 3vw;
+        background-position: 0 -11vh;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    .title{
+        font-size: 4vh;
+        margin-bottom: 1vh;
+    }
+
+    .rightContainer{
+        width : 100vw;
+        height : 84.5vh;
+        padding-top: 3vh;
+    }
+}

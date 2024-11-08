@@ -58,6 +58,12 @@
   transition-duration: 0.5s;
 }
 
+
+
+
+
+
+
 /* Changement quand hover sur tops */
 
 .leftContainer:has(.tops:hover) {
@@ -93,4 +99,92 @@ body:has(.downss:hover) .leftContainer {
   font-size: 39px;
   transition-duration: 0.5s;
   font-weight: 760;
+}
+
+
+
+
+
+
+
+/* Changement pour affichage smartphone */
+
+
+@media only screen and (max-width: 1150px){
+ .body{
+ flex-direction: column;
+ }
+
+ .leftContainer{
+  width: 100vw;
+  height : 55vh;
+  padding-top: 13vh;
+ }
+
+ .rightContainer{
+  width: 100vw;
+  height : 45vh;
+ }
+
+.topsContainer{
+  height : 25%;
+  padding-left: 5vw;
+}
+
+.tops{
+  font-size: 4.5vh;
+}
+
+ .downsContainer{
+  padding-right: 5vw;
+  height : 35%;
+ }
+
+ .downs{
+  font-size: 4.5vh;
+ }
+
+
+
+
+ /* Annulation des changements avec hover */
+
+
+/* Changement quand hover sur tops */
+
+.leftContainer:has(.tops:hover) {
+  width: 100vw;
+  transition-duration: 0.5s;
+}
+
+body:has(.tops:hover) .rightContainer {
+  width: 100vw;
+  transition-duration: 0.5s;
+}
+
+.tops:hover{
+  font-size: 5vh;
+  transition-duration: 0.5s;
+  font-weight: 760;
+}
+
+
+/* Changement quand hover sur downs */
+
+.rightContainer:has(.downs:hover) {
+  width: 100vw;
+  transition-duration: 0.5s;
+}
+
+body:has(.downss:hover) .leftContainer {
+  width: 100vw;
+  transition-duration: 0.5s;
+}
+
+.downs:hover{
+  font-size: 5vh;
+  transition-duration: 0.5s;
+  font-weight: 760;
+}
+
 }

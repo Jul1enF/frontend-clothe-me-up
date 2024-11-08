@@ -1,20 +1,19 @@
-.headerBody{
-    background-color:white;
-    position:fixed;
+.headerBody {
+    background-color: white;
+    position: fixed;
     top: 0;
-    left:0;
+    left: 0;
     width: 100vw;
     height: 90px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
     z-index: 1;
     transition-duration: 0.9s;
     border-bottom: 0.5px solid rgb(13, 1, 102);
 }
 
-.searchContainer{
-    width:30%;
+.searchContainer {
+    width: 30%;
     height: 100%;
     display: flex;
     justify-content: flex-start;
@@ -22,7 +21,7 @@
     padding-left: 3vw;
 }
 
-.inputContainer{
+.inputContainer {
     width: 260px;
     height: 47px;
     display: flex;
@@ -31,40 +30,41 @@
     transition-duration: 0.5s;
 }
 
-.glassIcon{
+.glassIcon {
     height: 20px;
-    color:rgb(13, 1, 102);
+    color: rgb(13, 1, 102);
     margin-right: 20px;
     cursor: pointer;
     transition-duration: 0.5s;
 }
 
-.search{
-    height:100%;
-    width:100%;
+.search {
+    height: 100%;
+    width: 100%;
     font-family: Helvetica;
     font-size: 16.5px;
     background-color: transparent;
     outline: none;
-    border : none;
-    color:rgb(13, 1, 102);
+    border: none;
+    color: rgb(13, 1, 102);
     transition-duration: 0.2s;
 }
-.search::placeholder{
-    color:rgb(13, 1, 102);
+
+.search::placeholder {
+    color: rgb(13, 1, 102);
     transition-duration: 0.5s;
-  }
+}
 
 
-  .autocompleteContainer{
+.autocompleteContainer {
     position: absolute;
     margin-top: 855px;
     height: 800px;
 }
 
-.autocomplete{
-    background-color: rgb(245	245	245	);
-    padding:15px;
+.autocomplete {
+    background-color: rgb(245 245 245);
+    padding: 15px;
     width: 280px;
     height: fit-content;
     max-height: 250px;
@@ -72,7 +72,7 @@
     scrollbar-width: thin;
 }
 
-.autocomplete p{
+.autocomplete p {
     color: rgb(13, 1, 102);
     font-size: 17.5px;
     font-weight: 550;
@@ -80,8 +80,8 @@
     cursor: pointer;
 }
 
-.titleContainer{
-    width:30%;
+.titleContainer {
+    width: 30%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -89,8 +89,8 @@
     transition-duration: 0.6s;
 }
 
-.nameSite{
-    color:rgb(13, 1, 102);
+.nameSite {
+    color: rgb(13, 1, 102);
     font-family: 'Open Sans';
     font-weight: 730;
     font-size: 43px;
@@ -99,8 +99,8 @@
     transition-duration: 0.5s;
 }
 
-.iconsContainer{
-    width:30%;
+.iconsContainer {
+    width: 30%;
     height: 100%;
     display: flex;
     justify-content: flex-end;
@@ -108,14 +108,14 @@
     padding-right: 3vw;
 }
 
-.boIcon{
-    color:rgb(13, 1, 102);
-    height : 22px;
+.boIcon {
+    color: rgb(13, 1, 102);
+    height: 22px;
     cursor: pointer;
     transition-duration: 0.5s;
 }
 
-.menuContainer{
+.menuContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -123,14 +123,14 @@
     margin-left: 4vw;
 }
 
-.menuIcon{
-    color:rgb(13, 1, 102);
-    height : 26px;
+.menuIcon {
+    color: rgb(13, 1, 102);
+    height: 26px;
     cursor: pointer;
     transition-duration: 0.5s;
 }
 
-.userContainer{
+.userContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -138,26 +138,26 @@
     margin-left: 4vw;
 }
 
-.userIcon{
-    color:rgb(13, 1, 102);
-    height : 22px;
+.userIcon {
+    color: rgb(13, 1, 102);
+    height: 22px;
     cursor: pointer;
     transition-duration: 0.5s;
 }
 
-.userName{
+.userName {
     color: rgb(13, 1, 102);
     position: absolute;
-    margin-top:47px;
-    font-size:15px;
+    margin-top: 47px;
+    font-size: 15px;
     font-weight: 600;
     transition-duration: 0.5s;
 }
 
 
-.userDropdownContainer{
+.userDropdownContainer {
     width: 180px;
-    height : 20vh;
+    height: 20vh;
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -167,48 +167,48 @@
     margin-right: 5.6vw;
 }
 
-.triangle{
-    color:rgb(13, 1, 102);
-    height:40px;
+.triangle {
+    color: rgb(13, 1, 102);
+    height: 40px;
     position: absolute;
     margin-top: -17px;
     margin-left: 5.7vw;
 }
 
-.userDropdownContainer p{
-    background-color:  rgb(13, 1, 102);
+.userDropdownContainer p {
+    background-color: rgb(13, 1, 102);
     width: 100%;
     text-align: center;
     font-size: 16px;
     font-weight: 550;
     padding-top: 14px;
     padding-bottom: 14px;
-    color:white;
+    color: white;
     cursor: pointer;
 }
 
-.userDropdownContainer p:hover{
+.userDropdownContainer p:hover {
     text-decoration: underline;
     text-underline-offset: 2px;
     text-decoration-thickness: 1.5px;
 }
 
-.firstP{
+.firstP {
     border-bottom: 1px solid white;
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
 }
 
-.P{
+.P {
     border-bottom: 1px solid white;
 }
 
-.lastP{
+.lastP {
     border-bottom-left-radius: 7px;
     border-bottom-right-radius: 7px;
 }
 
-.cartContainer{
+.cartContainer {
     height: 45px;
     cursor: pointer;
     display: flex;
@@ -216,14 +216,14 @@
     margin-left: 4vw;
 }
 
-.cartIcon{
-    color:rgb(13, 1, 102);
-    height : 22px;
+.cartIcon {
+    color: rgb(13, 1, 102);
+    height: 22px;
     cursor: pointer;
     transition-duration: 0.5s;
 }
 
-.cartCircle{
+.cartCircle {
     background-color: rgb(13, 1, 102);
     height: 19px;
     width: 19px;
@@ -239,109 +239,266 @@
     padding-top: 1.5px;
 }
 
-.cartCircle p{
-    color:white;
+.cartCircle p {
+    color: white;
     font-weight: 600;
     font-size: 16.5px;
     transition-duration: 0.5s;
 }
 
 
-/* Changements quand hover du header */
 
-.headerBody:hover{
-    background-color: white;
-    transition-duration: 0.9s;
-    height:95px;
+.phoneTitleContainer {
+    display: none;
 }
 
-.headerBody:hover .inputContainer{
-    width: 280px;
-    height: 51px;
-    border-bottom: 1.15px solid rgb(13, 1, 102);
-    transition-duration: 0.5s;
- }
-
- .headerBody:hover .glassIcon{
-    height: 22px;
-    color:rgb(13, 1, 102);
-    margin-right: 21px;
-    transition-duration: 0.5s;
- }
-
- .headerBody:hover .search{
-    height:100%;
-    width:100%;
-    font-size: 18px;
-    color:rgb(13, 1, 102);
-    transition-duration: 0.1s;
- }
-
- .headerBody:hover .search::placeholder{
-    color: rgb(13, 1, 102);
-    transition-duration: 0.5s;
- }
-
-
-
-.headerBody:hover .titleContainer{
-    padding-top: 0;
-    transition-duration: 0.5s;
- }
-
-.headerBody:hover .nameSite{
-   font-size: 44.5px;
-   color: rgb(13, 1, 102);
-   transition-duration: 0.5s;
-   text-shadow: none;
+.computerHeaderContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
 }
 
 
-.headerBody:hover .menuIcon{
-    height: 27px;
-    color:rgb(13, 1, 102);
-    transition-duration: 0.5s;
- }
-
-.headerBody:hover .userIcon{
-    height: 23.5px;
-    color:rgb(13, 1, 102);
-    transition-duration: 0.5s;
- }
 
 
- .headerBody:hover .userName{
-    text-shadow: none;
-    margin-top:46px;
-    color:rgb(13, 1, 102);
-    transition-duration: 0.5s;
-    font-size: 15px;
- }
-
- .headerBody:hover .cartIcon{
-    height: 23.5px;
-    color:rgb(13, 1, 102);
-    transition-duration: 0.5s;
- }
-
- .headerBody:hover .cartCircle{
-    background-color:rgb(13, 1, 102);
-    height:20px;
-    width:20px;
-    transition-duration: 0.5s;
-
- }
-
- .headerBody:hover .cartCircle p{
-    color: white;
-    font-size: 17px;
-    transition-duration: 0.5s;
- }
 
 
- .headerBody:hover .boIcon{
-    height: 23.5px;
-    color:rgb(13, 1, 102);
-    transition-duration: 0.5s;
- }
 
+
+/* Changements quand hover du header (écran ordi) */
+
+
+@media only screen and (min-width: 1150px) {
+
+    .headerBody:hover {
+        background-color: white;
+        transition-duration: 0.9s;
+        height: 95px;
+    }
+
+    .headerBody:hover .inputContainer {
+        width: 280px;
+        height: 51px;
+        border-bottom: 1.15px solid rgb(13, 1, 102);
+        transition-duration: 0.5s;
+    }
+
+    .headerBody:hover .glassIcon {
+        height: 22px;
+        color: rgb(13, 1, 102);
+        margin-right: 21px;
+        transition-duration: 0.5s;
+    }
+
+    .headerBody:hover .search {
+        height: 100%;
+        width: 100%;
+        font-size: 18px;
+        color: rgb(13, 1, 102);
+        transition-duration: 0.1s;
+    }
+
+    .headerBody:hover .search::placeholder {
+        color: rgb(13, 1, 102);
+        transition-duration: 0.5s;
+    }
+
+
+
+    .headerBody:hover .titleContainer {
+        padding-top: 0;
+        transition-duration: 0.5s;
+    }
+
+    .headerBody:hover .nameSite {
+        font-size: 44.5px;
+        color: rgb(13, 1, 102);
+        transition-duration: 0.5s;
+        text-shadow: none;
+    }
+
+
+    .headerBody:hover .menuIcon {
+        height: 27px;
+        color: rgb(13, 1, 102);
+        transition-duration: 0.5s;
+    }
+
+    .headerBody:hover .userIcon {
+        height: 23.5px;
+        color: rgb(13, 1, 102);
+        transition-duration: 0.5s;
+    }
+
+
+    .headerBody:hover .userName {
+        text-shadow: none;
+        margin-top: 46px;
+        color: rgb(13, 1, 102);
+        transition-duration: 0.5s;
+        font-size: 15px;
+    }
+
+    .headerBody:hover .cartIcon {
+        height: 23.5px;
+        color: rgb(13, 1, 102);
+        transition-duration: 0.5s;
+    }
+
+    .headerBody:hover .cartCircle {
+        background-color: rgb(13, 1, 102);
+        height: 20px;
+        width: 20px;
+        transition-duration: 0.5s;
+
+    }
+
+    .headerBody:hover .cartCircle p {
+        color: white;
+        font-size: 17px;
+        transition-duration: 0.5s;
+    }
+
+
+    .headerBody:hover .boIcon {
+        height: 23.5px;
+        color: rgb(13, 1, 102);
+        transition-duration: 0.5s;
+    }
+
+
+}
+
+
+
+
+
+
+
+/* Changement pour affichage smartphone */
+
+
+@media only screen and (max-width: 1150px) {
+    .headerBody {
+        height: 14vh;
+        padding: 0;
+        margin: 0;
+    }
+
+    .phoneTitleContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 8vh;
+        margin: 0;
+        padding: 0;
+        padding: 0.5vh 0 0 2vw;
+    }
+
+    .computerHeaderContainer {
+        height: 4vh;
+    }
+
+    .titleContainer {
+        display: none;
+    }
+
+    .nameSite {
+        font-size: 5.4vh;
+        margin-bottom: 1vh;
+        margin-top: 0;
+        padding: 0;
+        word-spacing: 0.8vw;
+        letter-spacing: 0vw;
+    }
+
+    .searchContainer {
+        width: 40vw;
+
+    }
+
+    .glassIcon {
+        height: 2vh;
+        margin-right: 3vw;
+    }
+
+    .inputContainer {
+        height: 3vh;
+    }
+
+    .menuIcon {
+        height: 2.8vh;
+        margin-left: 3vw;
+    }
+
+    .userIcon {
+        height: 2.8vh;
+        margin-left: 3vw;
+    }
+
+    .cartIcon {
+        height: 2.8vh;
+        margin-left: 3vw;
+    }
+
+    .boIcon {
+        height: 2.6vh;
+    }
+
+    .userName {
+        font-size: 1.7vh;
+        margin-top: 5.5vh;
+        margin-left: 2.5vw;
+    }
+
+    .userDropdownContainer {
+        width: 35vw;
+        top: 14.8vh
+    }
+
+    .triangle {
+        height: 4vh;
+        margin-top: -2vh;
+        margin-left: 7.8vw;
+    }
+
+    .userDropdownContainer p {
+        font-size: 3.8vw;
+        font-weight: 550;
+        letter-spacing: 0;
+        padding-top: 1.2vh;
+        padding-bottom: 1.2vh;
+    }
+
+    .autocompleteContainer {
+        margin-top: 12.2vh;
+        height: 4vh;
+    }
+
+    .autocomplete {
+        padding: 1.2vh 0 1vh 4vw;
+        width: 45vw;
+        max-height: 22vh;
+    }
+
+    .autocomplete p {
+        font-size: 4.7vw;
+        margin-bottom: 0.8vh;
+    }
+
+    .cartCircle {
+        height: 2.1vh;
+        width: 2.1vh;
+        margin-top: 5.4vh;
+        margin-right: 0.5vw;
+        padding-top: 0;
+        padding-left: 0.2vw;
+    }
+    
+    .cartCircle p {
+        font-size: 1.7vh;
+    }
+
+}

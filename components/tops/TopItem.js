@@ -18,7 +18,7 @@ export default function Item(props) {
                 </Link>
             </div>
             <div className={styles.imgContainer}>
-                <Image src={props.imgUrl} alt="Une image du pantalon" layout="fill" objectFit='contain' />
+                <Image src={props.imgUrl} alt="Une image du haut" layout="fill" objectFit='contain' />
             </div>
         </div>
     )

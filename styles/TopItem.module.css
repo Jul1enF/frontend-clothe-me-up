@@ -58,3 +58,52 @@ transition-duration: 1s;
     height : 47vh;
     width: 38vh;
 }
+
+
+
+
+
+/* Changement pour affichage smartphone */
+
+
+
+@media only screen and (max-width: 1150px){
+    .body{
+        width : 44vw;
+        height : 22vh;
+        min-height: 22vh;
+        justify-content: space-between;
+        padding : 0 1vw 0 0;
+    }
+
+    .infosContainer{
+        height : 100%;
+        width : 40%;
+        padding : 10vh 0 0 1vw;
+        margin : 0;
+        position:relative;
+    }
+
+    .infosContainer h4{
+        font-size: 4.8vw;
+    }
+
+    .infosContainer h5{
+        font-size: 3.8vw;
+    }
+
+    .infosContainer button{
+        font-size: 3.8vw;
+        font-weight: 550;
+        width: 19vw;
+        height : 4vh;
+
+    }
+
+    .imgContainer{
+        height : 100%;
+        width : 60%;
+        margin : 0;
+        padding : 0;
+    }
+}
