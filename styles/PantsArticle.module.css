@@ -1,33 +1,33 @@
-.body{
-    height:100vh;
+.body {
+    height: 100vh;
     width: 100vw;
     padding-top: 90px;
     display: flex;
 }
 
-.leftContainer{
-    width:30%;
-    height:100%;
-    background-color: rgb(245	245	245	);
+.leftContainer {
+    width: 30%;
+    height: 100%;
+    background-color: rgb(245 245 245);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.imgContainer{
-    height : 80%;
+.imgContainer {
+    height: 80%;
     width: 80%;
     position: relative;
 }
 
-.rightContainer{
+.rightContainer {
     width: 70%;
-    height:100%;
+    height: 100%;
     display: flex;
     align-items: center;
 }
 
-.titleContainer{
+.titleContainer {
     height: 70%;
     width: 29%;
     display: flex;
@@ -35,45 +35,45 @@
     padding-top: 5vh;
 }
 
-.title{
+.title {
     font-size: 31px;
     font-weight: 850;
-    color:rgb(13, 1, 102);
+    color: rgb(13, 1, 102);
 }
 
-.line{
-    width:1px;
-    height:70%;
+.line {
+    width: 1px;
+    height: 70%;
     border-left: 1px solid rgb(13, 1, 102);
 }
 
-.productInfosContainer{
-height:75%;
-width:70%;
-display: flex;
-flex-direction: column;
-justify-content: space-evenly;
-align-items: flex-end;
-padding-right: 8vw;
-padding-top: 1vh;
+.productInfosContainer {
+    height: 75%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    padding-right: 8vw;
+    padding-top: 1vh;
 }
 
-.price{
-    color:rgb(13, 1, 102);
+.price {
+    color: rgb(13, 1, 102);
     font-size: 20px;
 }
 
-.description{
-    width:70%;
+.description {
+    width: 70%;
     text-align: right;
-    color:rgb(13, 1, 102);
+    color: rgb(13, 1, 102);
     font-size: 17px;
     font-weight: 550;
 }
 
-.sizeMenu{
+.sizeMenu {
     width: 20vw;
-    height : 45px;
+    height: 45px;
     border: 1px solid rgb(13, 1, 102);
     border-radius: 5px;
     display: flex;
@@ -85,23 +85,23 @@ padding-top: 1vh;
     position: relative;
 }
 
-.menuSentence{
-    width:75%;
-    color:rgb(13, 1, 102);
+.menuSentence {
+    width: 75%;
+    color: rgb(13, 1, 102);
     font-size: 16px;
     font-weight: 570;
 }
 
-.dropDownIcon{
-    color:rgb(13, 1, 102);
+.dropDownIcon {
+    color: rgb(13, 1, 102);
 }
 
-.dropContainer{
+.dropContainer {
     position: absolute;
     margin-top: -3.5vh;
     padding-top: 2px;
     width: 20vw;
-    height : 100px;
+    height: 100px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -109,55 +109,55 @@ padding-top: 1vh;
     cursor: pointer;
 }
 
-.dropDown{
+.dropDown {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     background-color: white;
-    width:20vw;
+    width: 20vw;
     z-index: 1;
 }
 
-.stocks{
-    display:flex;
+.stocks {
+    display: flex;
     width: 100%;
     justify-content: space-between;
-    padding : 9px 2vw;
+    padding: 9px 2vw;
     border-bottom: 1px solid rgb(13, 1, 102);
     border-left: 1px solid rgb(13, 1, 102);
     border-right: 1px solid rgb(13, 1, 102);
-    color:rgb(13, 1, 102);
+    color: rgb(13, 1, 102);
     z-index: 1;
 }
 
 
-.stocks:hover{
-   background-color:rgb(245	245	245	);
+.stocks:hover {
+    background-color: rgb(245 245 245);
 }
 
-.size{
-   width: 50%;
-   display: flex;
+.size {
+    width: 50%;
+    display: flex;
     text-align: left;
     z-index: 1;
-    
+
 }
 
-.stock{
+.stock {
     width: 50%;
-    display:flex;
-   justify-content: flex-end;
-   z-index: 1;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 1;
 }
 
-.cartBtn{
+.cartBtn {
     width: 20vw;
-    height : 5vh;
+    height: 5vh;
     border: 1px solid rgb(13, 1, 102);
     border-radius: 5px;
     background-color: rgb(13, 1, 102);
-    color:white;
+    color: white;
     cursor: pointer;
     font-size: 16px;
     font-weight: 570;
@@ -165,18 +165,135 @@ padding-top: 1vh;
     z-index: 0;
 }
 
-.cartBtn:hover{
+.cartBtn:hover {
     background-color: white;
-    color:rgb(13, 1, 102);
+    color: rgb(13, 1, 102);
     transition-duration: 0.7s;
 }
 
-.resultSentence{
-    width:40vw;
+.resultSentence {
+    width: 40vw;
     position: absolute;
-    color:rgb(13, 1, 102);
+    color: rgb(13, 1, 102);
     margin-top: 65vh;
     text-align: right;
     font-weight: 550;
     font-size: 20px;
+}
+
+
+
+
+
+
+
+/* Changement pour affichage smartphone */
+
+
+
+@media only screen and (max-width: 1150px) {
+    .body {
+        height: 100dvh;
+        width: 100vw;
+        padding-top: 14.5dvh;
+    }
+
+    .leftContainer {
+        width: 40vw;
+        height: 85.5dvh;
+    }
+
+    .imgContainer {
+        width: 90%;
+    }
+
+    .rightContainer {
+        width: 60vw;
+        height: 85.5dvh;
+        flex-direction: column;
+        align-items: flex-end;
+        padding-right: 4vw;
+    }
+
+
+    .titleContainer {
+        height: 15%;
+        width: 100%;
+        justify-content: flex-end;
+        padding-top: 3dvh;
+    }
+
+    .title {
+        font-size: 7vw;
+    }
+
+    .line {
+        width: 80%;
+        height: 1px;
+        border-bottom: 1px solid rgb(13, 1, 102);
+    }
+
+    .productInfosContainer {
+        height: 85%;
+        width: 100%;
+        justify-content: space-evenly;
+        align-items: flex-end;
+        padding : 0dvh 0 0dvh 2vw
+    }
+
+    .price {
+        font-size: 5.5vw;
+    }
+
+    .description {
+        width: 100%;
+        font-size: 4.5vw;
+        font-weight: 500;
+    }
+
+    .sizeMenu {
+        width: 52vw;
+        height: 6dvh;
+        margin-bottom: 4dvh;
+    }
+
+    .menuSentence {
+        width: 86%;
+        font-size: 3.9vw;
+        font-weight: 570;
+    }
+
+    .dropContainer {
+        position: absolute;
+        margin-top: -4.9dvh;
+        padding-top: 0.5dvh;
+        width: 52vw;
+        height: 21dvh;
+    }
+
+    .dropDown {
+        width: 52vw;
+        max-height: 21dvh;
+        overflow-y: scroll;
+        border-bottom: 0.5px solid rgb(13, 1, 102);
+    }
+
+    .stocks {
+        padding: 1dvh 2vw;
+    }
+
+
+    .cartBtn {
+        width: 40vw;
+        height: 6dvh;
+        font-size: 4vw;
+        font-weight: 570;
+        margin-bottom: 3dvh;
+    }
+
+    .resultSentence {
+        width: 55vw;
+        margin-top: 66dvh;
+        font-size: 3.4vw;
+    }
 }

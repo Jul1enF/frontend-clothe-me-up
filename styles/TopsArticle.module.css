@@ -180,3 +180,121 @@ padding-top: 1vh;
     font-weight: 550;
     font-size: 20px;
 }
+
+
+
+
+
+
+
+
+/* Changement pour affichage smartphone */
+
+
+
+@media only screen and (max-width: 1150px) {
+    .body {
+        height: 100dvh;
+        width: 100vw;
+        padding-top: 14.5dvh;
+    }
+
+    .leftContainer {
+        width: 40vw;
+        height: 85.5dvh;
+    }
+
+    .imgContainer {
+        width: 95%;
+    }
+
+    .rightContainer {
+        width: 60vw;
+        height: 85.5dvh;
+        flex-direction: column;
+        align-items: flex-end;
+        padding-right: 4vw;
+    }
+
+
+    .titleContainer {
+        height: 15%;
+        width: 100%;
+        justify-content: flex-end;
+        padding-top: 3dvh;
+    }
+
+    .title {
+        font-size: 7vw;
+    }
+
+    .line {
+        width: 80%;
+        height: 1px;
+        border-bottom: 1px solid rgb(13, 1, 102);
+    }
+
+    .productInfosContainer {
+        height: 85%;
+        width: 100%;
+        justify-content: space-evenly;
+        align-items: flex-end;
+        padding : 0dvh 0 0dvh 2vw
+    }
+
+    .price {
+        font-size: 5.5vw;
+    }
+
+    .description {
+        width: 100%;
+        font-size: 4.5vw;
+        font-weight: 500;
+    }
+
+    .sizeMenu {
+        width: 52vw;
+        height: 6dvh;
+        margin-bottom: 4dvh;
+    }
+
+    .menuSentence {
+        width: 86%;
+        font-size: 3.9vw;
+        font-weight: 570;
+    }
+
+    .dropContainer {
+        position: absolute;
+        margin-top: -4.9dvh;
+        padding-top: 0.5dvh;
+        width: 52vw;
+        height: 21dvh;
+    }
+
+    .dropDown {
+        width: 52vw;
+        max-height: 21dvh;
+        overflow-y: scroll;
+        border-bottom: 0.5px solid rgb(13, 1, 102);
+    }
+
+    .stocks {
+        padding: 1dvh 2vw;
+    }
+
+
+    .cartBtn {
+        width: 40vw;
+        height: 6dvh;
+        font-size: 4vw;
+        font-weight: 570;
+        margin-bottom: 3dvh;
+    }
+
+    .resultSentence {
+        width: 55vw;
+        margin-top: 66dvh;
+        font-size: 3.4vw;
+    }
+}

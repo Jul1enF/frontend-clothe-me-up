@@ -13,7 +13,7 @@ export default function Signup() {
 
     const url = process.env.NEXT_PUBLIC_BACK_ADDRESS
 
-    const user = useSelector((state)=>state.user.value)
+    const user = useSelector((state) => state.user.value)
 
     // États pour affichage ou non passwords et modal
 
@@ -79,14 +79,14 @@ export default function Signup() {
         }
     }
 
-    const googleClick=async()=>{
-        if(user.cart_articles.length>0){
-            const response = await fetch(`${url}/cart/google`, {method:'POST'})
+    const googleClick = async () => {
+        if (user.cart_articles.length > 0) {
+            const response = await fetch(`${url}/cart/google`, { method: 'POST' })
             const data = await response.json()
             location.assign(data.url)
         }
-        else{
-            const response = await fetch(`${url}/users/google`, {method:'POST'})
+        else {
+            const response = await fetch(`${url}/users/google`, { method: 'POST' })
             const data = await response.json()
             location.assign(data.url)
         }
@@ -106,7 +106,10 @@ export default function Signup() {
                     <h3 className={styles.modalSentence} style={modalSentence2 ? { display: "flex" } : { display: "none" }}>{modalSentence2}</h3>
                 </div>
             </Modal>
-            <div className={styles.topContainer}></div>
+            <div className={styles.topContainer}>
+                <h2 className={styles.phoneTitle}>Inscription</h2>
+                <div className={styles.phoneLine}></div>
+            </div>
             <div className={styles.downContainer}>
                 <div className={styles.titleContainer}>
                     <h2 className={styles.title}>Inscription</h2>
@@ -116,6 +119,14 @@ export default function Signup() {
                 </div>
                 <div className={styles.inputsContainer}>
                     <div className={styles.inputColumn}>
+
+                        <div className={styles.phoneBtnContainer}>
+                            <button onClick={() => googleClick()} className={styles.googleBtn}><div className={styles.imgContainer}><Image src="/googleIcon.svg.png" layout='fill' alt="google logo" /></div>S'inscrire avec Google </button>
+                            <h2 className={styles.or}>Ou</h2>
+
+                        </div>
+
+
                         <input className={styles.input} type="text" placeholder='Prénom*' onChange={(e) => {
                             setFirstname(e.target.value)
                             setError('')
@@ -153,7 +164,7 @@ export default function Signup() {
                     </div>
                     <div className={styles.btnContainer}>
                         <h2 className={styles.or}>Ou</h2>
-                        <button onClick={()=>googleClick()} className={styles.googleBtn}><div className={styles.imgContainer}><Image src="/googleIcon.svg.png" layout='fill' alt="google logo" /></div>S'inscrire avec Google </button>
+                        <button onClick={() => googleClick()} className={styles.googleBtn}><div className={styles.imgContainer}><Image src="/googleIcon.svg.png" layout='fill' alt="google logo" /></div>S'inscrire avec Google </button>
                     </div>
                 </div>
             </div>

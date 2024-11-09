@@ -53,7 +53,7 @@ export default function Verification(){
     },[infos])
 
     if (validated){
-        setTimeout(()=>router.push('/'), "4000")
+        setTimeout(()=>router.push('/'), 5000)
     }
 
     return(

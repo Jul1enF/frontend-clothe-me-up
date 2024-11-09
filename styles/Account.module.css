@@ -89,3 +89,98 @@
     align-items: center;
     padding: 3vh 2vw 1vh;
 }
+
+
+
+
+
+
+
+/* Changement pour affichage smartphone */
+
+
+@media only screen and (max-width: 1150px) {
+    .body {
+        height: 100dvh;
+        width: 100vw;
+        padding-top: 14.5dvh;
+        flex-direction: column;
+    }
+    
+    .leftContainer {
+        width: 100%;
+        height: 19dvh;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 3.5dvh 3vw;
+        background-position: 0 -3dvh;
+    
+    }
+    
+    .title {
+        font-size: 4.5dvh;
+    }
+    
+    .line {
+        width: 85%;
+        height: 2px;
+        margin-bottom: 3dvh;
+    }
+    
+    .rightContainer {
+        width: 100%;
+        height: 66.5dvh;
+        display: flex;
+        flex-direction: column;
+        align-items:flex-start;
+    }
+    
+    .stepsTitleContainer {
+        height: 20%;
+        width: fit-content;
+        max-width: 100vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding-top: 2dvh;
+        overflow-x: scroll;
+    }
+    
+    .stepAndIconContainer {
+        width: 50vw;
+        height: 10dvh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1vw 0 1vw;
+        margin-bottom: 2dvh;
+        border: 1px solid rgb(13, 1, 102);
+    }
+    
+    .arrowIcon {
+        height: 3.5vw;
+    }
+    
+    .stepsTitleContainer h2 {
+        font-size: 3.5dvw;
+        width : 80%
+    }
+    
+    .line2 {
+        width: 90%;
+        height: 1px;
+        border-left: 1px solid rgb(13, 1, 102);
+    }
+    
+    .stepContainer {
+        height: 80%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 3vh 2vw 1vh;
+    }
+
+}

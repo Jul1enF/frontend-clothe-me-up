@@ -1,23 +1,23 @@
-.body{
+.body {
     width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-.topContainer{
+.topContainer {
     height: 44%;
     background-image: url('../public/SignBackground6.jpg');
     background-size: cover;
 }
 
-.downContainer{
+.downContainer {
     width: 100%;
     height: 56%;
     display: flex;
 }
 
-.titleContainer{
+.titleContainer {
     width: 22%;
     height: 35%;
     display: flex;
@@ -25,68 +25,68 @@
     align-items: center;
 }
 
-.title{
-    color : rgb(13, 1, 102);
+.title {
+    color: rgb(13, 1, 102);
     font-size: 30px;
     font-family: Helvetica;
     font-weight: 770;
 }
 
-.lineContainer{
+.lineContainer {
     width: 1px;
     height: 100%;
     display: flex;
     align-items: center;
- 
+
 }
 
-.line{
+.line {
     width: 1px;
-    height : 85%;
+    height: 85%;
     border-right: 1px solid rgb(13, 1, 102);
 }
 
-.inputsContainer{
-    width : 77%;
+.inputsContainer {
+    width: 77%;
     height: 100%;
     display: flex;
     align-items: center;
     padding-left: 2%;
 }
 
-.inputColumn{
+.inputColumn {
     padding-top: 2%;
     width: 45%;
     height: 100%;
-    display:flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-  
+
 }
 
-.input{
-    height : 47px;
+.input {
+    height: 47px;
     width: 65%;
     border-radius: 5px;
     background-color: white;
-    color:rgb(13, 1, 102);
+    color: rgb(13, 1, 102);
     outline: none;
     padding-left: 7px;
     font-size: 15px;
     border: 1px solid rgb(13, 1, 102);
 }
 
-.inputsContainer input::placeholder{
-    color:rgb(13, 1, 102);
+.inputsContainer input::placeholder {
+    color: rgb(13, 1, 102);
 }
 
-.passwordContainer{
-    height : 47px;
+.passwordContainer {
+    height: 47px;
     width: 65%;
     border-radius: 5px;
     background-color: white;
-    color:rgb(13, 1, 102);
+    color: rgb(13, 1, 102);
     outline: none;
     padding-left: 7px;
     padding-right: 9px;
@@ -98,36 +98,36 @@
     margin-bottom: 4.5vh;
 }
 
-.password{
-    border:none;
+.password {
+    border: none;
     height: 45px;
     width: 80%;
     outline: none;
     font-size: 15px;
-    color:rgb(13, 1, 102);
+    color: rgb(13, 1, 102);
 }
 
-.eyeIcon{
-    color:rgb(13, 1, 102);
+.eyeIcon {
+    color: rgb(13, 1, 102);
     cursor: pointer;
 
 }
 
-.errorMessage{
-    width:40vw;
-    position:absolute;
+.errorMessage {
+    width: 40vw;
+    position: absolute;
     bottom: 21vh;
-    left : 21vw;
+    left: 21vw;
     font-size: 17px;
-    color:rgb(230, 25, 25);
+    color: rgb(230, 25, 25);
     text-align: center;
 }
 
-.registerBtn{
-    height:54px;
+.registerBtn {
+    height: 54px;
     width: 17vw;
     border: none;
-    color:white;
+    color: white;
     background-color: rgb(13, 1, 102);
     border-radius: 25px;
     font-size: 19px;
@@ -136,7 +136,7 @@
     cursor: pointer;
 }
 
-.btnContainer{
+.btnContainer {
     height: 86%;
     width: 55%;
     display: flex;
@@ -145,28 +145,28 @@
     align-items: center;
     padding-bottom: 9.5%;
     padding-left: 3%;
-   
+
 }
 
-.imgContainer{
+.imgContainer {
     position: relative;
-    height : 25px;
-    width:25px;
-    }
-    
-    .or{
-        font-size: 24px;
-        color:rgb(13, 1, 102);
-    }
-    
-    .googleBtn{
+    height: 25px;
+    width: 25px;
+}
+
+.or {
+    font-size: 24px;
+    color: rgb(13, 1, 102);
+}
+
+.googleBtn {
     height: 50px;
     width: 50%;
     padding-right: 3%;
     padding-left: 3%;
     background-color: white;
     border: 1px solid rgb(13, 1, 102);
-    color:rgb(13, 1, 102);
+    color: rgb(13, 1, 102);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -175,5 +175,158 @@
     font-weight: 900;
     font-family: Helvetica;
     cursor: pointer;
+}
+
+
+.phoneLine {
+    display: none;
+}
+
+
+.phoneTitle {
+    display: none;
+}
+
+
+
+
+
+/* Changement pour affichage smartphone */
+
+
+@media only screen and (max-width: 1150px) {
+
+    .body {
+        width: 100vw;
+        height: 100dvh;
+        flex-direction: column;
     }
-    
+
+    .topContainer {
+        height: 32%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 0 0 3.5dvh 0
+    }
+
+    .phoneTitle {
+        display: flex;
+        color: white;
+        font-size: 4.3dvh;
+        font-family: Helvetica;
+        font-weight: 770;
+    }
+
+    .phoneLine {
+        display: flex;
+        height: 1px;
+        width: 75%;
+        border-bottom: 1.5px solid white;
+        margin-top: 2dvh;
+    }
+
+    .downContainer {
+        width: 100%;
+        height: 68%;
+    }
+
+    .titleContainer {
+        display: none;
+    }
+
+    .lineContainer {
+        display: none;
+    }
+
+    .inputsContainer {
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        align-items: center;
+        padding : 0dvh 2vw;
+    }
+
+    .inputColumn {
+        padding-top: 0;
+        width: 100%;
+        height: 60%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+
+    }
+
+    .input {
+        height: 6dvh;
+        width: 65%;
+        padding-left: 2dvw;
+        font-size: 3dvh;
+    }
+
+
+    .passwordContainer {
+        height: 6dvh;
+        width: 65%;
+        padding-left: 2dvw;
+        padding-right: 2dvw;
+        font-size: 3dvh;
+        margin-bottom: 0dvh;
+    }
+
+    .password {
+        border: none;
+        height: 100%;
+        width: 80%;
+        font-size: 3dvh;
+    }
+
+    .errorMessage {
+        width: 100%;
+        position: absolute;
+        bottom: auto;
+        margin-top: -32dvh;
+        left: 0;
+        font-size: 3dvh;
+    }
+
+    .registerBtn {
+        height: 11vw;
+        width: 43vw;
+        font-size: 4.7vw;
+    }
+
+    .btnContainer {
+        height: 40%;
+        width: 100%;
+        padding : 1dvh 0 7dvh 0;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .imgContainer {
+        position: relative;
+        height: 4.5vw;
+        width: 4.5vw;
+    }
+
+    .or {
+        font-size: 5.7vw;
+    }
+
+    .googleBtn {
+        height: 8dvh;
+        width: 65%;
+        padding-right: 2%;
+        padding-left: 3%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 4dvw;
+        font-weight: 900;
+    }
+
+}

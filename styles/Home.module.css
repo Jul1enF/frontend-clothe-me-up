@@ -62,6 +62,7 @@
 
 
 
+@media only screen and (min-width: 1150px){
 
 
 /* Changement quand hover sur tops */
@@ -102,6 +103,7 @@ body:has(.downss:hover) .leftContainer {
 }
 
 
+}
 
 
 
@@ -117,74 +119,32 @@ body:has(.downss:hover) .leftContainer {
 
  .leftContainer{
   width: 100vw;
-  height : 55vh;
-  padding-top: 13vh;
+  height : 52vh;
+  padding-top: 14.5dvh;
  }
 
  .rightContainer{
   width: 100vw;
-  height : 45vh;
+  height : 48vh;
+  background-position: 0 -3vh;
  }
 
 .topsContainer{
-  height : 25%;
+  height : 20%;
   padding-left: 5vw;
 }
 
 .tops{
-  font-size: 4.5vh;
+  font-size: 4.2dvh;
 }
 
  .downsContainer{
   padding-right: 5vw;
-  height : 35%;
+  height : 45%;
  }
 
  .downs{
-  font-size: 4.5vh;
+  font-size: 4.2dvh;
  }
-
-
-
-
- /* Annulation des changements avec hover */
-
-
-/* Changement quand hover sur tops */
-
-.leftContainer:has(.tops:hover) {
-  width: 100vw;
-  transition-duration: 0.5s;
-}
-
-body:has(.tops:hover) .rightContainer {
-  width: 100vw;
-  transition-duration: 0.5s;
-}
-
-.tops:hover{
-  font-size: 5vh;
-  transition-duration: 0.5s;
-  font-weight: 760;
-}
-
-
-/* Changement quand hover sur downs */
-
-.rightContainer:has(.downs:hover) {
-  width: 100vw;
-  transition-duration: 0.5s;
-}
-
-body:has(.downss:hover) .leftContainer {
-  width: 100vw;
-  transition-duration: 0.5s;
-}
-
-.downs:hover{
-  font-size: 5vh;
-  transition-duration: 0.5s;
-  font-weight: 760;
-}
 
 }

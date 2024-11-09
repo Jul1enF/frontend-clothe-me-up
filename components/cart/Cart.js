@@ -31,11 +31,11 @@ export default function Cart() {
                 body: JSON.stringify({
                     jwtToken: infos[1],
                     articlesNotLinked: user.articlesNotLinked,
-                    temporaryToken : user.temporaryToken
+                    temporaryToken: user.temporaryToken
                 })
             })
             const data = await response.json()
-            dispatch(login({ firstname: data.firstname, name:data.name, email:data.email, mobile_phone:data.mobile_phone, token: data.token, connectionDate: new Date(), is_admin: data.is_admin, cart_articles: data.cart_articles, addresses : data.addresses, orders : data.orders, password : data.password }))
+            dispatch(login({ firstname: data.firstname, name: data.name, email: data.email, mobile_phone: data.mobile_phone, token: data.token, connectionDate: new Date(), is_admin: data.is_admin, cart_articles: data.cart_articles, addresses: data.addresses, orders: data.orders, password: data.password }))
             if (data.change) {
                 setError('Des articles de votre panier ont été remis en rayon !')
                 setTimeout(() => setError(''), "4000")
@@ -51,7 +51,7 @@ export default function Cart() {
             let temporaryToken
 
             if (user.token) { jwtToken = user.token }
-            else {temporaryToken = user.temporaryToken}
+            else { temporaryToken = user.temporaryToken }
 
             const response = await fetch(`${url}/cart/checkArticles`, {
                 method: 'PUT',
@@ -73,7 +73,7 @@ export default function Cart() {
                     articlesNotLinked: data.articlesNotLinked,
                     cart_articles: data.cart_articles,
                     addresses: [],
-                    temporaryToken : user.temporaryToken,
+                    temporaryToken: user.temporaryToken,
                 }))
                 setError('Des articles de votre panier ont été remis en rayon !')
                 setTimeout(() => setError(''), "4000")
@@ -100,11 +100,11 @@ export default function Cart() {
     let articles
     let total = 0
 
-    console.log(user.cart_articles.every(e=>e && e.price))
+    console.log(user.cart_articles.every(e => e && e.price))
 
     if (user.cart_articles.length == 0) {
         articles = <h4>Aucun article enregistré !</h4>
-    } else if(user.cart_articles.every(e=>e && e.price)) {
+    } else if (user.cart_articles.every(e => e && e.price)) {
         // Mise en commun de tous les articles et tri par date d'ajout au panier
         let allArticles = []
         user.cart_articles.map(e => allArticles.push(e))
@@ -116,21 +116,21 @@ export default function Cart() {
             return <CartItem key={i} {...e} />
         })
 
-        allArticles.map(e => total+=e.price)
+        allArticles.map(e => total += e.price)
     }
 
     let totalSection
-    if (total>=0.4){
-        totalSection = <div className={styles.totalContainer}>
-        <h3 className={styles.total}>Total : {total.toFixed(2)}€</h3>
-        <h6>Frais de port offerts !</h6>
-    </div> 
-    }
-    else if(total>0){
+    if (total >= 0.4) {
         totalSection = <div className={styles.totalContainer}>
             <h3 className={styles.total}>Total : {total.toFixed(2)}€</h3>
-            <h6>(Plus que {(0.4-total).toFixed(2)}€ avant les frais de port offerts !)</h6>
-        </div> 
+            <h6>Frais de port offerts !</h6>
+        </div>
+    }
+    else if (total > 0) {
+        totalSection = <div className={styles.totalContainer}>
+            <h3 className={styles.total}>Total : {total.toFixed(2)}€</h3>
+            <h6>(Plus que {(0.4 - total).toFixed(2)}€ avant les frais de port offerts !)</h6>
+        </div>
     }
 
 
@@ -144,8 +144,8 @@ export default function Cart() {
             <Link href="/signup"><button className={styles.orderBtn}>S'inscrire</button></Link>
         </div>
     }
-    else if ( user.cart_articles.length == 0 && user.token){
-        payment=<></>
+    else if (user.cart_articles.length == 0 && user.token) {
+        payment = <></>
     }
     else if (user.token) {
         payment = <div className={styles.connexionContainer}>
@@ -164,7 +164,10 @@ export default function Cart() {
     return (
         <div className={styles.body}>
             <Header2 />
-            <div className={styles.topContainer}></div>
+            <div className={styles.topContainer}>
+                <h2 className={styles.phoneTitle}>Mon Panier</h2>
+                <div className={styles.phoneLine}></div>
+            </div>
             <div className={styles.downContainer}>
                 <div className={styles.titleContainer}>
                     <h2 className={styles.title}>Mon Panier</h2>

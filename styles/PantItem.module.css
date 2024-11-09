@@ -56,3 +56,51 @@ transition-duration: 1s;
     height : 47vh;
     width: 24vh;
 }
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 1150px){
+    .body{
+        width : 44.5vw;
+        height : 22dvh;
+        min-height: 22dvh;
+        justify-content: space-between;
+        padding : 1dvh 1vw 0 0;
+    }
+
+    .infosContainer{
+        height : 100%;
+        width : 60%;
+        padding : 10dvh 0 2dvh 1vw;
+        margin : 0 0 0 0 ;
+        position:relative;
+    }
+
+    .infosContainer h4{
+        font-size: 4.8vw;
+    }
+
+    .infosContainer h5{
+        font-size: 3.8vw;
+    }
+
+    .infosContainer button{
+        font-size: 3.8vw;
+        font-weight: 500;
+        width: 19vw;
+        min-height : 4dvh;
+
+    }
+
+    .imgContainer{
+        height : 90%;
+        width : 40%;
+        margin : 0;
+        padding : 0;
+    }
+}

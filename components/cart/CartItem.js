@@ -41,8 +41,8 @@ export default function CartItem(props) {
     return (
         <div className={styles.body}>
             <p onClick={() => articleClick()} className={styles.name}>{props.name}</p>
-            <p>Taille : {props.size}</p>
-            <p>{price}</p>
+            <p className={styles.name}>Taille : {props.size}</p>
+            <p className={styles.price}>{price}</p>
             <div className={styles.imgContainer}>
                 <Image src={props.imgUrl} alt="Image du vêtement" layout='fill' objectFit='contain' />
             </div>

@@ -1,61 +1,61 @@
-.body{
+.body {
     width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-.modalContent{
-    width:40vw;
-    height:22vh;
-    top : 20vh;
-    left:30vw;
+.modalContent {
+    width: 40vw;
+    height: 22vh;
+    top: 20vh;
+    left: 30vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding:0px 3vw
+    padding: 0px 3vw
 }
 
-.modalContainer{
+.modalContainer {
     display: flex;
     flex-direction: column;
-    width:40vw;
-    height:22vh;
+    width: 40vw;
+    height: 22vh;
     justify-content: center;
     align-items: center;
 }
 
-.closeIcon{
-    color:rgb(13, 1, 102);
+.closeIcon {
+    color: rgb(13, 1, 102);
 }
 
-.modalSentence{
-   text-align: center;
-   color:rgb(13, 1, 102);
-   font-size: 17px;
-   margin-bottom: 1vh;
+.modalSentence {
+    text-align: center;
+    color: rgb(13, 1, 102);
+    font-size: 17px;
+    margin-bottom: 1vh;
 }
 
-.modalContainer{
+.modalContainer {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.topContainer{
+.topContainer {
     height: 44%;
     background-image: url('../public/SignBackground6.jpg');
     background-size: cover;
 }
 
-.downContainer{
+.downContainer {
     width: 100%;
     height: 56%;
     display: flex;
 }
 
-.titleContainer{
+.titleContainer {
     width: 22%;
     height: 35%;
     display: flex;
@@ -63,68 +63,68 @@
     align-items: center;
 }
 
-.title{
-    color : rgb(13, 1, 102);
+.title {
+    color: rgb(13, 1, 102);
     font-size: 30px;
     font-family: Helvetica;
     font-weight: 770;
 }
 
-.lineContainer{
+.lineContainer {
     width: 1px;
     height: 100%;
     display: flex;
     align-items: center;
- 
+
 }
 
-.line{
+.line {
     width: 1px;
-    height : 85%;
+    height: 85%;
     border-right: 1px solid rgb(13, 1, 102);
 }
 
-.inputsContainer{
-    width : 77%;
+.inputsContainer {
+    width: 77%;
     height: 100%;
     display: flex;
     align-items: flex-start;
     padding-left: 2%;
 }
 
-.inputColumn{
+.inputColumn {
     padding-bottom: 2%;
     width: 33%;
     height: 87%;
-    display:flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-  
+
 }
 
-.input{
-    height : 47px;
+.input {
+    height: 47px;
     width: 75%;
     border-radius: 5px;
     background-color: white;
-    color:rgb(13, 1, 102);
+    color: rgb(13, 1, 102);
     outline: none;
     padding-left: 7px;
     font-size: 15px;
     border: 1px solid rgb(13, 1, 102);
 }
 
-.inputsContainer input::placeholder{
-    color:rgb(13, 1, 102);
+.inputsContainer input::placeholder {
+    color: rgb(13, 1, 102);
 }
 
-.passwordContainer{
-    height : 47px;
+.passwordContainer {
+    height: 47px;
     width: 75%;
     border-radius: 5px;
     background-color: white;
-    color:rgb(13, 1, 102);
+    color: rgb(13, 1, 102);
     outline: none;
     padding-left: 7px;
     padding-right: 9px;
@@ -135,32 +135,32 @@
     align-items: center;
 }
 
-.password{
-    border:none;
+.password {
+    border: none;
     height: 45px;
     width: 80%;
     outline: none;
     font-size: 15px;
-    color:rgb(13, 1, 102);
+    color: rgb(13, 1, 102);
 }
 
-.eyeIcon{
-    color:rgb(13, 1, 102);
+.eyeIcon {
+    color: rgb(13, 1, 102);
     cursor: pointer;
 
 }
 
-.errorMessage{
-    width:40vw;
-    position:absolute;
+.errorMessage {
+    width: 40vw;
+    position: absolute;
     bottom: 12vh;
-    left : 29vw;
+    left: 29vw;
     font-size: 17px;
-    color:rgb(230, 25, 25);
+    color: rgb(230, 25, 25);
     text-align: center;
 }
 
-.btnContainer{
+.btnContainer {
     height: 60%;
     width: 33%;
     display: flex;
@@ -172,47 +172,242 @@
     padding-top: 5%;
 }
 
-.registerBtn{
-    height:46px;
+.registerBtn {
+    height: 46px;
     width: 15vw;
     border: none;
-    color:white;
+    color: white;
     background-color: rgb(13, 1, 102);
     border-radius: 25px;
     font-size: 19px;
     font-weight: 900;
     letter-spacing: 1px;
     cursor: pointer;
-    position:absolute;
+    position: absolute;
     bottom: 3vh;
-    left : 41vw;
+    left: 41vw;
 }
 
-.imgContainer{
-position: relative;
-height : 25px;
-width:25px;
+.imgContainer {
+    position: relative;
+    height: 25px;
+    width: 25px;
 }
 
-.or{
+.or {
     font-size: 24px;
-    color:rgb(13, 1, 102);
+    color: rgb(13, 1, 102);
 }
 
-.googleBtn{
-height: 50px;
-width: 80%;
-padding-right: 3%;
-padding-left: 3%;
-background-color: white;
-border: 1px solid rgb(13, 1, 102);
-color:rgb(13, 1, 102);
-display: flex;
-justify-content: space-evenly;
-align-items: center;
-border-radius: 5px;
-font-size: 16px;
-font-weight: 900;
-font-family: Helvetica;
-cursor: pointer;
+.googleBtn {
+    height: 50px;
+    width: 80%;
+    padding-right: 3%;
+    padding-left: 3%;
+    background-color: white;
+    border: 1px solid rgb(13, 1, 102);
+    color: rgb(13, 1, 102);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 900;
+    font-family: Helvetica;
+    cursor: pointer;
+}
+
+
+
+
+
+.phoneLine {
+    display: none;
+}
+
+
+.phoneTitle {
+    display: none;
+}
+
+.phoneBtnContainer {
+    display: none;
+}
+
+
+
+
+
+/* Changement pour affichage smartphone */
+
+
+@media only screen and (max-width: 1150px) {
+    .modalContent {
+        width: 80vw;
+        height: 44dvh;
+        top: 22dvh;
+        left: 10vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0dvh 3vw
+    }
+
+    .modalContainer {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        padding-top: 7dvh;
+    }
+
+
+    .modalSentence {
+        text-align: center;
+        color: rgb(13, 1, 102);
+        font-size: 3dvh;
+        margin-bottom: 3dvh;
+    }
+
+
+
+    .body {
+        width: 100vw;
+        height: 100dvh;
+        flex-direction: column;
+    }
+
+    .topContainer {
+        height: 32%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 0 0 3.5dvh 0
+    }
+
+    .phoneTitle {
+        display: flex;
+        color: white;
+        font-size: 4.3dvh;
+        font-family: Helvetica;
+        font-weight: 770;
+    }
+
+    .phoneLine {
+        display: flex;
+        height: 1px;
+        width: 75%;
+        border-bottom: 1.5px solid white;
+        margin-top: 2dvh;
+    }
+
+    .downContainer {
+        width: 100%;
+        height: 68%;
+        overflow-y: scroll;
+        flex-direction: column;
+    }
+
+    .titleContainer {
+        display: none;
+    }
+
+    .lineContainer {
+        display: none;
+    }
+
+
+    .inputsContainer {
+        width: 100%;
+        height: fit-content;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 4dvh 2vw;
+    }
+
+    .inputColumn {
+        padding-bottom: 0;
+        width: 100%;
+        height: fit-content;
+        justify-content: flex-start;
+    }
+
+    .input {
+        height: 6dvh;
+        width: 75%;
+        padding-left: 2dvw;
+        font-size: 3dvh;
+        margin-bottom: 3dvh;
+    }
+
+    .passwordContainer {
+        height: 6dvh;
+        width: 75%;
+        padding-left: 2dvw;
+        font-size: 3dvh;
+        margin-bottom: 3dvh;
+    }
+
+    .password {
+        height: 96%;
+        width: 90%;
+        font-size: 3dvh;
+    }
+
+    .errorMessage {
+        width: 100%;
+        position: relative;
+        bottom: auto;
+        left: auto;
+        font-size: 2.7dvh;
+        margin-top: -1dvh;
+    }
+
+    .registerBtn {
+        height: 11vw;
+        width: 43vw;
+        font-size: 4.7vw;
+        position: relative;
+        bottom: auto;
+        left: auto;
+        margin-top: 2dvh;
+    }
+
+    .phoneBtnContainer {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .btnContainer {
+        display: none;
+    }
+
+    .imgContainer {
+        position: relative;
+        height: 4.5vw;
+        width: 4.5vw;
+    }
+
+    .or {
+        font-size: 5.7vw;
+        margin-bottom: 3dvh;
+    }
+
+    .googleBtn {
+        height: 8dvh;
+        width: 75%;
+        padding: 0 4vw;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        font-size: 4.3dvw;
+        font-weight: 900;
+        margin-bottom: 3dvh;
+    }
 }
