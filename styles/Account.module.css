@@ -66,13 +66,11 @@
 
 .title2{
     cursor: pointer;
-}
-
-.stepsTitleContainer h2 {
     font-size: 22px;
     font-weight: 850;
     color: rgb(13, 1, 102);
 }
+
 
 .line2 {
     width: 1px;
@@ -101,86 +99,99 @@
 
 @media only screen and (max-width: 1150px) {
     .body {
-        height: 100dvh;
+        height: 100svh;
         width: 100vw;
-        padding-top: 14.5dvh;
+        padding-top: 14.5svh;
         flex-direction: column;
     }
     
     .leftContainer {
         width: 100%;
-        height: 19dvh;
+        height: 18svh;
         flex-direction: column;
         align-items: flex-start;
-        padding: 3.5dvh 3vw;
-        background-position: 0 -3dvh;
+        justify-content: center;
+        padding: 3.5svh 3vw 0;
+        background-position: 0 -4svh;
     
     }
     
     .title {
-        font-size: 4.5dvh;
+        font-size: 4.5svh;
+        margin-bottom: 2svh;
     }
     
     .line {
         width: 85%;
         height: 2px;
-        margin-bottom: 3dvh;
+        margin-bottom: 3svh;
     }
     
     .rightContainer {
-        width: 100%;
-        height: 66.5dvh;
+        width: 100vw;
+        height: 67.5svh;
         display: flex;
         flex-direction: column;
-        align-items:flex-start;
+        align-items:center;
+
     }
     
     .stepsTitleContainer {
-        height: 20%;
-        width: fit-content;
-        max-width: 100vw;
+        height: 8svh;
+        width: 100vw;
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
-        align-items: flex-start;
-        padding-top: 2dvh;
+        align-items: center;
         overflow-x: scroll;
+        padding-top: 0svh;
+        margin-bottom: 1svh;
     }
     
     .stepAndIconContainer {
-        width: 50vw;
-        height: 10dvh;
+        width: 33vw;
+        min-width: 33vw;
+        height: 8svh;
         display: flex;
+        flex-direction: row;
         justify-content: space-between;
         align-items: center;
         padding: 0 1vw 0 1vw;
-        margin-bottom: 2dvh;
-        border: 1px solid rgb(13, 1, 102);
+        margin-bottom: 0svh;
     }
     
     .arrowIcon {
         height: 3.5vw;
+        display: none;
     }
     
-    .stepsTitleContainer h2 {
-        font-size: 3.5dvw;
-        width : 80%
+    .title2 {
+        font-size: 3.6dvw;
+        width : 100%;
+        text-align: center;
+    }
+
+    .chosenCategory{
+        text-decoration: underline;
+        text-underline-offset: 1.2svh;
+        text-decoration-thickness: 2.2px;
     }
     
     .line2 {
-        width: 90%;
+        width: 100%;
         height: 1px;
-        border-left: 1px solid rgb(13, 1, 102);
+        border-bottom: 1px solid rgb(13, 1, 102);
     }
     
     .stepContainer {
-        height: 80%;
+        height: 58.5svh;
+        overflow-y: scroll;
         width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        padding: 3vh 2vw 1vh;
+        padding: 1svh 2vw 0svh;
     }
 
 }

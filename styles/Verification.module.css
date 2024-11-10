@@ -63,7 +63,7 @@
     .mainContainer{
         height:100%;
         width: 100%;
-        padding-top: 5dvh;
+        padding-top: 5svh;
         display: flex;
     }
     
@@ -101,10 +101,10 @@
     
     .sentence{
         color:rgb(13, 1, 102);
-        font-size: 3dvh;
+        font-size: 3svh;
         width: 100%;
         text-align: center;
-        line-height: 4.9dvh;
+        line-height: 4.9svh;
     }
     
     

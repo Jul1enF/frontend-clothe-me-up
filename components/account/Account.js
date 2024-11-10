@@ -42,6 +42,10 @@ export default function Account(){
     }
 
 
+    // Pour affichage mobile, double style de title 2
+
+    let categoryStyle = styles.title2 + styles.chosenCategory
+
     return(
         <div className={styles.body}>
              <Header3 />
@@ -53,18 +57,18 @@ export default function Account(){
                 <div className={styles.stepsTitleContainer}>
                     <div className={styles.stepAndIconContainer}>
                         <FontAwesomeIcon icon={faArrowRight} style={informationsStyle} className={styles.arrowIcon} />
-                        <h2 className={styles.title2} onClick={()=>setStep("informations")}>Mes informations</h2>
+                        <h2 className={`${styles.title2} ${step == "informations" && styles.chosenCategory}`} onClick={()=>setStep("informations") } >Mes informations</h2>
                     </div>
                     <div className={styles.stepAndIconContainer}>
                         <FontAwesomeIcon icon={faArrowRight} style={addressesStyle} className={styles.arrowIcon} />
-                        <h2 className={styles.title2} onClick={()=>{
+                        <h2 className={`${styles.title2} ${step == "addresses" && styles.chosenCategory}`} onClick={()=>{
                             setStep("addresses")
                             setNewAddressVisible(false)
                             }}>Mes adresses</h2>
                     </div>
                     <div className={styles.stepAndIconContainer}>
                         <FontAwesomeIcon icon={faArrowRight} style={ordersStyle} className={styles.arrowIcon} />
-                        <h2 className={styles.title2} onClick={()=>{
+                        <h2 className={`${styles.title2} ${step == "orders" && styles.chosenCategory}`} onClick={()=>{
                             setStep("orders")
                             }}>Mes commandes</h2>
                     </div>

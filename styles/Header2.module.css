@@ -383,7 +383,7 @@
 @media only screen and (max-width: 1150px) {
     .headerBody {
         background: linear-gradient(0deg, rgba(0, 0, 0, 0.00), rgba(0, 0, 0, 0.43));
-        height: 14.5dvh;
+        height: 14.5svh;
         padding: 0;
         margin: 0;
     }
@@ -392,14 +392,14 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 8dvh;
+        height: 8svh;
         margin: 0;
         padding: 0;
-        padding: 0.5dvh 0 0 3vw;
+        padding: 0.5svh 0 0 3vw;
     }
 
     .computerHeaderContainer {
-        height: 4dvh;
+        height: 4svh;
     }
 
     .titleContainer {
@@ -407,8 +407,8 @@
     }
 
     .nameSite {
-        font-size: 5.4dvh;
-        margin-bottom: 1.5dvh;
+        font-size: 5.4svh;
+        margin-bottom: 1.5svh;
         margin-top: 0;
         padding: 0;
         word-spacing: 0.8vw;
@@ -421,48 +421,48 @@
     }
 
     .glassIcon {
-        height: 2dvh;
+        height: 2svh;
         margin-right: 3vw;
     }
 
     .inputContainer {
-        height: 3dvh;
+        height: 3svh;
     }
 
     .menuIcon {
-        height: 4dvh;
+        height: 4svh;
         margin-left: 4vw;
     }
 
     .userIcon {
-        height: 4dvh;
+        height: 4svh;
         margin-left: 4vw;
     }
 
     .cartIcon {
-        height: 4dvh;
+        height: 4svh;
         margin-left: 4vw;
     }
 
     .boIcon {
-        height: 3.6dvh;
+        height: 3.6svh;
     }
 
     .userName {
-        font-size: 1.7dvh;
-        margin-top: 6.4dvh;
+        font-size: 1.7svh;
+        margin-top: 6.4svh;
         margin-left: 3.8dvw;
     }
 
     .userDropdownContainer {
         width: 35vw;
-        top: 15.2dvh;
+        top: 15.2svh;
         margin-left: 1.7dvw;
     }
 
     .triangle {
         height: 4vh;
-        margin-top: -2dvh;
+        margin-top: -2svh;
         margin-left: 7.8vw;
         color : white;
     }
@@ -471,8 +471,8 @@
         font-size: 3.8vw;
         font-weight: 600;
         letter-spacing: 0;
-        padding-top: 1.2dvh;
-        padding-bottom: 1.2dvh;
+        padding-top: 1.2svh;
+        padding-bottom: 1.2svh;
         color : rgb(13, 1, 102);
         background-color: white;
     }
@@ -488,31 +488,31 @@
     }
 
     .autocompleteContainer {
-        margin-top: 12.2dvh;
-        height: 4dvh;
+        margin-top: 12.2svh;
+        height: 4svh;
     }
 
     .autocomplete {
-        padding: 1.2dvh 0 1dvh 4vw;
+        padding: 1.2svh 0 1svh 4vw;
         width: 45vw;
-        max-height: 22dvh;
+        max-height: 22svh;
     }
 
     .autocomplete p {
         font-size: 4.7vw;
-        margin-bottom: 0.8dvh;
+        margin-bottom: 0.8svh;
     }
 
     .cartCircle {
-        height: 2.1dvh;
-        width: 2.1dvh;
-        margin-top: 6.4dvh;
+        height: 2.1svh;
+        width: 2.1svh;
+        margin-top: 6.4svh;
         margin-right: 1.5dvw;
         padding-top: 0;
         padding-left: 0.2dvw;
     }
     
     .cartCircle p {
-        font-size: 1.7dvh;
+        font-size: 1.7svh;
     }
 }

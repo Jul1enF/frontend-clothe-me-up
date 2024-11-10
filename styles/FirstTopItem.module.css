@@ -67,11 +67,11 @@ transition-duration: 1s;
 @media only screen and (max-width: 1150px){
     .body{
         width : 70vw;
-        height : 28dvh;
-        min-height: 28dvh;
+        height : 28svh;
+        min-height: 28svh;
         justify-content: space-between;
         padding-left: 2vw;
-        margin-bottom: 3dvh;
+        margin-bottom: 3svh;
     }
 
     .infosContainer{
@@ -99,6 +99,6 @@ transition-duration: 1s;
     .infosContainer button{
         font-size: 5vw;
         width: 25vw;
-        height : 5dvh
+        height : 5svh
     }
 }

@@ -115,18 +115,20 @@ body:has(.downss:hover) .leftContainer {
 @media only screen and (max-width: 1150px){
  .body{
  flex-direction: column;
+ height: 100svh;
+ width: 100vw;
  }
 
  .leftContainer{
   width: 100vw;
-  height : 52vh;
-  padding-top: 14.5dvh;
+  height : 52svh;
+  padding-top: 14.5svh;
  }
 
  .rightContainer{
   width: 100vw;
-  height : 48vh;
-  background-position: 0 -3vh;
+  height : 48svh;
+  background-position: 0 -3svh;
  }
 
 .topsContainer{
@@ -135,16 +137,16 @@ body:has(.downss:hover) .leftContainer {
 }
 
 .tops{
-  font-size: 4.2dvh;
+  font-size: 4.2svh;
 }
 
  .downsContainer{
   padding-right: 5vw;
-  height : 45%;
+  height : 35%;
  }
 
  .downs{
-  font-size: 4.2dvh;
+  font-size: 4.2svh;
  }
 
 }

@@ -244,14 +244,14 @@
 @media only screen and (max-width: 1150px) {
     .modalContent {
         width: 80vw;
-        height: 44dvh;
-        top: 22dvh;
+        height: 44svh;
+        top: 22svh;
         left: 10vw;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 0dvh 3vw
+        padding: 0svh 3vw
     }
 
     .modalContainer {
@@ -261,22 +261,22 @@
         height: 100%;
         justify-content: center;
         align-items: center;
-        padding-top: 7dvh;
+        padding-top: 7svh;
     }
 
 
     .modalSentence {
         text-align: center;
         color: rgb(13, 1, 102);
-        font-size: 3dvh;
-        margin-bottom: 3dvh;
+        font-size: 3svh;
+        margin-bottom: 3svh;
     }
 
 
 
     .body {
         width: 100vw;
-        height: 100dvh;
+        height: 100svh;
         flex-direction: column;
     }
 
@@ -286,13 +286,13 @@
         flex-direction: column;
         justify-content: flex-end;
         align-items: center;
-        padding: 0 0 3.5dvh 0
+        padding: 0 0 3.5svh 0
     }
 
     .phoneTitle {
         display: flex;
         color: white;
-        font-size: 4.3dvh;
+        font-size: 4.3svh;
         font-family: Helvetica;
         font-weight: 770;
     }
@@ -302,7 +302,7 @@
         height: 1px;
         width: 75%;
         border-bottom: 1.5px solid white;
-        margin-top: 2dvh;
+        margin-top: 2svh;
     }
 
     .downContainer {
@@ -326,7 +326,7 @@
         height: fit-content;
         flex-direction: column;
         align-items: flex-start;
-        padding: 4dvh 2vw;
+        padding: 4svh 2vw;
     }
 
     .inputColumn {
@@ -337,25 +337,25 @@
     }
 
     .input {
-        height: 6dvh;
+        height: 6svh;
         width: 75%;
         padding-left: 2dvw;
-        font-size: 3dvh;
-        margin-bottom: 3dvh;
+        font-size: 3svh;
+        margin-bottom: 3svh;
     }
 
     .passwordContainer {
-        height: 6dvh;
+        height: 6svh;
         width: 75%;
         padding-left: 2dvw;
-        font-size: 3dvh;
-        margin-bottom: 3dvh;
+        font-size: 3svh;
+        margin-bottom: 3svh;
     }
 
     .password {
         height: 96%;
         width: 90%;
-        font-size: 3dvh;
+        font-size: 3svh;
     }
 
     .errorMessage {
@@ -363,8 +363,8 @@
         position: relative;
         bottom: auto;
         left: auto;
-        font-size: 2.7dvh;
-        margin-top: -1dvh;
+        font-size: 2.7svh;
+        margin-top: -1svh;
     }
 
     .registerBtn {
@@ -374,7 +374,7 @@
         position: relative;
         bottom: auto;
         left: auto;
-        margin-top: 2dvh;
+        margin-top: 2svh;
     }
 
     .phoneBtnContainer {
@@ -396,11 +396,11 @@
 
     .or {
         font-size: 5.7vw;
-        margin-bottom: 3dvh;
+        margin-bottom: 3svh;
     }
 
     .googleBtn {
-        height: 8dvh;
+        height: 8svh;
         width: 75%;
         padding: 0 4vw;
         display: flex;
@@ -408,6 +408,6 @@
         align-items: center;
         font-size: 4.3dvw;
         font-weight: 900;
-        margin-bottom: 3dvh;
+        margin-bottom: 3svh;
     }
 }
