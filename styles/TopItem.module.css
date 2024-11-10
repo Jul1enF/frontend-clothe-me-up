@@ -70,8 +70,8 @@ transition-duration: 1s;
 @media only screen and (max-width: 1150px){
     .body{
         width : 44vw;
-        height : 22svh;
-        min-height: 22svh;
+        height : 22dvh;
+        min-height: 22dvh;
         justify-content: space-between;
         padding : 0 1vw 0 0;
     }
@@ -79,7 +79,7 @@ transition-duration: 1s;
     .infosContainer{
         height : 100%;
         width : 40%;
-        padding : 10svh 0 1svh 1vw;
+        padding : 10dvh 0 1dvh 1vw;
         margin : 0;
         position:relative;
     }
@@ -96,7 +96,7 @@ transition-duration: 1s;
         font-size: 3.8vw;
         font-weight: 500;
         width: 19vw;
-        height : 4svh;
+        height : 4dvh;
 
     }
 

@@ -194,14 +194,14 @@ padding-top: 1vh;
 
 @media only screen and (max-width: 1150px) {
     .body {
-        height: 100svh;
+        height: 100dvh;
         width: 100vw;
-        padding-top: 14.5svh;
+        padding-top: 14.5dvh;
     }
 
     .leftContainer {
         width: 40vw;
-        height: 85.5svh;
+        height: 85.5dvh;
     }
 
     .imgContainer {
@@ -210,7 +210,7 @@ padding-top: 1vh;
 
     .rightContainer {
         width: 60vw;
-        height: 85.5svh;
+        height: 85.5dvh;
         flex-direction: column;
         align-items: flex-end;
         padding-right: 4vw;
@@ -221,7 +221,7 @@ padding-top: 1vh;
         height: 15%;
         width: 100%;
         justify-content: flex-end;
-        padding-top: 3svh;
+        padding-top: 3dvh;
     }
 
     .title {
@@ -239,7 +239,7 @@ padding-top: 1vh;
         width: 100%;
         justify-content: space-evenly;
         align-items: flex-end;
-        padding : 0svh 0 0svh 2vw
+        padding : 0dvh 0 0dvh 2vw
     }
 
     .price {
@@ -254,8 +254,8 @@ padding-top: 1vh;
 
     .sizeMenu {
         width: 52vw;
-        height: 6svh;
-        margin-bottom: 4svh;
+        height: 6dvh;
+        margin-bottom: 4dvh;
     }
 
     .menuSentence {
@@ -266,35 +266,35 @@ padding-top: 1vh;
 
     .dropContainer {
         position: absolute;
-        margin-top: -4.9svh;
-        padding-top: 0.5svh;
+        margin-top: -4.9dvh;
+        padding-top: 0.5dvh;
         width: 52vw;
-        height: 21svh;
+        height: 21dvh;
     }
 
     .dropDown {
         width: 52vw;
-        max-height: 21svh;
+        max-height: 21dvh;
         overflow-y: scroll;
         border-bottom: 0.5px solid rgb(13, 1, 102);
     }
 
     .stocks {
-        padding: 1svh 2vw;
+        padding: 1dvh 2vw;
     }
 
 
     .cartBtn {
         width: 40vw;
-        height: 6svh;
+        height: 6dvh;
         font-size: 4vw;
         font-weight: 570;
-        margin-bottom: 3svh;
+        margin-bottom: 3dvh;
     }
 
     .resultSentence {
         width: 55vw;
-        margin-top: 66svh;
+        margin-top: 66dvh;
         font-size: 3.4vw;
     }
 }

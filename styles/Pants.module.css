@@ -66,28 +66,28 @@
 
 
     .body{
-        padding-top: 14.5svh;
+        padding-top: 14.5dvh;
         flex-direction: column;
     }
 
     .leftContainer{
         width : 100vw;
-        height : 25svh;
-        padding : 3.5svh 0 0 3vw;
-        background-position: 0 -19svh;
+        height : 25dvh;
+        padding : 3.5dvh 0 0 3vw;
+        background-position: 0 -19dvh;
         align-items: flex-start;
         justify-content: flex-start;
     }
 
     .title{
-        font-size: 4svh;
-        margin-bottom: 1svh;
+        font-size: 4dvh;
+        margin-bottom: 1dvh;
     }
 
     .rightContainer{
         width : 100vw;
-        height : 60.5svh;
-        padding-top: 3svh;
+        height : 60.5dvh;
+        padding-top: 3dvh;
     }
 
     .lastPsContainer{

@@ -67,16 +67,16 @@ transition-duration: 1s;
 @media only screen and (max-width: 1150px){
     .body{
         width : 44.5vw;
-        height : 22svh;
-        min-height: 22svh;
+        height : 22dvh;
+        min-height: 22dvh;
         justify-content: space-between;
-        padding : 1svh 1vw 0 0;
+        padding : 1dvh 1vw 0 0;
     }
 
     .infosContainer{
         height : 100%;
         width : 60%;
-        padding : 10svh 0 2svh 1vw;
+        padding : 10dvh 0 2dvh 1vw;
         margin : 0 0 0 0 ;
         position:relative;
     }
@@ -93,7 +93,7 @@ transition-duration: 1s;
         font-size: 3.8vw;
         font-weight: 500;
         width: 19vw;
-        min-height : 4svh;
+        min-height : 4dvh;
 
     }
 

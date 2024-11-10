@@ -99,37 +99,37 @@
 
 @media only screen and (max-width: 1150px) {
     .body {
-        height: 100svh;
+        height: 100dvh;
         width: 100vw;
-        padding-top: 14.5svh;
+        padding-top: 14.5dvh;
         flex-direction: column;
     }
     
     .leftContainer {
         width: 100%;
-        height: 18svh;
+        height: 18dvh;
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
-        padding: 3.5svh 3vw 0;
-        background-position: 0 -4svh;
+        padding: 3.5dvh 3vw 0;
+        background-position: 0 -4dvh;
     
     }
     
     .title {
-        font-size: 4.5svh;
-        margin-bottom: 2svh;
+        font-size: 4.5dvh;
+        margin-bottom: 2dvh;
     }
     
     .line {
         width: 85%;
         height: 2px;
-        margin-bottom: 3svh;
+        margin-bottom: 3dvh;
     }
     
     .rightContainer {
         width: 100vw;
-        height: 67.5svh;
+        height: 67.5dvh;
         display: flex;
         flex-direction: column;
         align-items:center;
@@ -137,27 +137,27 @@
     }
     
     .stepsTitleContainer {
-        height: 8svh;
+        height: 8dvh;
         width: 100vw;
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
         overflow-x: scroll;
-        padding-top: 0svh;
-        margin-bottom: 1svh;
+        padding-top: 0dvh;
+        margin-bottom: 1dvh;
     }
     
     .stepAndIconContainer {
         width: 33vw;
         min-width: 33vw;
-        height: 8svh;
+        height: 8dvh;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         padding: 0 1vw 0 1vw;
-        margin-bottom: 0svh;
+        margin-bottom: 0dvh;
     }
     
     .arrowIcon {
@@ -173,7 +173,7 @@
 
     .chosenCategory{
         text-decoration: underline;
-        text-underline-offset: 1.2svh;
+        text-underline-offset: 1.2dvh;
         text-decoration-thickness: 2.2px;
     }
     
@@ -184,14 +184,14 @@
     }
     
     .stepContainer {
-        height: 58.5svh;
+        height: 58.5dvh;
         overflow-y: scroll;
         width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        padding: 1svh 2vw 0svh;
+        padding: 1dvh 2vw 0dvh;
     }
 
 }

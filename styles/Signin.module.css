@@ -198,7 +198,7 @@
 
     .body {
         width: 100vw;
-        height: 100svh;
+        height: 100dvh;
         flex-direction: column;
     }
 
@@ -208,13 +208,13 @@
         flex-direction: column;
         justify-content: flex-end;
         align-items: center;
-        padding: 0 0 3.5svh 0
+        padding: 0 0 3.5dvh 0
     }
 
     .phoneTitle {
         display: flex;
         color: white;
-        font-size: 4.3svh;
+        font-size: 4.3dvh;
         font-family: Helvetica;
         font-weight: 770;
     }
@@ -224,7 +224,7 @@
         height: 1px;
         width: 75%;
         border-bottom: 1.5px solid white;
-        margin-top: 2svh;
+        margin-top: 2dvh;
     }
 
     .downContainer {
@@ -245,7 +245,7 @@
         height: 100%;
         flex-direction: column;
         align-items: center;
-        padding : 0svh 2vw;
+        padding : 0dvh 2vw;
     }
 
     .inputColumn {
@@ -260,36 +260,36 @@
     }
 
     .input {
-        height: 6svh;
+        height: 6dvh;
         width: 65%;
         padding-left: 2dvw;
-        font-size: 3svh;
+        font-size: 3dvh;
     }
 
 
     .passwordContainer {
-        height: 6svh;
+        height: 6dvh;
         width: 65%;
         padding-left: 2dvw;
         padding-right: 2dvw;
-        font-size: 3svh;
-        margin-bottom: 0svh;
+        font-size: 3dvh;
+        margin-bottom: 0dvh;
     }
 
     .password {
         border: none;
         height: 100%;
         width: 80%;
-        font-size: 3svh;
+        font-size: 3dvh;
     }
 
     .errorMessage {
         width: 100%;
         position: absolute;
         bottom: auto;
-        margin-top: -32svh;
+        margin-top: -32dvh;
         left: 0;
-        font-size: 3svh;
+        font-size: 3dvh;
     }
 
     .registerBtn {
@@ -301,7 +301,7 @@
     .btnContainer {
         height: 40%;
         width: 100%;
-        padding : 1svh 0 7svh 0;
+        padding : 1dvh 0 7dvh 0;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
@@ -318,7 +318,7 @@
     }
 
     .googleBtn {
-        height: 8svh;
+        height: 8dvh;
         width: 65%;
         padding-right: 2%;
         padding-left: 3%;

@@ -161,7 +161,7 @@
 @media only screen and (max-width: 1150px) {
     .body{
         width: 100vw;
-        height: 100svh;
+        height: 100dvh;
         display: flex;
         flex-direction: column;
     }
@@ -172,13 +172,13 @@
         flex-direction: column;
         justify-content: flex-end;
         align-items: center;
-        padding: 0 0 6svh 0
+        padding: 0 0 6dvh 0
     }
 
     .phoneTitle {
         display: flex;
         color: white;
-        font-size: 4.3svh;
+        font-size: 4.3dvh;
         font-family: Helvetica;
         font-weight: 770;
     }
@@ -188,7 +188,7 @@
         height: 1px;
         width: 75%;
         border-bottom: 1.5px solid white;
-        margin-top: 2svh;
+        margin-top: 2dvh;
     }
     
     .downContainer{
@@ -215,28 +215,28 @@
         align-items: flex-start;
         padding-left: 3%;
         padding-right: 3%;
-        padding-top: 2.5svh;
+        padding-top: 2.5dvh;
     }
 
     .rightContainer h4{
-        font-size: 3.5svh;
+        font-size: 3.5dvh;
     }
     
     .rightContainer h2{
-        font-size: 3.9svh;
-        margin-bottom: 2svh;
+        font-size: 3.9dvh;
+        margin-bottom: 2dvh;
     }
     
     .articlesContainer{
         width:100%;
         height: fit-content;
-        max-height : 35.5svh;
-        padding : 2.5svh 0 1svh 0;
-        margin-bottom: 3svh;
+        max-height : 35.5dvh;
+        padding : 2.5dvh 0 1dvh 0;
+        margin-bottom: 3dvh;
     }
     
     .totalContainer{
-        margin-bottom: 1.8svh;
+        margin-bottom: 1.8dvh;
         width: 100%;
         display: flex;
         justify-content: space-between ;
@@ -245,20 +245,20 @@
     
     
     .totalContainer h3{
-        font-size: 3.5svh;
+        font-size: 3.5dvh;
     }
     
     .totalContainer h6{
-        font-size: 2.9svh;
+        font-size: 2.9dvh;
     }
     
     .connexion{
-        font-size: 2.9svh;
-        margin-bottom: 2.5svh;
+        font-size: 2.9dvh;
+        margin-bottom: 2.5dvh;
     }
     
     .connexionContainer{
-        margin-bottom: 2svh;
+        margin-bottom: 2dvh;
         padding: 0 2vw;
         display: flex;
         justify-content: space-between;
@@ -267,17 +267,17 @@
     
     .orderBtn{
         width: 40vw;
-        height : 6.5svh;
-        font-size: 3svh;
+        height : 6.5dvh;
+        font-size: 3dvh;
         margin-right: 0;
     }
     
     .error{
         width:100%;
         bottom: auto;
-        top : 32svh;
+        top : 32dvh;
         left : auto;
-        font-size: 3svh;
+        font-size: 3dvh;
     }
     
 }
