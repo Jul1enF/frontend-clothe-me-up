@@ -135,21 +135,21 @@ export default function Signup() {
                             setName(e.target.value)
                             setError('')
                         }} value={name}></input>
-                        <input className={styles.input} type="text" placeholder='Email*' onChange={(e) => {
+                        <input className={styles.input} autoCapitalize='none' type="text" placeholder='Email*' onChange={(e) => {
                             setEmail(e.target.value)
                             setError('')
                         }} value={email}></input>
                     </div>
                     <div className={styles.inputColumn}>
                         <div className={styles.passwordContainer}>
-                            <input type={eye1Visible ? "text" : "password"} placeholder='Mot de passe*' className={styles.password} onChange={(e) => {
+                            <input type={eye1Visible ? "text" : "password"} placeholder='Mot de passe*' autoCapitalize='none' className={styles.password} onChange={(e) => {
                                 setPassword(e.target.value)
                                 setError('')
                             }} value={password}></input>
                             <FontAwesomeIcon icon={eye1Visible ? faEyeSlash : faEye} className={styles.eyeIcon} onClick={() => setEye1Visible(!eye1Visible)} />
                         </div>
                         <div className={styles.passwordContainer}>
-                            <input type={eye2Visible ? "text" : "password"} placeholder='Confirmation du mot de passe*' className={styles.password} onChange={(e) => {
+                            <input type={eye2Visible ? "text" : "password"} placeholder='Confirmation du mot de passe*' className={styles.password} autoCapitalize='none' onChange={(e) => {
                                 setPassword2(e.target.value)
                                 setError('')
                             }} value={password2}></input>

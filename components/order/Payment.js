@@ -29,12 +29,12 @@ export default function Payment(props) {
         console.log(data)
         if (!data.result) {
             setError("Erreur, merci de vous reconnecter.")
-            setTimeout(() => { router.push("/") }, "4000")
+            setTimeout(() => { router.push("/") }, 4000)
         }
         if (data.badChange && data.articlesRemoved.length > 0) {
             data.articlesRemoved.map(e => dispatch(deleteCartArticle(e)))
             setError("Des articles de votre panier ne sont malheureusement plus disponibles !")
-            setTimeout(() => { router.push("/cart/c") }, "4000")
+            setTimeout(() => { router.push("/cart/c") }, 4000)
         }
     }
 
@@ -144,13 +144,13 @@ export default function Payment(props) {
             setTimeout(() => {
                 dispatch(logout())
                 router.push('/')
-            }, "4000")
+            }, 4000)
         }
         // Si articles plus dispo
         else if (!orderResult.payment && orderResult.missingArticles){
             setError(orderResult.errorSentence)
             orderResult.articlesRemoved.map(e=>dispatch(deleteCartArticle(e)))
-             setTimeout(()=>{router.push('/cart/c')},"4000")
+             setTimeout(()=>{router.push('/cart/c')},4000)
         }
         // Si payement refusé
         else if (!orderResult.payment){

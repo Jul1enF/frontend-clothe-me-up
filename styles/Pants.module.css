@@ -68,6 +68,8 @@
     .body{
         padding-top: 14.5dvh;
         flex-direction: column;
+        height: 100dvh;
+        width : 100vw;
     }
 
     .leftContainer{

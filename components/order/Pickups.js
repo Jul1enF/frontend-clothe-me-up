@@ -76,6 +76,10 @@ export default function Pickups (props) {
         })
     }
 
+
+
+    // Création pour Leaflet d'un paquet avec toutes les coordonées des pickups pour qu'il centre la map sur eux
+
     const allCoords = pickupAddresses.map(e => {
                 return L.latLng([e.latitude, e.longitude])
             })
@@ -83,6 +87,8 @@ export default function Pickups (props) {
 
     const bounds = L.latLngBounds([...allCoords])
 
+
+    
 
     // Création des fiches des points de retraits
 

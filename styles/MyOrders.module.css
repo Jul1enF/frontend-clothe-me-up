@@ -198,3 +198,203 @@
     min-width: fit-content;
     margin-right: 1vw;
 }
+
+
+
+
+
+
+
+/* Changement pour affichage smartphone */
+
+
+@media only screen and (max-width: 1150px) {
+
+    .body{
+        height:100%;
+        width: 100%;
+        overflow-y: scroll;
+        scrollbar-width: none;
+        padding-top: 3dvh;
+    }
+    
+    .noCommandContainer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 3.5vh;
+        font-size: 3.5vw;
+    }
+    
+    .noCommandContainer h2{
+        margin-bottom: 5dvh;
+        text-align: center;
+    }
+    
+    .line2{
+        width:50%;
+        border-bottom: 1px solid rgb(13, 1, 102);
+        margin-bottom: 7dvh;
+    }
+    
+    .linksContainer{
+        padding-top: 2dvh;
+        display: flex;
+        justify-content: space-between;
+        width: 40%;
+        font-size: 4.5vw;
+        text-decoration: underline;
+        text-underline-offset: 1.5dvh;
+    }
+  
+    .orderContainer{
+        width:100%;
+        background-color: rgb(245	245	245	);
+        border-radius : 10px;
+        margin-bottom: 3dvh;
+        padding : 2.5dvh 1vw;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .orderInfosContainer{
+        width:100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .orderNumber{
+        font-size: 4.3vw;
+    }
+    
+    .orderInfosContainer h3{
+        font-size: 4.3vw;
+        min-width: 27%;
+    }
+    
+    .chevron{
+        height : 3.5dvh;
+    }
+    
+    .line3{
+        width: 100%;
+        padding-top: 2.5dvh;
+        border-bottom: 1px solid rgb(13, 1, 102);
+    }
+    
+    .orderDetailsContainer{
+        width: 100%;
+        padding-top: 3dvh;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .details{
+        width: 100%;
+        font-size: 4.7vw;
+        color : rgb(13, 1, 102);
+        font-weight: 600;
+        padding-left: 1vw;
+        margin-bottom: 1dvh;
+    }
+    
+    .line{
+        width: 35%;
+        border-bottom: 1px solid rgb(13, 1, 102);
+        margin-bottom: 3dvh;
+    }
+    
+    .articlesContainer{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 2.5dvh;
+    }
+    
+    .articleContainer{
+        height : 7.5dvh;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2dvh;
+        padding : 0 1vw;
+    }
+    
+    .articleName{
+        font-size: 4.4vw;
+    }
+    
+    .articleContainer p{
+        font-size: 4.4vw;
+    }
+    
+    .imgContainer{
+        height: 7dvh;
+        width : 8vw;
+        position: relative;
+    }
+    
+    .detailLinesContainer{
+        width: 100%;
+        border : 1px solid rgb(13, 1, 102);
+        padding : 3dvh 1.5vw;
+        margin-bottom: 2dvh;
+    }
+    
+    .detailLine{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1.5dvh;
+    }
+    
+    .detailLinesContainer h6{
+        font-size: 4.4vw;
+        margin-right: 0.5vw;
+        width: 50%;
+    }
+    
+    .detailLinesContainer p{
+        font-size: 4vw;
+        text-align: left;
+    }
+    
+    .startPartDetailLine{
+        width:100%;
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 1.5dvh;
+    }
+    
+    .endPartDetailLine{
+        width:100%;
+        display: flex;
+        justify-content: flex-start;
+    }
+    
+    .lastDetailLine{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .partDetailLine{
+        width:100%;
+        display: flex;
+        justify-content: flex-start;
+    }
+    
+    .addressTitle{
+        min-width: fit-content;
+        margin-right: 0vw;
+    }
+    
+    
+
+}

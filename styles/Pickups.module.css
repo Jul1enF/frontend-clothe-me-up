@@ -155,3 +155,182 @@
     letter-spacing: 1px;
     cursor: pointer;
 }
+
+
+
+
+
+
+
+
+
+
+/* Changement pour affichage smartphone */
+
+
+@media only screen and (max-width: 1150px) {
+
+    .body{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 2vh;
+        padding-top: 0dvh;
+    }
+    
+    .map{
+        width: 90%;
+        height: 40dvh;
+        margin-bottom: 3dvh;
+    }
+    
+    .markerContainer{
+        height:6dvh;
+        width:6dvh;
+        margin-left: -1dvh;
+    }
+    
+    .markerIcon{
+        height : 6dvh;
+        color:rgb(124	124	123	);
+    }
+    
+    .selectedMarkerIcon{
+        height:6dvvh;
+        color:orange;
+    }
+    
+    .colissimoLogo{
+        position: absolute;
+        color:white;
+        height : 3dvh;
+        width: 3dvh;
+        margin-left: 0.8dvh;
+        margin-top: 0.8dvh;
+        z-index: 1;
+        object-fit: contain;
+    }
+    
+    .popupContainer{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 2.5dvh 2vw;
+    }
+    
+    .popupContainer p{
+        font-size: 3.5vw;
+        font-weight: 600;
+        margin:0 0 1.5vh;
+    }
+    
+    .popupBtn{
+        height:5dvh;
+        width: 25vw;
+        border: none;
+        color:white;
+        background-color: rgb(13, 1, 102);
+        border-radius: 3dvh;
+        font-size: 4vw;
+        font-weight: 900;
+        letter-spacing: 1px;
+        cursor: pointer;
+    }
+    
+    .pickupsContainer{
+        width:90%;
+        height: 55dvh;
+        overflow-y: scroll;
+        scrollbar-width: thin;
+        border-top: 0.5px solid black;
+        border-bottom: 0.5px solid black;
+        padding : 1dvh 0
+    }
+    
+    .pickContainer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 2vh;
+        background-color: white;
+        padding : 2vh 1vw;
+        border-radius: 2dvh;
+    }
+    
+    .schedulesContainer{
+        display : flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+    
+    .schedules{
+        display: flex;
+        flex-direction: column;
+        width: 48%;
+        margin-bottom: 0.5vh;
+    }
+    
+    .dayContainer{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 1vh;
+        flex-wrap: wrap;
+    }
+    
+    .sundayContainer{
+        display : flex;
+        justify-content: space-between;
+        width:50%;
+        margin-bottom: 2dvh;
+    }
+    
+    .sundayShortContainer{
+        display : flex;
+        justify-content: space-between;
+        width:40%;
+        margin-bottom: 2dvh;
+    }
+    
+    .pickContainer h4{
+        font-size: 3.8vw;
+        font-weight: 600;
+        margin-bottom: 1vh;
+    }
+    
+    .pickContainer h6{
+        font-size: 3.6vw;
+        font-weight: 500;
+        margin-bottom: 1vh;
+        text-align: center;
+    }
+    
+    .pickContainer h5{
+        font-size: 4.2vw;
+        font-weight: 600;
+        text-decoration: underline;
+        text-underline-offset: 1dvh;
+        margin-bottom: 2dvh;
+    }
+    
+    .pickContainer p{
+        font-size: 3.4vw;
+        font-weight: 300;
+    }
+    
+    .pickupBtn{
+        height:5.5dvh;
+        width: 30%;
+        border: none;
+        color:white;
+        background-color: rgb(13, 1, 102);
+        border-radius: 5dvh;
+        font-size: 4.3vw;
+        font-weight: 900;
+        letter-spacing: 1px;
+        cursor: pointer;
+    }
+
+}

@@ -123,16 +123,18 @@ body:has(.downss:hover) .leftContainer {
   width: 100vw;
   height : 52dvh;
   padding-top: 14.5dvh;
+  transition-duration: 0s;
  }
 
  .rightContainer{
   width: 100vw;
   height : 48dvh;
   background-position: 0 -3dvh;
+  transition-duration: 0s;
  }
 
 .topsContainer{
-  height : 20%;
+  height : 27%;
   padding-left: 5vw;
 }
 

@@ -385,6 +385,7 @@
         height: 14.5dvh;
         padding: 0;
         margin: 0;
+        transition-duration: 0s;
     }
 
     .phoneTitleContainer {
@@ -412,57 +413,69 @@
         padding: 0;
         word-spacing: 0.8dvw;
         letter-spacing: 0dvw;
+        transition-duration: 0s;
     }
 
     .searchContainer {
         width: 40dvw;
+        transition-duration: 0s;
 
     }
 
     .glassIcon {
         height: 2dvh;
         margin-right: 3dvw;
+        transition-duration: 0s;
     }
 
     .inputContainer {
-        height: 3dvh;
+        height: 4dvh;
+        padding-bottom: 1dvh;
+        transition-duration: 0s;
     }
 
     .menuIcon {
         height: 4dvh;
         margin-left: 4dvw;
+        transition-duration: 0s;
     }
 
     .userIcon {
         height: 4dvh;
         margin-left: 4dvw;
+        transition-duration: 0s;
     }
 
     .cartIcon {
         height: 4dvh;
         margin-left: 4dvw;
+        transition-duration: 0s;
     }
 
     .boIcon {
         height: 3.6dvh;
+        transition-duration: 0s;
     }
 
     .userName {
         font-size: 1.7dvh;
         margin-top: 6.4dvh;
         margin-left: 3.8dvw;
+        transition-duration: 0s;
     }
 
     .userDropdownContainer {
         width: 35dvw;
         top: 15.2dvh;
         margin-left: 1.7dvw;
+        transition-duration: 0s;
     }
 
     .triangle {
         height: 4dvh;
         margin-top: -2dvh;
         margin-left: 7.8dvw;
+        transition-duration: 0s;
     }
 
     .userDropdownContainer p {
@@ -471,22 +484,26 @@
         letter-spacing: 0;
         padding-top: 1.2dvh;
         padding-bottom: 1.2dvh;
+        transition-duration: 0s;
     }
 
     .autocompleteContainer {
         margin-top: 12.2dvh;
         height: 4dvh;
+        transition-duration: 0s;
     }
 
     .autocomplete {
         padding: 1.2dvh 0 1dvh 4dvw;
         width: 45dvw;
         max-height: 22dvh;
+        transition-duration: 0s;
     }
 
     .autocomplete p {
         font-size: 4.7dvw;
         margin-bottom: 0.8dvh;
+        transition-duration: 0s;
     }
 
     .cartCircle {
@@ -496,10 +513,12 @@
         margin-right: 1.5dvw;
         padding-top: 0;
         padding-left: 0.2dvw;
+        transition-duration: 0s;
     }
     
     .cartCircle p {
         font-size: 1.7dvh;
+        transition-duration: 0s;
     }
 
 }

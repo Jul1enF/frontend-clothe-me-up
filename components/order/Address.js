@@ -10,15 +10,21 @@ export default function Address(props) {
     const router = useRouter()
     const dispatch = useDispatch()
 
+
+
     // Affichage ou non du formulaire d'adresse à l'arrivée
     const [newAddressVisible, setNewAddressVisible] = useState(false)
 
     useEffect(() => {
         (!props.addresses || props.addresses.length == 0) ? setNewAddressVisible(true) : setNewAddressVisible(false)
-    }, [])
+    }, [props.toogleAddressComponent])
+
 
     let newAddressStyle
     newAddressVisible ? newAddressStyle = { display: "flex" } : newAddressStyle = { display: "none" }
+
+
+
 
     // États pour enregistrement adresse
     const [title, setTitle] = useState('')
@@ -31,6 +37,8 @@ export default function Address(props) {
     const [phone, setPhone] = useState('')
 
 
+
+
     // Variables pour les erreurs
 
     const mobileRegex = /^(06|07)[0-9]{8}$/
@@ -40,6 +48,8 @@ export default function Address(props) {
     const validPostCode = postCodeRegex.test(post_code)
 
     const [error, setError] = useState("")
+
+
 
     // Fonction appelée au click sur enregistrer adresse
 
@@ -76,7 +86,7 @@ export default function Address(props) {
                 setTimeout(() => {
                     dispatch(logout())
                     router.push('/')
-                }, "4000")
+                }, 4000)
             }
             else if (data.result) {
                 dispatch(addAddress(data.address))
@@ -85,6 +95,8 @@ export default function Address(props) {
             }
         }
     }
+
+
 
     // Affichage des addresses enregistrées
 
@@ -108,6 +120,10 @@ export default function Address(props) {
             <h2>Ou</h2>
             <h4 onClick={() => setNewAddressVisible(true)}>Enregistrer une nouvelle adresse ?</h4>
         </div>
+
+
+
+
 
     return (
         <div className={styles.body}>

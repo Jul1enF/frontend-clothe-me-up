@@ -14,6 +14,15 @@ export default function Order() {
 
     const [step, setStep] = useState('address')
 
+
+
+    // État bidon juste là pour reseter le composant adresse au click sur le nom de la catégorie
+
+    const [toogleAddressComponent, setToogleAddressComponent]=useState(false)
+
+
+    
+
     //Fonctions IDF et états pour remonter les choix de commande
 
     const [chosenAddress, setChosenAddress] = useState({})
@@ -21,7 +30,6 @@ export default function Order() {
     const [deliveryMode, setDeliveryMode] = useState('')
     const [deliveryPrice, setDeliveryPrice] = useState(0)
 
-    console.log(chosenAddress2)
 
     function getAddress(address) {
         setChosenAddress(address)
@@ -43,6 +51,9 @@ export default function Order() {
         setDeliveryPrice(price)
     }
 
+
+
+
     // Calcul du montant total des articles + frais de port
     let totalArticles = 0
 
@@ -50,12 +61,14 @@ export default function Order() {
 
     let total = totalArticles + deliveryPrice
 
+
+
     // Affichage conditionnel des composants en fonction de l'étape en cours
 
     let content
 
     if (step === "address") {
-        content = <Address addresses={user.addresses} token={user.token} getAddress={getAddress} changeStep={changeStep} />
+        content = <Address addresses={user.addresses} token={user.token} getAddress={getAddress} changeStep={changeStep} toogleAddressComponent={toogleAddressComponent}/>
     } else if (step === "delivery") {
         content = <Delivery changeStep={changeStep} totalArticles={totalArticles} getDeliveryMode={getDeliveryMode} getDeliveryPrice={getDeliveryPrice} getAddress2={getAddress2} chosenAddress={chosenAddress}/>
     } else if (step == "payment") {
@@ -66,6 +79,9 @@ export default function Order() {
             <h3>Un email de confirmation avec votre reçu vous a été adressé (pensez à vérifier vos spams).</h3>
         </div>
     }
+
+
+
 
     // Affichage conditionnel des flèches en fonction de l'étape
 
@@ -81,11 +97,17 @@ export default function Order() {
     let validationStyle
     step === "ordered" ? validationStyle = { color: "rgb(13, 1, 102)" } : validationStyle = { color: "transparent" }
 
+
+
+
     // Fonction appelée au click sur les noms d'étapes pour revenir à celles ci
 
     const addressClick = ()=>{
         if (step=== "ordered"){return}
-        else {setStep("address")}
+        else {
+            setStep("address")
+            setToogleAddressComponent(previousState => !previousState)
+        }
     }
 
     const deliveryClick = ()=>{
@@ -104,19 +126,19 @@ export default function Order() {
                 <div className={styles.stepsTitleContainer}>
                     <div className={styles.stepAndIconContainer}>
                         <FontAwesomeIcon icon={faArrowRight} style={addresseStyle} className={styles.arrowIcon} />
-                        <h2 className={styles.title2} onClick={()=>addressClick()}>Adresse de livraison</h2>
+                        <h2 className={`${styles.title2} ${step == "address" && styles.chosenCategory}`} onClick={()=>addressClick()}>Adresse de livraison</h2>
                     </div>
                     <div className={styles.stepAndIconContainer}>
                         <FontAwesomeIcon icon={faArrowRight} style={deliveryStyle} className={styles.arrowIcon} />
-                        <h2 className={styles.title2} onClick={()=>deliveryClick()}>Mode de livraison</h2>
+                        <h2 className={`${styles.title2} ${step == "delivery" && styles.chosenCategory}`}onClick={()=>deliveryClick()}>Mode de livraison</h2>
                     </div>
                     <div className={styles.stepAndIconContainer}>
                         <FontAwesomeIcon icon={faArrowRight} style={paymentStyle} className={styles.arrowIcon} />
-                        <h2>Paiement</h2>
+                        <h2 className={`${styles.title3} ${step == "payment" && styles.chosenCategory}`}>Paiement</h2>
                     </div>
                     <div className={styles.stepAndIconContainer}>
                         <FontAwesomeIcon icon={faArrowRight} style={validationStyle} className={styles.arrowIcon} />
-                        <h2 >Validation</h2>
+                        <h2 className={`${styles.title3} ${step == "ordered" && styles.chosenCategory}`}>Validation</h2>
                     </div>
                 </div>
                 <div className={styles.line2}></div>

@@ -66,9 +66,12 @@
 
 .title2{
     cursor: pointer;
+    font-size: 22px;
+    font-weight: 850;
+    color: rgb(13, 1, 102);
 }
 
-.stepsTitleContainer h2 {
+.title3 {
     font-size: 22px;
     font-weight: 850;
     color: rgb(13, 1, 102);
@@ -116,4 +119,151 @@
     padding: 1vh 0;
     border-radius: 5px;
     margin-bottom: 9vh;
+}
+
+
+
+
+/* Changement pour affichage smartphone */
+
+
+@media only screen and (max-width: 1150px) {
+
+    .body {
+        height: 100dvh;
+        width: 100vw;
+        padding-top: 14.5dvh;
+        flex-direction: column;
+    }
+    
+    .leftContainer {
+        width: 100%;
+        height: 16dvh;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 3.5dvh 3vw 0;
+        background-position: 0 -35vh;
+    
+    }
+    
+    .title {
+        font-size: 4.5dvh;
+        margin-bottom: 2dvh;
+    }
+    
+    .line {
+        width: 85%;
+        height: 2px;
+        margin-bottom: 3dvh;
+    }
+    
+    .rightContainer {
+        width: 100vw;
+        height: 69.5dvh;
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+    }
+    
+    .stepsTitleContainer {
+        height: fit-content;
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        overflow-x: scroll;
+        padding-top: 0.5dvh;
+        padding-bottom: 0.5dvh;
+        margin-bottom: 0dvh;
+        flex-wrap: wrap;
+    }
+    
+    .stepAndIconContainer {
+        width: fit-content;
+        min-width: fit-content;
+        height: fit-content;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5dvh 1vw 1dvh 1vw;
+        margin-bottom: 0dvh;
+    }
+    
+    .arrowIcon {
+        height: 3.5vw;
+     
+    }
+    
+    .title2 {
+        font-size: 4dvw;
+        width : fit-content;
+        min-width: fit-content;
+        text-align: center;
+        margin-left: 3vw;
+    }
+
+    .title3 {
+        font-size: 4dvw;
+        width : fit-content;
+        min-width: fit-content;
+        text-align: center;
+        margin-left: 3vw;
+    }
+
+    .chosenCategory{
+        text-decoration: underline;
+        text-underline-offset: 0.5dvh;
+        text-decoration-thickness: 2px;
+    }
+
+    
+    .line2 {
+        width: 100%;
+        height: 1px;
+        border-bottom: 1px solid rgb(13, 1, 102);
+    }
+    
+    .stepContainer {
+        height: 60.5dvh;
+        overflow-y: scroll;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0dvh 2vw 0dvh;
+    }
+    
+    .successContainer {
+        width: 95%;
+        height: 60%;
+        padding-top: 7vh;
+        padding-bottom: 2vh;
+        border-radius: 3dvh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-image: url("/cadeau.jpg");
+        background-size: cover;
+        margin-top: 3.5dvh;
+    }
+    
+    
+    .successContainer h3 {
+        font-size: 4.7vw;
+        font-weight: 750;
+        width: 85%;
+        color: rgb(13, 1, 102);
+        text-align: center;
+        line-height: 5dvh;
+        background-color: rgb(255, 255, 255);
+        padding: 1vh 0;
+        border-radius: 1dvh;
+        margin-bottom: 9vh;
+    }
+    
+
 }

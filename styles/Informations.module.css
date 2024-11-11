@@ -176,162 +176,129 @@
     .body{
         height:100%;
         width: 100%;
-        padding: 3vh 0;
+        padding: 2dvh 0;
         display: flex;
         flex-direction: column;
     }
     
     .infosContainer{
-        width: 100vw;
+        width: 100%;
         display: flex;
         align-items: center;
         justify-content: flex-start;
         flex-wrap: wrap;
-        margin-bottom: 4dvh;
+        margin-bottom: 2dvh;
+        border-bottom: 1px solid rgb(13, 1, 102);
+        padding-bottom: 2dvh;
     }
     
     .body h3{
-        width:50vw;
+        width:32%;
         text-align: left;
-        font-size: 4.7vw;
+        font-size: 4.3vw;
+        margin-bottom: 2.5dvh;
     }
     
     .body p{
-        width:50vw;
+        width:68%;
         text-align: left;
         font-size: 17px;
         font-weight:500;
-        color:rgb(13, 1, 102); 
+        color:rgb(13, 1, 102);
+        margin-bottom: 2.5dvh;
     }
     
     .lineInputContainer{
-        width:40%;
+        width:68%;
         padding-right: 1vw;
     }
     
     .input{
-        height : 5.5vh;
+        height : 8dvw;
         width: 100%;
-        border-radius: 5px;
-        background-color: white;
-        color:rgb(13, 1, 102);
-        outline: none;
-        padding-left: 7px;
-        font-size: 15px;
-        border: 1px solid rgb(13, 1, 102);
-    }
-    
-    .inputsContainer input::placeholder{
-        color:rgb(13, 1, 102);
+        padding-left: 2vw;
+        font-size: 4.4vw;
+        margin-bottom: 2.5dvh;
     }
     
     .lineBtnsContainer{
-        width: 40%;
+        width: 100%;
         display: flex;
         justify-content: space-between;
     }
     
     .changeBtn{
-        width: 100%;
-        height : 5.5vh;
-        border: 1px solid rgb(13, 1, 102);
-        border-radius: 5px;
-        background-color: rgb(13, 1, 102);
-        color:white;
-        cursor: pointer;
-        font-size: 16.5px;
-        font-weight: 570;
+        width: 34vw;
+        margin-left: 31vw;
+        height : 5.8dvh;
+        font-size: 3dvh;
     }
     
     .changeBtn:hover{
-        background-color: white;
-        color:rgb(13, 1, 102);
+        background-color: rgb(13, 1, 102);
+        color:white;
     }
     
     .abortBtn{
-        width: 48%;
-        height : 5.5vh;
-        border: 1px solid rgb(13, 1, 102);
-        border-radius: 5px;
-        background-color: rgb(13, 1, 102);
-        color:white;
-        cursor: pointer;
-        font-size: 16px;
-        font-weight: 570;
+        width: 42%;
+        height : 5.8dvh;
+        font-size: 3dvh;
     }
     
     .abortBtn:hover{
-        background-color: white;
-        color:rgb(13, 1, 102);
+        background-color: rgb(13, 1, 102);
+        color:white;
     }
     
     .saveBtn{
-        width: 48%;
-        height : 5.5vh;
-        border: 1px solid rgb(13, 1, 102);
-        border-radius: 5px;
-        background-color: rgb(13, 1, 102);
-        color:white;
-        cursor: pointer;
-        font-size: 16px;
-        font-weight: 570;
+        width: 42%;
+        height : 5.8dvh;
+        font-size: 3dvh;
     }
     
     .saveBtn:hover{
-        background-color: white;
-        color:rgb(13, 1, 102);
+        background-color: rgb(13, 1, 102);
+        color:white;
     }
     
     .linePasswordsContainer{
-        position : absolute;
+        position : relative;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        width : 17.9vw;
-        margin-left: 9.4vw;
-        margin-top: 19.6vh;
-        height : 25vh;
-    
+        width:68%;
+        margin-left: auto;
+        margin-top: auto;
+        height : fit-content;
+        margin-bottom: 2.5dvh;
     }
     
     .passwordContainer{
-        height : 5.5vh;
-        width: 100%;
-        border-radius: 5px;
-        background-color: white;
-        color:rgb(13, 1, 102);
-        outline: none;
-        padding-left: 7px;
-        padding-right: 9px;
         font-size: 15px;
         border: 1px solid rgb(13, 1, 102);
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 1vh;
+        margin-bottom: 1dvh;
+        height : 8dvw;
+        width: 100%;
+        padding-left: 2vw;
+        padding-right: 2vw;
     }
     
     .password{
-        border:none;
-        height : 5.2vh;
+        height : 7dvw;
         width: 100%;
-        outline: none;
-        font-size: 15px;
-        color:rgb(13, 1, 102);
-    }
-    
-    .eyeIcon{
-        color:rgb(13, 1, 102);
-        cursor: pointer;
-    
+        font-size: 4.4vw;
     }
     
     .error{
-        width:45vw;
+        width:96vw;
         position:absolute;
-        bottom: 5vh;
-        left : 51.5vw;
-        font-size: 19px;
+        bottom: auto;
+        margin-top: -4.7dvh;
+        left : auto;
+        font-size: 2dvh;
         text-align: center;
     }
     

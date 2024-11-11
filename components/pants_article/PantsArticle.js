@@ -142,7 +142,7 @@ export default function PantsArticle() {
         setArticles(articles.filter(e => e._id !== chosenSizeArticles[0]._id))
 
         setResultSentence("Article mis de côté dans votre panier pendant 3 heures !")
-        setTimeout(()=>setResultSentence(''), "3800")
+        setTimeout(()=>setResultSentence(''), 4000)
 
         // Si plus d'article au prochain re-render, push vers page tops
         if(articles.length==1){router.push('/pants')}

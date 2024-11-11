@@ -276,6 +276,7 @@ padding-top: 1vh;
         width: 52vw;
         max-height: 21dvh;
         overflow-y: scroll;
+        scrollbar-width: thin;
         border-bottom: 0.5px solid rgb(13, 1, 102);
     }
 

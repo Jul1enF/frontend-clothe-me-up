@@ -26,42 +26,42 @@
     margin-bottom: 5vh;
 }
 
-.singleAddressContainer{
+.singleAddressContainer {
     width: 100%;
     height: 8vh;
     padding: 0 1vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(245	245	245	);
+    background-color: rgb(245 245 245);
     margin-bottom: 5vh;
     border-radius: 10px;
 }
 
-.addresseName{
+.addresseName {
     font-weight: 900;
     margin-right: 0.5vw;
     font-size: 18.5px;
-    color:rgb(13, 1, 102);
+    color: rgb(13, 1, 102);
     letter-spacing: 0.2px;
     width: 28%;
 }
 
-.addressInfos{
-    color:rgb(13, 1, 102);
+.addressInfos {
+    color: rgb(13, 1, 102);
     font-size: 18.5px;
     letter-spacing: 0.2px;
     width: 64%;
     font-weight: 500;
 }
 
-.trash{
-    height : 19px;
-    color:rgb(13, 1, 102);
+.trash {
+    height: 19px;
+    color: rgb(13, 1, 102);
     cursor: pointer;
 }
 
-.getNewAddressContainer{
+.getNewAddressContainer {
     padding-top: 5vh;
 }
 
@@ -73,18 +73,18 @@
     border: 1px solid rgb(13, 1, 102);
     border-radius: 5px;
     background-color: rgb(13, 1, 102);
-    color:white;
+    color: white;
     font-weight: 570;
-    padding : 1vh 2vw;
+    padding: 1vh 2vw;
     line-height: 27px;
     transition-duration: 0.7s;
     cursor: pointer;
 }
 
 
-.addressesContainer h4:hover{
+.addressesContainer h4:hover {
     background-color: white;
-    color:rgb(13, 1, 102);
+    color: rgb(13, 1, 102);
     transition-duration: 0.7s;
 }
 
@@ -191,4 +191,150 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+
+
+
+
+/* Changement pour affichage smartphone */
+
+
+@media only screen and (max-width: 1150px) {
+
+    .body {
+        height: 100%;
+        width: 100%;
+        padding: 0dvh 0;
+    }
+
+    .addressesContainer {
+        width: 100%;
+        height: 100%;
+        padding-top: 2dvh;
+    }
+
+    .singleAddressContainer {
+        width: 100%;
+        height: 12dvh;
+        padding: 0 1vw;
+        margin-bottom: 3dvh;
+    }
+
+    .addresseName {
+        margin-right: 0.5vw;
+        font-size: 4.8dvw;
+        letter-spacing: 0.2px;
+        width: 28%;
+    }
+
+    .addressInfos {
+        font-size: 4.4dvw;
+        letter-spacing: 0.2px;
+        width: 64%;
+    }
+
+    .trash {
+        height: 3.5dvh;
+    }
+
+    .getNewAddressContainer {
+        padding-top: 4dvh;
+    }
+
+    .addressesContainer h4 {
+        font-size: 4vw;
+        letter-spacing: 0.5px;
+        margin-bottom: 5vh;
+        padding: 1.3dvh 3vw;
+        line-height: 4dvh;
+        transition-duration: 0s;
+    }
+
+
+    .addressesContainer h4:hover {
+        background-color: rgb(13, 1, 102);
+        color: white;
+        transition-duration: 0s;
+    }
+
+    .newAddress {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        position: relative;
+        padding-top: 3dvh;
+        padding-bottom: 3dvh;
+    }
+
+    .registerSentenceContainer {
+        width: 100%;
+        align-items: center;
+    }
+
+    .newAddress h3 {
+        font-size: 5vw;
+        margin-bottom: 4dvh;
+        text-decoration: underline;
+        text-underline-offset: 1.7dvh;
+    }
+
+    .line2 {
+        width: 90%;
+        height: 1px;
+        margin-bottom: 3dvh;
+        display: none;
+    }
+
+    .inputsContainer {
+        height: fit-content;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .newAddress input {
+        height: 8dvh;
+        width: 90%;
+        padding-left: 1vw;
+        font-size: 4.4vw;
+    }
+
+    .input {
+        margin-bottom: 2dvh;
+    }
+
+    .mobileInput {
+        margin-bottom: 5dvh;
+    }
+
+    .btnContainer {
+        width: 100%;
+        height: 8dvh;
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+
+    .registerBtn {
+        height: 8dvh;
+        width: 50vw;
+        font-size: 5vw;
+    }
+
+    .errorMessage {
+        width: 100%;
+        height: auto;
+        position: absolute;
+        margin-left: auto;
+        font-size: 3.8vw;
+        margin-top: -4.6dvh;
+    }
+
+
 }

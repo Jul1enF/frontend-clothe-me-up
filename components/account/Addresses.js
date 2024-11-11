@@ -79,7 +79,7 @@ export default function Addresses(props) {
                 setTimeout(() => {
                     dispatch(logout())
                     router.push('/')
-                }, "4000")
+                }, 4000)
             }
             else if (data.result) {
                 dispatch(addAddress(data.address))
@@ -165,7 +165,7 @@ export default function Addresses(props) {
                         setError("")
                     }} value={phone} className={styles.mobileInput}></input>
                     <div className={styles.btnContainer}>
-                        <button className={styles.registerBtn} onClick={() => registerClick()}>Enregistrer et choisir</button>
+                        <button className={styles.registerBtn} onClick={() => registerClick()}>Enregistrer</button>
                         <h4 className={styles.errorMessage}>{error}</h4>
                     </div>
                 </div>

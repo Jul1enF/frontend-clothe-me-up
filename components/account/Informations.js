@@ -69,7 +69,7 @@ export default function () {
             setTimeout(() => {
                 dispatch(logout())
                 router.push('/')
-            }, "4000")
+            }, 4000)
         }
         else {
             setErrorIsInformations(true)
@@ -80,7 +80,7 @@ export default function () {
             setTimeout(() => {
                 setError('')
                 setErrorIsInformations(false)
-            }, "4000")
+            }, 4000)
         }
     }
 
@@ -143,7 +143,7 @@ export default function () {
             setTimeout(() => {
                 dispatch(logout())
                 router.push('/')
-            }, "4000")
+            }, 4000)
         }
         else {
             setErrorIsInformations(true)
@@ -154,7 +154,7 @@ export default function () {
             setTimeout(() => {
                 setError('')
                 setErrorIsInformations(false)
-            }, "4000")
+            }, 4000)
         }
     }
 
@@ -209,7 +209,7 @@ export default function () {
 
             setTimeout(() => {
                 setError('')
-            }, "4000")
+            }, 4000)
             return
         }
 
@@ -228,7 +228,7 @@ export default function () {
             setTimeout(() => {
                 dispatch(logout())
                 router.push('/')
-            }, "4000")
+            }, 4000)
         }
         else {
             setErrorIsInformations(true)
@@ -239,7 +239,7 @@ export default function () {
             setTimeout(() => {
                 setError('')
                 setErrorIsInformations(false)
-            }, "4000")
+            }, 4000)
         }
     }
 
@@ -309,7 +309,7 @@ export default function () {
             setTimeout(() => {
                 dispatch(logout())
                 router.push('/')
-            }, "4000")
+            }, 4000)
         }
         else {
             setErrorIsInformations(true)
@@ -319,7 +319,7 @@ export default function () {
             setTimeout(() => {
                 dispatch(logout())
                 router.push('/')
-            }, "4000")
+            }, 4000)
         }
     }
 
@@ -333,7 +333,7 @@ export default function () {
     else {
         emailContent =
             <div className={styles.lineInputContainer}>
-                <input className={styles.input} type="text" placeholder={user.email} onChange={(e) => {
+                <input autoCapitalize='none' className={styles.input} type="text" placeholder={user.email} onChange={(e) => {
                     setNewEmail(e.target.value)
                     setError('')
                 }} value={newEmail}></input>
@@ -394,7 +394,7 @@ export default function () {
             setTimeout(() => {
                 dispatch(logout())
                 router.push('/')
-            }, "4000")
+            }, 4000)
         }
         else {
             setErrorIsInformations(true)
@@ -408,7 +408,7 @@ export default function () {
             setTimeout(() => {
                 setError('')
                 setErrorIsInformations(false)
-            }, "4000")
+            }, 4000)
         }
     }
 
@@ -423,21 +423,21 @@ export default function () {
         passwordContent =
             <div className={styles.linePasswordsContainer}>
                 <div className={styles.passwordContainer} style={user.password ? {display : "flex"} : {display : "none"}}>
-                    <input type={eye1Visible ? "text" : "password"} placeholder='Ancien mot de passe' className={styles.password} onChange={(e) => {
+                    <input autoCapitalize='none' type={eye1Visible ? "text" : "password"} placeholder='Ancien mot de passe' className={styles.password} onChange={(e) => {
                         setOldPassword(e.target.value)
                         setError('')
                     }} value={oldPassword}></input>
                     <FontAwesomeIcon icon={eye1Visible ? faEyeSlash : faEye} className={styles.eyeIcon} onClick={() => setEye1Visible(!eye1Visible)} />
                 </div>
                 <div className={styles.passwordContainer}>
-                    <input type={eye2Visible ? "text" : "password"} placeholder='Nouveau mot de passe' className={styles.password} onChange={(e) => {
+                    <input autoCapitalize='none' type={eye2Visible ? "text" : "password"} placeholder='Nouveau mot de passe' className={styles.password} onChange={(e) => {
                         setNewPassword(e.target.value)
                         setError('')
                     }} value={newPassword}></input>
                     <FontAwesomeIcon icon={eye2Visible ? faEyeSlash : faEye} className={styles.eyeIcon} onClick={() => setEye2Visible(!eye2Visible)} />
                 </div>
                 <div className={styles.passwordContainer}>
-                    <input type={eye3Visible ? "text" : "password"} placeholder='Confirmation mot de passe' className={styles.password} onChange={(e) => {
+                    <input autoCapitalize='none' type={eye3Visible ? "text" : "password"} placeholder='Confirmation mot de passe' className={styles.password} onChange={(e) => {
                         setNewPassword2(e.target.value)
                         setError('')
                     }} value={newPassword2}></input>

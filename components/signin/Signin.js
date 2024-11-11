@@ -92,9 +92,9 @@ export default function Signin() {
                         <input className={styles.input} type="text" placeholder='Email' onChange={(e) => {
                             setEmail(e.target.value)
                             setError('')
-                        }} value={email}></input>
+                        }} value={email} autoCapitalize='none'></input>
                         <div className={styles.passwordContainer}>
-                            <input type={eye1Visible ? "text" : "password"} placeholder='Mot de passe' className={styles.password} onChange={(e) => {
+                            <input type={eye1Visible ? "text" : "password"} placeholder='Mot de passe' className={styles.password} autoCapitalize='none' onChange={(e) => {
                                 setPassword(e.target.value)
                                 setError('')
                             }} value={password} onKeyDown={(event) => {

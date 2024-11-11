@@ -141,7 +141,7 @@
         width: 100vw;
         display: flex;
         flex-direction: row;
-        justify-content: flex-start;
+        justify-content: space-between;
         align-items: center;
         overflow-x: scroll;
         padding-top: 0dvh;
@@ -149,8 +149,7 @@
     }
     
     .stepAndIconContainer {
-        width: 33vw;
-        min-width: 33vw;
+        width: fit-content;
         height: 8dvh;
         display: flex;
         flex-direction: row;
@@ -166,7 +165,7 @@
     }
     
     .title2 {
-        font-size: 3.6dvw;
+        font-size: 3.9dvw;
         width : 100%;
         text-align: center;
     }
@@ -191,7 +190,7 @@
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        padding: 1dvh 2vw 0dvh;
+        padding: 0dvh 2vw 0dvh;
     }
 
 }
