@@ -37,12 +37,12 @@ function Home() {
   return (
     <div className={styles.body}>
       <Header />
-      <div className={styles.leftContainer}>
+      <div className={styles.leftContainer} onClick={()=>router.push('/tops')}>
         <div className={styles.topsContainer}>
           <Link href="/tops"><h2 className={styles.tops}>HAUTS</h2></Link>
         </div>
       </div>
-      <div className={styles.rightContainer}>
+      <div className={styles.rightContainer} onClick={()=>router.push('/pants')}>
         <div className={styles.downsContainer}>
           <Link href='/pants'><h2 className={styles.downs}>BAS</h2></Link>
         </div>
