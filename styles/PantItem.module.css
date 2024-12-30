@@ -19,6 +19,7 @@
     justify-content: space-evenly;
     margin-right: 13vw;
     margin-bottom: 30.5vh;
+    z-index: 1;
 }
 
 .infosContainer h4{
